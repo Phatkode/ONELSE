@@ -1,0 +1,40 @@
+	<!--     Container     -->
+	<div class="container">
+			
+<div class="collapse" id="collapseExample">			
+			<form (ngSubmit)="login()">
+				<!-- Form Field (Username) -->
+				<div class="form-group">
+					<input style="text-align: center" type="text" name="username" placeholder="username" class="form-control" ngModel #username="ngModel">
+				</div>
+				<!-- Form Field (Password) -->
+				<div class="form-group">
+					<input style="text-align: center"  type="text" name="Password" placeholder="password" class="form-control" ngModel #password="ngModel">
+				</div>		
+
+
+
+
+				<!-- Sumbit Button -->
+				<button class="btn btn-dark btn-block" routerLink="/profile">Submit Login</button>
+</form></div>
+
+<form (ngSubmit)="login()">
+				<!-- Login Button -->
+					<button class= "btn btn-secondary btn-block" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Login</button>
+
+
+
+
+				<!-- Register Button -->
+				<button class="btn btn-success btn-block" routerLink="/register">Register</button>
+			</form>
+	
+</div>
+
+
+
+
+
+
+
