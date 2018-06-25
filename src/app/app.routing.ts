@@ -6,9 +6,9 @@ import { RegisterComponent } from './components/user/register/register.component
 import { ProfileComponent } from './components/user/profile/profile.component';
 import { AppComponent } from './app.component';
 import { EventsComponent } from './components/art/events/events.component';
-import { BillconfirmComponent } from './components/art/Shopping/billconfirm/billconfirm.component';
-import { CheckoutComponent } from './components/art/Shopping/checkout/checkout.component';
-import { ShoppingcartComponent } from './components/art/Shopping/shoppingcart/shoppingcart.component';
+import { BillconfirmComponent } from './components/art/shopping/billconfirm/billconfirm.component';
+import { CheckoutComponent } from './components/art/shopping/checkout/checkout.component';
+import { ShoppingcartComponent } from './components/art/shopping/shoppingcart/shoppingcart.component';
 import { ShoppingComponent } from './components/art/shopping/shopping.component';
 import { BulletinComponent } from './components/community/bulletin/bulletin.component';
 import { VlogComponent } from './components/community/vlog/vlog.component';
