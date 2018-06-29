@@ -26,6 +26,8 @@ import { LoginComponent } from './components/user/login/login.component';
 import { Routing } from './app.routing';
 import { VloggerpagesComponent } from './components/community/vlog/vloggerpages/vloggerpages.component';
 
+import { UserService } from './Services/user.service.client'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +57,7 @@ import { VloggerpagesComponent } from './components/community/vlog/vloggerpages/
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

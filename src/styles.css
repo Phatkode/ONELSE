@@ -1,5 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
 body{
-	padding-top: 70px;
 	padding-bottom: 70px;
+	background-image: url("./images/LSECUBE3.jpg");
+	background-size:  2700px 2700px
+}
+
+.sw-noPadding{
+	padding: 0;
+}
+
+.btn-block+.btn-block {
+    margin-top: 0;
+}
+
+.logoPadding{
+	padding-left: 30px;
+	padding-top: 8px;
+}
+
+
+.dropdown:hover .dropdown-menu {
+	display: block;
+	border-style: none;
+}
+
+
+.dropdown-item:hover .dropdown-menu {
+	display: block;
+	border-style: none;
+}
+
+
+.dropdown-menu {
+	margin-top: 0;
+}
+
+
+.nav-text{
+	vertical-align: center;
+	color: red;
+}
+
+
+.upper-header{
+	max-height: 50px;
+	
+}
+
+.bg-white{
+	background: white;
 }

@@ -8,24 +8,39 @@
 			<h5  align="left" >*PERSONAL</h5>
 				<!-- Form field bday -->
 				<div class="form-group">
-					<input type="text" name="birthday" placeholder="birthday" class="form-control">
+					<input type="text" name="birthday" placeholder="birthday" required ngModel="{{user.birthday}}" #birthday="ngModel" class="form-control">
 				</div>		
 				<!-- Form field email -->
 				<div class="form-group">
-					<input type="text" name="email" placeholder="email" class="form-control">
+					<input type="text" required ngModel="{{user.email}}" name="email" placeholder="email" class="form-control">
 				</div>
 				<!-- Form field Username -->
 				<div class="form-group">
-					<input type="text" name="username" placeholder="username" class="form-control">
+					<input type="text" required ngModel="{{user.userName}}" name="userName" placeholder="username" class="form-control">
 				</div>
 				<!-- Form field Password -->
 				<div class="form-group">
-					<input type="password" name="password" placeholder="password" class="form-control">
+					<input type="password" required ngModel="{{user.password}}" name="password" placeholder="password" class="form-control">
 				</div>
-				<!--  Form field Verify  -->
+
 				<div class="form-group">
-					<input type="password" name=" verify-password" placeholder="verify password" class="form-control">
+					<input type="password" name="password" placeholder="verify password" class="form-control">
+					</div>
+				<!-- Form field VerifyPassword -->
+				<div class="collapse" id="savePass">
+
+	<button class="btn btn-light">show old password</button>
+
+					<a style="color: white" class="btn btn-dark">save new password</a><br>
+						
+			
+
 				</div>
+				
+			
+					<button class="btn-block btn-danger" data-toggle="collapse" data-target="#savePass" aria-expanded="false" aria-controls="savePass">edit password</button>
+				
+			
 		</div>
 
 			<!-- PROF PIC & EDIT BUTTON -->
@@ -92,24 +107,24 @@
 			<h5  align="center" >BUSINESS</h5>
 
 					<div  class="form-group">
-					<input style="text-align: center"type="text" name="business contact" placeholder="business contact" class="form-control">
+					<input style="text-align: center"type="text" name="business contact" ngModel="{{user.businessContact}}" placeholder="business contact" class="form-control">
 					</div>
 					<!-- ~~~~~~~~~~~~~~~~~~~ -->
 					<!--  -->
 					<!-- ~~~~~~~~~~~~~~~~~~~ -->	
 					<div  class="form-group">
-					<input style="text-align: center"type="text" name="title" placeholder="title" class="form-control">
+					<input style="text-align: center"type="text" ngModel="{{user.businessTitle}}" name="title" placeholder="business title" class="form-control">
 					</div>
 					<!-- ~~~~~~~~~~~~~~~~~~~ -->
 					<!--  -->
 					<!-- ~~~~~~~~~~~~~~~~~~~ -->
 					<div  class="form-group">
-					<input style="text-align: center"type="text" name="organization" placeholder="organization" class="form-control">
+					<input style="text-align: center"type="text" name="businessName" ngModel="{{user.businessName}}" placeholder="business name" class="form-control">
 					</div>
 					<!-- ~~~~~~~~~~~~~~~~~~~ -->
 					<!--  -->
 					<!-- ~~~~~~~~~~~~~~~~~~~ -->				<div  class="form-group">
-					<input style="text-align: center"type="text" name="address" placeholder="address" class="form-control">
+					<input style="text-align: center"type="text" name="businessAddress" ngModel="{{user.businessAddress}}" placeholder="business address" class="form-control">
 					</div>
 					<!-- ~~~~~~~~~~~~~~~~~~~ -->
 					<!--  -->
@@ -117,19 +132,19 @@
 
 
 					<div  class="form-group">
-					<input style="text-align: center"type="text" name="industry" placeholder="industry" class="form-control">
+					<input style="text-align: center"type="text" name="businessIndustry" ngModel="{{user.businessIndustry}}" placeholder="business Industry" class="form-control">
 					</div>
 					<!-- ~~~~~~~~~~~~~~~~~~~ -->
 					<!--  -->
 					<!-- ~~~~~~~~~~~~~~~~~~~ -->
 					<div  class="form-group">
-					<input style="text-align: center"type="text" name="website" placeholder="website" class="form-control">
+					<input style="text-align: center"type="text" name="businessWebsite" ngModel="{{user.businessWebsite}}" placeholder="businessWebsite" class="form-control">
 					</div>
 					<!-- ~~~~~~~~~~~~~~~~~~~ -->
 					<!--  -->
 					<!-- ~~~~~~~~~~~~~~~~~~~ -->
 					<div  class="form-group">
-					<input style="text-align: center"type="text" name="phone" placeholder="phone" class="form-control">
+					<input style="text-align: center"type="text" name="businessPhone" ngModel="{{user.businessPhone}}" placeholder="business phone" class="form-control">
 					</div>
 					<!-- ~~~~~~~~~~~~~~~~~~~ -->
 					<!--  -->

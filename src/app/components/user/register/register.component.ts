@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms'
+import { UserService } from '../../../Services/user.service.client'
+import { User } from '../../../models/user.model.client'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-register',
@@ -6,10 +10,115 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+ 
+  @ViewChild('f') registerForm: NgForm;
 
-  constructor() { }
+  // personal
+  birthday: string;
+  email: string;
+  userName: string;
+  firstName: string;
+  lastName: string;
+  password: string;
+  verifyPassword: string;
+  passwordError: boolean;
+  usernameError: boolean;
+  // business
+  businessContact: string;
+  businessTitle: string;
+  businessName: string;
+  businessAddress: string;
+  businessIndustry: string;
+  businessWebsite: string;
+  businessEmail: string;
+  businessPhone: string;
+  // artist
+  artistName: string;
+  artistEmail: string;
+  socialMedia1: string;
+  socialMedia2: string;
+  socialMedia3: string;
+  artistWebsite: string;
+  artistPhone: string;
+
+  constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit() {
+      this.passwordError = false;
+      this.usernameError = false;
   }
 
+  register(){
+  	// personal
+    this.birthday = this.registerForm.value.birthday;
+    this.email = this.registerForm.value.email;
+    this.userName = this.registerForm.value.userName;
+    this.firstName = this.registerForm.value.firstName;
+    this.lastName = this.registerForm.value.lastName;
+  	this.password = this.registerForm.value.password;
+  	this.verifyPassword = this.registerForm.value.verifyPassword;
+   	// business
+  	this.businessContact = this.registerForm.value.businessContact;
+  	this.businessTitle = this.registerForm.value.businessTitle;
+  	this.businessName = this.registerForm.value.businessName;
+  	this.businessAddress = this.registerForm.value.BusinessAddress;
+  	this.businessIndustry = this.registerForm.value.businessIndustry;
+  	this.businessWebsite = this.registerForm.value.businessWebsite;
+	  this.businessEmail = this.registerForm.value.businessEmail;
+  	this.businessPhone = this.registerForm.value.businessPhone;
+  	// artist
+  	this.artistName = this.registerForm.value.artistName;
+  	this.artistEmail = this.registerForm.value.artistEmail;
+  	this.socialMedia1 = this.registerForm.value.socialMedia1;
+  	this.socialMedia2 = this.registerForm.value.socialMedia2;
+  	this.socialMedia3 = this.registerForm.value.socialMedia3;
+  	this.artistWebsite = this.registerForm.value.artistWebsite;
+  	this.artistPhone = this.registerForm.value.artistPhone;
+
+    if(this.password !== this.verifyPassword) {
+        this.passwordError = true;
+    } else {
+        this.passwordError = false;
+        this.userService.findUserByUsername(this.userName).subscribe(
+            (user: User) => {
+                this.usernameError = true;
+            },
+            (error: any) => {
+                const newUser: User = {
+                    _id: "",
+                    birthday: this.birthday,
+                    email: this.email,
+                    userName: this.userName,
+                    firstName: this.firstName,
+                    lastName: this.lastName,
+                    password: this.password,
+                    businessContact: this.businessContact,
+                    businessTitle: this.businessTitle,
+                    businessName: this.businessName,
+                    businessAddress: this.businessAddress,
+                    businessIndustry: this.businessIndustry,
+                    businessWebsite: this.businessWebsite,
+                    businessEmail: this.businessEmail,
+                    businessPhone: this.businessPhone,
+                    // artist
+                    artistName: this.artistName,
+                    artistEmail: this.artistEmail,
+                    socialMedia1: this.socialMedia1,
+                    socialMedia2: this.socialMedia2,
+                    socialMedia3: this.socialMedia3,
+                    artistWebsite: this.artistWebsite,
+                    artistPhone: this.artistPhone
+                };
+                this.userService.createUser(newUser).subscribe(
+                    (user: User) => {
+                        var id = user._id;
+                        this.router.navigate(['user', id]);
+                    }
+                )
+            }
+        )
+    }
+  }
 }
+
+

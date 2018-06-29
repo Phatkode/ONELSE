@@ -58,8 +58,9 @@ app.set('port', port);
 
 const server = http.createServer(app);
 
+require("./server/app")(app)
 
-// For Build: Catch all other routes and return the index file -- BUILDING
+// For Bild: Catch all other routes and return the index file -- BUILDING
 
 app.get('*', function (req, res) {
 
