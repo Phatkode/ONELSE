@@ -45,7 +45,23 @@
 
 			<!-- PROF PIC & EDIT BUTTON -->
 			<div align="center" class="col-4">
-				<img src="../../../images/Prof.png" alt="Prof pic" width="auto" ><br><p></p><hr><p></p>
+
+				<form ngNoForm action="{{baseUrl}}/api/user/{{uid}}/website/{{wid}}/page/{{pid}}/widget/{{wgid}}/upload" method="post" enctype="multipart/form-data">
+
+                                <div>
+
+                                <label class='form-group'>Upload</label>
+
+                                         <input  name="myFile"   type="file" class="form-control"/>
+
+                                         <button type="submit" class="btn btn-block btn-primary">Upload Image</button>
+
+                                 </div>
+
+                        </form>
+
+                        
+				<img src="" alt="../../../images/Prof.png" width="auto" ><br><p></p><hr><p></p>
 					<a style="color: white" class="btn-block btn-danger" data-toggle="collapse" data-target="#Edit" aria-expanded="false" aria-controls="Edit">Edit Profile</a><br>
 
 
