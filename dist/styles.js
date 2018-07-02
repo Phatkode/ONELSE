@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* You can add global styles to this file, and also import other style files */\nbody{\n\tpadding-bottom: 70px;\n\tbackground-image: url('LSECUBE3.jpg');\n\tbackground-size:  2700px 2700px\n}\n.sw-noPadding{\n\tpadding: 0;\n}\n.btn-block+.btn-block {\n    margin-top: 0;\n}\n.logoPadding{\n\tpadding-left: 30px;\n\tpadding-top: 8px;\n}\n.dropdown:hover .dropdown-menu {\n\tdisplay: block;\n\tborder-style: none;\n}\n.dropdown-item:hover .dropdown-menu {\n\tdisplay: block;\n\tborder-style: none;\n}\n.dropdown-menu {\n\tmargin-top: 0;\n}\n.nav-text{\n\tvertical-align: center;\n\tcolor: red;\n}\n.upper-header{\n\tmax-height: 50px;\n\t\n}\n.bg-white{\n\tbackground: white;\n}"
+module.exports = "/* You can add global styles to this file, and also import other style files */\r\nbody{\r\n\tpadding-bottom: 70px;\r\n\tbackground-image: url('LSECUBE3.jpg');\r\n\tbackground-size:  2700px 2700px\r\n}\r\n.sw-noPadding{\r\n\tpadding: 0;\r\n}\r\n.btn-block+.btn-block {\r\n    margin-top: 0;\r\n}\r\n.logoPadding{\r\n\tpadding-left: 15px;\r\n\tpadding-top: 8px;\r\n}\r\n.dropdown:hover .dropdown-menu {\r\n\tdisplay: block;\r\n\tborder-style: none;\r\n}\r\n.dropdown-item:hover .dropdown-menu {\r\n\tdisplay: block;\r\n\tborder-style: none;\r\n}\r\n.dropdown-menu {\r\n\tmargin-top: 0;\r\n}\r\n.nav-text{\r\n\tvertical-align: center;\r\n\tcolor: red;\r\n}\r\n.upper-header{\r\n\tmax-height: 35px;\r\n\t\r\n}\r\n.bg-white{\r\n\tbackground: white;\r\n}"
 
 /***/ }),
 
