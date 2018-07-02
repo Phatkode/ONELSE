@@ -1,0 +1,132 @@
+.carosell {
+	padding: 0px;
+	border: none;
+}
+
+.container {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  display: block;
+  height: 16rem;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #008CBA;
+  overflow: hidden;
+  width: 0;
+  height: 100%;
+  transition: .5s ease;
+}
+
+.container:hover .overlay {
+  width: 100%;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
+
+
+
+/* Set height of body and the document to 100% to enable "full page tabs" */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+}
+
+/* Style tab links */
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+}
+
+#Community {background-color: red;}
+#News {background-color: green;}
+#Contact {background-color: blue;}
+#About {background-color: orange;}
+
+
+.visionsfont {
+	color: white;
+}
+
+a .redletters{
+	color: bg-danger;
+}
+
+
+
+.hrtwo
+{
+padding: 0;
+border: 0;
+border-top: none;}
+
+.textbordermiddle{ 
+text-align: left;
+font-weight: lighter;
+justify-content: left;
+border-left: 0px;
+margin-left: 0px;
+padding-left: 0px;
+}
+
+
+
+.containerpermission{
+  padding-left: 0px;
+  margin-left: 0px;
+
+}
+
+.header-center{
+text-align: right;
+padding-top: 60px;
+
+}
+
+.cream-color{
+color: yellow;
+
+}
+
+.negmarg{
+/*max-height: 0;*/
+
+}
+
+

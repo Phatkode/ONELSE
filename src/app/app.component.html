@@ -1,27 +1,29 @@
 <!-- LSE upper header -->
-<div class=" justify-content-center row container-fluid upper-header bg-white">
+<div class=" justify-content-center row upper-header bg-white">
     <div class="col-2">
-        <img class="logoPadding" width="100%" alt="Angular Logo" src="../images/LSE LOGO2.jpg">  
+        <img class="logoPadding" width="88%" src="../images/LSE LOGO2.jpg">  
     </div>
-    <div class="col-6 text-muted text-right"> <h2><i>"A resource for arts that inspire community!"</i></h2>
+
+  
+   <div class="col-6  text-muted text-center header-mission"> <h4 class="header-mission-top-margin "><strong data-toggle="collapse" data-target="#visionsfour" aria-expanded="false" aria-controls="collapseExample" class="text">"A resource for arts that inspire come-unity!"</strong></h4>
     </div>
     <div class="nav-text col-2 sw-noPadding bg-secondary btn-block">
-        <button class= "btn btn-secondary btn-block" data-toggle="collapse" data-target="#login" aria-expanded="false" aria-controls="collapseExample">Login</button>
+        <button class= "btn btn-secondary btn-block btn-top-padding" data-toggle="collapse" data-target="#login" aria-expanded="false" aria-controls="collapseExample"> <i class="fas fa-key header-icons-padding"></i>LOGIN</button>
     </div>  
-    <div class="col-2 sw-noPadding bg-success btn-block">
-        <button class="btn btn-success btn-block" routerLink="/register">Register</button>
+    <div class="nav-text col-2 sw-noPadding bg-success btn-block">
+        <button class="btn btn-success btn-block btn-top-padding" data-toggle="collapse" data-target="#register" aria-expanded="false" aria-controls="collapseExample"><i class="fas fa-user-circle header-icons-padding"></i>REGISTER</button>
     </div>
 </div>
 
-<div class="row bg-white container-fluid">
+<div class="row bg-white header-row-slim">
     <div class="col-4"></div>
     <div class="col-4"></div>
-    <div class="col-4 align-content-center bg-light">
+    <div class="col-4 align-content-center">
         <!-- LSE lower header -->
         <div class="justify-content-center row nav-text">
             <ul class="nav nav-pills ">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"  aria-haspopup="true" aria-expanded="false">COMMUNITY</a>
+                    <a class="legend-center nav-link dropdown" data-toggle="dropdown" href="#"  aria-haspopup="true" aria-expanded="false">community.</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" routerLink="/community/vlog">Vlog</a>
                         <a class="dropdown-item" routerLink="/community/bulletin">Word-of-Mouth</a>
@@ -30,7 +32,7 @@
             </ul>
             <ul class="nav nav-pills">                       
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">ART</a>
+                  <a class="legend-center nav-link dropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">art.</a>
                   <div class="dropdown-menu">
                       <a class="dropdown-item" routerLink="/art/events">Events</a>
                       <a class="dropdown-item" routerLink="/art/shopping">Shop</a>
@@ -39,7 +41,7 @@
             </ul>
             <ul class="nav nav-pills">  
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">RESOURCE</a>
+                    <a class="legend-center nav-link dropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">resource.</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" routerLink="/resource/calendar">Calendar</a>
                         <a class="dropdown-item" routerLink="/resource/services">Services</a>
@@ -48,9 +50,179 @@
             </ul>
         </div>  
     </div>
-    <hr>
 </div>
+  <!--     Container     -->
+<div class="collapse" data-toggle="onclick" id="login">
+  <div class="container negmarg">
+   <hr>
+    <div class="display-4 text-center text-muted">ENTER LOGIN</div> <hr>
+       
+      <form (ngSubmit)="login()" #f="ngForm">
+        <!-- Form Field (Username) -->
+        <div class="form-group">
+          <input required style="text-align: center" type="text" name="userName" placeholder="username" class="form-control" ngModel #userName="ngModel">
+        </div>
+        
+        <!-- Form Field (Password) -->
+        <div class="form-group">
+          <input  required style="text-align: center"  type="text" name="password" placeholder="password" class="form-control" ngModel #password="ngModel">
+        </div>    
+
+        <!-- Sumbit Button -->
+        <button (ngSubmit)="login()" class="form btn btn-dark btn-block">Submit Login</button>
+</form><hr> </div>
 <br>
+
+  
+</div>
+
+
+<div class="collapse" data-toggle="onclick" id="register">
+  <div class="container negmarg">
+   <hr>
+  <div class="row container">
+    <!-- Register label -->
+    <div class="col-3"><h2  align="center">Register</h2></div>
+    <div class="col-3"><button class="container-fluid btn btn-danger" data-toggle="popover" title="show/hide personal panel" data-toggle="collapse" data-target="#registertwo" aria-expanded="false" aria-controls="collapseExample">
+    PERSONAL</button></div>
+    <div class="col-3"> <button class="container-fluid btn btn-secondary" data-toggle="popover" title="show/hide personal panel" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">
+    BUSINESS</button></div>
+    <div class="col-3"> <button class="container-fluid btn btn-success" data-toggle="popover" title="show/hide personal panel" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
+    ARTIST</button></div>
+  </div>
+  <br>
+  <div *ngIf="usernameError" class='alert alert-danger'>The username is taken, please try another one</div>
+  <div *ngIf="passwordError" class='alert alert-danger'>The passwords you entered are matched</div>
+  <form (ngSubmit)="register()" #f="ngForm">
+    <div class="collapse" id="registertwo">
+      <div class="card card-body">
+        <!-- PERSONAL SECTION -->
+        <div class="btn btn-danger container container-fluid"> 
+          <h5  class="display-4" align="left" >*PERSONAL</h5>
+          <!-- Form field birthday -->
+          <div class="form-group">
+            <input type="date" name="birthday" placeholder="birthday" required ngModel #birthday="ngModel" class="form-control">
+          </div>
+          <!-- Form field email -->
+          <div class="form-group">
+            <input type="email" name="email" placeholder="email" required ngModel #email="ngModel" class="form-control">
+          </div>
+          <!-- Form field username -->
+          <div class="form-group">
+            <input type="text" name="userName" required ngModel #userName="ngModel" placeholder="username" class="form-control">
+          </div>
+          <!-- Form field firstname -->
+          <div class="form-group">
+            <input type="text" name="firstName" required ngModel #firstName="ngModel" placeholder="firstName" class="form-control">
+          </div>
+          <!-- Form field lastname -->
+          <div class="form-group">
+            <input type="text" name="lastName" required ngModel #lastName="ngModel" placeholder="lastName" class="form-control">
+          </div>
+          <!-- Form field password -->
+          <div class="form-group">
+            <input type="password" name="password" placeholder="password" required ngModel #password="ngModel"  class="form-control">
+          </div>
+          <!--  Form field verify password  -->
+          <div class="form-group">
+            <input type="password" name="verifyPassword" required ngModel #verifyPassword="ngModel"  placeholder="verify password" class="form-control">
+          </div>
+        </div>
+      </div>
+      <br><br>
+    </div>
+    <div class="collapse" id="collapseExample1">
+      <div class="card card-body">
+        <!-- BUSINESS SECTION -->
+        <div class="btn btn-secondary container container-fluid"> 
+          <h5  class="display-4" align="center" >BUSINESS</h5>
+          <!-- form field business contact -->
+          <div  class="form-group">
+            <input style="text-align: center"type="text" name="businessContact" ngModel #businessContact="ngModel"  placeholder="business contact" class="form-control">
+          </div>
+          <!-- form field title -->
+          <div  class="form-group">
+            <input style="text-align: center"type="text" name="businessTitle" ngModel #businessTitle="ngModel" placeholder="business title" class="form-control">
+          </div>
+          <!-- form field organization -->
+          <div  class="form-group">
+            <input style="text-align: center"type="text" name="businessName" ngModel #businessName="ngModel"  placeholder="busines name" class="form-control">
+          </div>
+          <!-- form field address -->
+          <div  class="form-group">
+            <input style="text-align: center"type="text" name="businessAddress" ngModel #businessAddress="ngModel" placeholder="business address" class="form-control">
+          </div>
+          <!-- form field industry -->
+          <div  class="form-group">
+            <input style="text-align: center"type="text" name="businessIndustry" ngModel #businessIndustry="ngModel" placeholder="business industry" class="form-control">
+          </div>
+          <!-- form field website -->
+          <div  class="form-group">
+            <input style="text-align: center"type="text" ngModel #businessWebsite="ngModel" name="businessWebsite" placeholder="business website" class="form-control">
+          </div>
+                    <!-- form field bizz email -->
+          <div  class="form-group">
+            <input style="text-align: center"type="text" ngModel #businessEmail="ngModel" name="businessEmail" placeholder="business email" class="form-control">
+          </div>
+          <!-- form field phone -->
+          <div  class="form-group">
+            <input style="text-align: center"type="text" ngModel #businessPhone="ngModel" name="businessPhone" placeholder="business phone" class="form-control">
+          </div>
+
+        </div>
+      </div>
+      <br><br>
+    </div>
+  <!-- ARTIST SECTION -->
+    <div class="collapse" id="collapseExample2">
+      <div class="card card-body">
+        <div class="btn btn-success container container-fluid"> 
+          <h5  class="display-4" align="right" >ARTIST</h5>
+          <!-- form field email -->
+          <div class="form-group">
+            <input style="text-align: right" type="text" name="artistName" ngModel #artistName="ngModel" placeholder="artist name" class="form-control">
+          </div>
+          <div class="form-group">
+            <input style="text-align: right" type="text" name="artistEmail" ngModel #artistEmail="ngModel" placeholder="artist email" class="form-control">
+          </div>
+          <!-- Form field social media url 1 -->
+          <div class="form-group">
+            <input style="text-align: right" type="text" name="socialMedia1" ngModel #socialMedia1="ngModel" placeholder="social media url 1" class="form-control">
+          </div>          
+          <!-- Form field social media url 2 -->
+          <div class="form-group">
+            <input style="text-align: right" type="text" name="socialMedia2" ngModel #socialMedia2="ngModel" placeholder="social media url 2" class="form-control">
+          </div>
+          <!-- Form field social media url 3 -->
+          <div class="form-group">
+            <input style="text-align: right" type="text" name="socialMedia3" ngModel #socialMedia3="ngModel" placeholder="social media url 3" class="form-control">
+          </div>          
+          <!-- Form field website -->
+          <div class="form-group">
+            <input style="text-align: right" type="text" name="artistWebsite" ngModel #artistWebsite="ngModel" placeholder="artist website" class="form-control">
+          </div>      
+
+          <!-- Form field phone -->
+          <div class="form-group">
+            <input style="text-align: right" type="text" name="artistPhone" ngModel #artistPhone="ngModel" placeholder="artist phone" class="form-control">
+          </div>
+
+        </div>
+      </div>
+      <br><br>
+    </div>
+    <!-- SUBMIT SECTION -->
+    <!--   Register Button   -->
+    <button [disabled]="f.invalid" type="submit" class="btn btn-dark">Register</button>
+    <!--    Cancel  Button   -->
+    <a class= "btn btn-secondary" routerLink="/login">Cancel</a>
+  </form>
+
+<hr>
+</div></div>
+
+
+
 <router-outlet></router-outlet>
 
 <!-- 
@@ -58,7 +230,7 @@
     ~~~~~~~~~~~~~~ -->
     <!-- Footer Nav Bar -->     
     <!-- ~~~~~~~~~~~~~~ -->
-    <div class="align-content-center container">
+    <div class="align-content-center container nobordernow">
 
 
         <!-- CSS Code: Place this code in the document's head (between the 'head' tags) -->
@@ -98,31 +270,7 @@
            <th>
 
 
-            <div class="btn-group dropup">
-              <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                TEMP SITE LEGEND
-            </button>
-            <div class="dropdown-menu">
-                <a routerLink="/''">1. Home</a><br>
-                <a routerLink="/login">2. Login</a><br>
-                <a routerLink="/register">3. Register</a><br>
-                <a routerLink="/profile">4. Profile</a><br>
-                <a routerLink="/community/vlog">5. VlogLyfe</a><br>
-                <a routerLink="/community/vloggerpages">6. VloggerPage</a><br>
-                <a routerLink="/user/:uid/:vid/community/myvlog">7. Post Vlog</a><br>
-                <a routerLink="/community/bulletin">8. WordOfMouth</a><br>
-                <a routerLink="/user/:uid/:bid/community/bulletin/post">9. ShoutOut</a><br>
-                <a routerLink="/art/events">10. Events</a><br>
-                <a routerLink="/art/shopping">11. Shop</a><br>
-                <a routerLink="/user/:cid/art/shopping">12. Shopping cart</a><br>
-                <a routerLink="/resource/calendar">13. Calendar</a><br>
-                <a routerLink="/user/:uid/resource/calendarpost">14. Calendar Post</a><br>
-                <a routerLink="/resource/services">15. Services</a><br>
-                <a routerLink="/user/:uid/:vid/community/myvlog/preview">16. Bid Request</a><br>
-                <a routerLink="/user/:cid/art/billconfirm">17. LogOut</a><br>
-                <a routerLink="/user/:cid/art/checkout">18. About Us</a><br>
-            </div>
-        </div>
+          
 
 
 
@@ -138,19 +286,19 @@
 
 
 
-    <th><a routerLink="/home"><i class="fab fa-houzz"></i></a></th>
-    <th><a routerLink="/login"><i class="fas fa-key"></i></a></th>
-    <th><a routerLink="/register"><i class="fas fa-clipboard-list"></i></a></th>
-    <th><a routerLink="/profile"><i class="fas fa-user-circle"></i></a></th>
-    <th><a routerLink="/community/vlog"><i class="fas fa-video"></i></a></th>
-    <th><a routerLink="/community/bulletin"><i class="far fa-comment-dots"></i></a></th>
-    <th><a routerLink="/art/events"><i class="fas fa-bolt"></i></a></th>
-    <th><a routerLink="/art/shopping"><i class="fas fa-store-alt"></i></a></th>
-    <th><a routerLink="/resource/calendar"><i class="far fa-calendar-alt"></i></a></th>
-    <th><a routerLink="/resource/services"><i class="fas fa-hand-holding-heart"></i></a></th>
-    <th><a routerLink="/user/:cid/art/checkout"><i class="fas fa-at"></i></a></th>
-    <th><a routerLink="/user/:cid/art/shopping"><i class="fas fa-shopping-cart"></i></a></th>
-    <th><a routerLink="/user/:cid/art/billconfirm"><i class="fas fa-sign-out-alt"></i></a></th>
+    <th><a routerLink="/home"><i class="fab fa-houzz footer-icons-white werth"></i></a></th>
+    <th><a routerLink="/login"><i class="fas fa-key footer-icons-white werth"></i></a></th>
+    <th><a routerLink="/register"><i class="fas fa-clipboard-list footer-icons-white werth"></i></a></th>
+    <th><a routerLink="/profile"><i class="fas fa-user-circle footer-icons-white werth"></i></a></th>
+    <th><a routerLink="/community/vlog"><i class="fas fa-video footer-icons-white werth"></i></a></th>
+    <th><a routerLink="/community/bulletin"><i class="far fa-comment-dots footer-icons-white werth"></i></a></th>
+    <th><a routerLink="/art/events"><i class="fas fa-bolt footer-icons-white werth"></i></a></th>
+    <th><a routerLink="/art/shopping"><i class="fas fa-store-alt footer-icons-white werth"></i></a></th>
+    <th><a routerLink="/resource/calendar"><i class="far fa-calendar-alt footer-icons-white werth"></i></a></th>
+    <th><a routerLink="/resource/services"><i class="fas fa-hand-holding-heart footer-icons-white werth"></i></a></th>
+    <th><a routerLink="/user/:cid/art/checkout"><i class="fas fa-at footer-icons-white werth"></i></a></th>
+    <th><a routerLink="/user/:cid/art/shopping"><i class="fas fa-shopping-cart footer-icons-white werth"></i></a></th>
+    <th><a routerLink="/user/:cid/art/billconfirm"><i class="fas fa-sign-out-alt footer-icons-white werth"></i></a></th>
 </tr>
 </thead>
 
@@ -215,3 +363,32 @@ postcalendar          { path : 'user/:uid/resource/calendarpost' , component: Ca
 
 </nav>
 
+
+
+<div id="mySidenav" class="sidenav">
+  <a id="about">  <div class="dropdown-item "><i class="fas fa-list-ul "></i>
+              <div type="text" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                
+            </div>
+            <div class="bg-dark dropdown-menu float-right text-indent">
+                <a class="" routerLink="/''">1. Home</a><br>
+                <a routerLink="/login">2. Login</a><br>
+                <a routerLink="/register">3. Register</a><br>
+                <a routerLink="/profile">4. Profile</a><br>
+                <a routerLink="/community/vlog">5. VlogLyfe</a><br>
+                <a routerLink="/community/vloggerpages">6. VloggerPage</a><br>
+                <a routerLink="/user/:uid/:vid/community/myvlog">7. Post Vlog</a><br>
+                <a routerLink="/community/bulletin">8. WordOfMouth</a><br>
+                <a routerLink="/user/:uid/:bid/community/bulletin/post">9. ShoutOut</a><br>
+                <a routerLink="/art/events">10. Events</a><br>
+                <a routerLink="/art/shopping">11. Shop</a><br>
+                <a routerLink="/user/:cid/art/shopping">12. Shopping cart</a><br>
+                <a routerLink="/resource/calendar">13. Calendar</a><br>
+                <a routerLink="/user/:uid/resource/calendarpost">14. Calendar Post</a><br>
+                <a routerLink="/resource/services">15. Services</a><br>
+                <a routerLink="/user/:uid/:vid/community/myvlog/preview">16. Bid Request</a><br>
+                <a routerLink="/user/:cid/art/billconfirm">17. LogOut</a><br>
+                <a routerLink="/user/:cid/art/checkout">18. About Us</a><br>
+            </div>
+        </div></a>
+</div>
