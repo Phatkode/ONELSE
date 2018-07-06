@@ -19,31 +19,31 @@ export class ArtMediumBooleans {
 
 
 
-	constructor(_id, artMediumId) {
+	// constructor(_id, artMediumId) {
 
 
-	this._id: = this._id;
-	this.businessIndustryId: = this.businessIndustryId;
-	this.artMediumId: = this.artMediumId;
-	this.digitalGraphics?: digitalGraphics;
-	this.canvasArt = canvasArt;
-	this.webDesign = webDesign;
-	this.photography = photography;
-	this.videography = videography;
-	this.lyricalArts = lyricalArts;
-	this.vocalInstrument = vocalInstrument;
-	this.theater = theater;
-	this.modeling = modeling;
-	this.acting = acting;
-	this.comedy = comedy;
-	this.dance = dance;
-	this.musicProduction = musicProduction;
-
-
-
+	// this._id: = this._id;
+	// this.businessIndustryId: = this.businessIndustryId;
+	// this.artMediumId: = this.artMediumId;
+	// this.digitalGraphics?: digitalGraphics;
+	// this.canvasArt = canvasArt;
+	// this.webDesign = webDesign;
+	// this.photography = photography;
+	// this.videography = videography;
+	// this.lyricalArts = lyricalArts;
+	// this.vocalInstrument = vocalInstrument;
+	// this.theater = theater;
+	// this.modeling = modeling;
+	// this.acting = acting;
+	// this.comedy = comedy;
+	// this.dance = dance;
+	// this.musicProduction = musicProduction;
 
 
 
 
-	}
+
+
+
+	// }
 }

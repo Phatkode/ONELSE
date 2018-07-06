@@ -9,13 +9,13 @@ export class MyWordOfMouth {
 	
 	
 
-	constructor(_id, myWordOfMouth_id) {
-	this._id = this._id;
-	this.myWordOfMouth_id = this.myWordOfMouth_id;
-	this.userName = this.userName;
-	this.dateOfEntry = this.dateOfEntry;
-	this.mainType = this.mainType;
-	this.entryLink = this.entryLink;
+	// constructor(_id, myWordOfMouth_id) {
+	// this._id = this._id;
+	// this.myWordOfMouth_id = this.myWordOfMouth_id;
+	// this.userName = this.userName;
+	// this.dateOfEntry = this.dateOfEntry;
+	// this.mainType = this.mainType;
+	// this.entryLink = this.entryLink;
 
-	}
+	// }
 }

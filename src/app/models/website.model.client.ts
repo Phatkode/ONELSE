@@ -4,10 +4,10 @@ export class Website {
 	developerId: string;
 	description: string
 
-	constructor(_id, name, developerId, description) {
-		this._id = _id;
-		this.name = name;
-		this.developerId = developerId;
-		this.description = description;
-	}
+	// constructor(_id, name, developerId, description) {
+	// 	this._id = _id;
+	// 	this.name = name;
+	// 	this.developerId = developerId;
+	// 	this.description = description;
+	// }
 }

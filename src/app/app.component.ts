@@ -10,10 +10,12 @@ import { Router } from '@angular/router'
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent implements OnInit {
 
   @ViewChild('f') loginForm: NgForm;
 
+  title = 'app';
   userName: string;
   password: string;
   errorFlag: boolean;
@@ -25,7 +27,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
   }
 
-  login(){
+  login() {
     this.userName = this.loginForm.value.userName;
     this.password = this.loginForm.value.password;
     this.userService.findUserByCredentials(this.userName, this.password).subscribe(
@@ -38,5 +40,5 @@ export class AppComponent implements OnInit {
       }
     )
   }
-
 }
+

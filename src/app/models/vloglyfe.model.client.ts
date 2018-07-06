@@ -22,23 +22,23 @@ export class VlogLyfe {
 	
 	
 
-	constructor(_id, vlogLyfe_id, classification, url, title, vlogEntry, imageOne, imageTwo, imageThree) {
-	this._id = this._id;
-	this.vlogLyfe_id = this.vlogLyfe_id;
-	this.artEventsFun = artEventsFun;
-	this.education = education;
-	this.itemReview = itemReview;
-	this.outdoors = outdoors;
-	this.family = family;
-	this.fitness = fitness;
-	this.dining = dining;
-	this.classification = classification;
-	this.url = url;
-	this.title = title;
-	this.vlogEntry = vlogEntry;
-	this.imageOne = imageOne;
-	this.imageTwo = imageTwo;
-	this.imageThree = imageThree;
+	// constructor(_id, vlogLyfe_id, classification, url, title, vlogEntry, imageOne, imageTwo, imageThree) {
+	// this._id = this._id;
+	// this.vlogLyfe_id = this.vlogLyfe_id;
+	// this.artEventsFun = artEventsFun;
+	// this.education = education;
+	// this.itemReview = itemReview;
+	// this.outdoors = outdoors;
+	// this.family = family;
+	// this.fitness = fitness;
+	// this.dining = dining;
+	// this.classification = classification;
+	// this.url = url;
+	// this.title = title;
+	// this.vlogEntry = vlogEntry;
+	// this.imageOne = imageOne;
+	// this.imageTwo = imageTwo;
+	// this.imageThree = imageThree;
 
-	}
+	// }
 }

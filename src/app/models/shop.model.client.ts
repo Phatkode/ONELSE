@@ -9,10 +9,10 @@ export class MyPurchase {
 	username?: string ;
 	
 
-	constructor(_id, purchaseId:, websiteId, description) {
-		this._id = _id;
-		this.name = name;
-		this.websiteId = websiteId;
-		this.description = description;
-	}
+	// constructor(_id, purchaseId:, websiteId, description) {
+	// 	this._id = _id;
+	// 	this.name = name;
+	// 	this.websiteId = websiteId;
+	// 	this.description = description;
+	// }
 }

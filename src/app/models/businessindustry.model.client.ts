@@ -23,29 +23,29 @@ export class BusinessIndustryBooleans {
 
 
 
-	constructor(_id, businessIndustryId) {
+	// constructor(_id, businessIndustryId) {
 
 
-	this._id: = this._id;
-	this.businessIndustryId: = this.businessIndustryId;
-	this.acgricultureAnimals: = acgricultureAnimals;
-	this.businessServices =  businessServices;
-	this.computerElectronics =  computerElectronics;
-	this.protectiveServices =  protectiveServices;
-	this.education =  education;
-	this.unionUtilities =  unionUtilities;
-	this.governmentPublic =  governmentPublic;
-	this.healthMedicine =  healthMedicine;
-	this.manufacturing =  manufacturing;
-	this.mediaEntertainment =  mediaEntertainmen;
-	this.nonprofitAdvocacy =  nonprofitAdvocacy;
-	this.realestateConstruction =  realestateConstruction;
-	this.entrepreneurContractor =  entrepreneurContractor;
-	this.customerService =  customerService;	
-	this.trasportationTravel =  trasportationTravel;
-	this.salesDistribution =  salesDistribution;
-	this.culinaryArts =  culinaryArts;
-	this.professionalArtist =  professionalArtist;
+	// this._id: = this._id;
+	// this.businessIndustryId: = this.businessIndustryId;
+	// this.acgricultureAnimals: = acgricultureAnimals;
+	// this.businessServices =  businessServices;
+	// this.computerElectronics =  computerElectronics;
+	// this.protectiveServices =  protectiveServices;
+	// this.education =  education;
+	// this.unionUtilities =  unionUtilities;
+	// this.governmentPublic =  governmentPublic;
+	// this.healthMedicine =  healthMedicine;
+	// this.manufacturing =  manufacturing;
+	// this.mediaEntertainment =  mediaEntertainmen;
+	// this.nonprofitAdvocacy =  nonprofitAdvocacy;
+	// this.realestateConstruction =  realestateConstruction;
+	// this.entrepreneurContractor =  entrepreneurContractor;
+	// this.customerService =  customerService;	
+	// this.trasportationTravel =  trasportationTravel;
+	// this.salesDistribution =  salesDistribution;
+	// this.culinaryArts =  culinaryArts;
+	// this.professionalArtist =  professionalArtist;
 
-	}
+	// }
 }

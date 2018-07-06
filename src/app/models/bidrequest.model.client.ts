@@ -29,32 +29,32 @@ export class BidRequest {
 
 
 
-	constructor(_id, bidRequestId, bidPreferredBudget, bidProjectTitle, bidDetailedDescription, bidDate, bidContactOne, bidContactTwo, bidPhone, bidEmail, bidWebsite) {
+	// constructor(_id, bidRequestId, bidPreferredBudget, bidProjectTitle, bidDetailedDescription, bidDate, bidContactOne, bidContactTwo, bidPhone, bidEmail, bidWebsite) {
 
 
-	this._id: = this._id;
-	this.bidRequestId: = this.bidRequestId;
-	this.webMaintenance = webMaintenance;
-	this.webDesign = webDesign;
-	this.webConsulting = webConsulting;
-	this.logoDesign = logoDesign;
-	this.flyerDesign = flyerDesign;
-	this.businessTemplates = businessTemplates;
-	this.eventCoordination = eventCoordination;
-	this.eventAssistance = eventAssistance;
-	this.eventConsulting = eventConsulting;
-	this.artServices = artServices;
-	this.artCuration = artCuration;
-	this.artAdvertisement = artAdvertisement;
-	this.bidPreferredBudget = bidPreferredBudget;
-	this.bidProjectTitle = bidProjectTitle;	
-	this.bidDetailedDescription = bidDetailedDescription;
-	this.bidDate = bidDate;
-	this.bidContactOne = bidContactOne;
-	this.bidContactTwo = bidContactTwo;
-	this.bidPhone = bidPhone;
-	this.bidEmail = bidEmail;
-	this.bidWebsite = bidWebsite;
+	// this._id: = this._id;
+	// this.bidRequestId: = this.bidRequestId;
+	// this.webMaintenance = webMaintenance;
+	// this.webDesign = webDesign;
+	// this.webConsulting = webConsulting;
+	// this.logoDesign = logoDesign;
+	// this.flyerDesign = flyerDesign;
+	// this.businessTemplates = businessTemplates;
+	// this.eventCoordination = eventCoordination;
+	// this.eventAssistance = eventAssistance;
+	// this.eventConsulting = eventConsulting;
+	// this.artServices = artServices;
+	// this.artCuration = artCuration;
+	// this.artAdvertisement = artAdvertisement;
+	// this.bidPreferredBudget = bidPreferredBudget;
+	// this.bidProjectTitle = bidProjectTitle;	
+	// this.bidDetailedDescription = bidDetailedDescription;
+	// this.bidDate = bidDate;
+	// this.bidContactOne = bidContactOne;
+	// this.bidContactTwo = bidContactTwo;
+	// this.bidPhone = bidPhone;
+	// this.bidEmail = bidEmail;
+	// this.bidWebsite = bidWebsite;
 
-	}
+	// }
 }

@@ -8,10 +8,10 @@ export class UserImages {
 	
 	
 
-	constructor(_id, userImages_id, userImage, userCoverImage) {
-	this._id = this._id;
-	this.userImages_id = this.userImages_id;
-	this.userImage = userImage;
-	this.userCoverImage = userCoverImage;
-	}
+	// constructor(_id, userImages_id, userImage, userCoverImage) {
+	// this._id = this._id;
+	// this.userImages_id = this.userImages_id;
+	// this.userImage = userImage;
+	// this.userCoverImage = userCoverImage;
+	// }
 }

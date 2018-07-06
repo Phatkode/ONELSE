@@ -1,3 +1,4 @@
+
 <!-- LSE upper header -->
 <div class=" justify-content-center row upper-header bg-white">
     <div class="col-2">
@@ -52,9 +53,9 @@
     </div>
 </div>
   <!--     Container     -->
-<div class="collapse" data-toggle="onclick" id="login">
+<div class="collapse"  id="login">
   <div class="container negmarg">
-   <hr>
+    <hr>
     <div class="display-4 text-center text-muted">ENTER LOGIN</div> <hr>
        
       <form (ngSubmit)="login()" #f="ngForm">
@@ -69,8 +70,10 @@
         </div>    
 
         <!-- Sumbit Button -->
-        <button (ngSubmit)="login()" class="form btn btn-dark btn-block">Submit Login</button>
-</form><hr> </div>
+        <button class="form btn btn-dark btn-block" type="submit">Submit Login</button>
+</form>
+<hr>
+</div>
 <br>
 
   
@@ -80,145 +83,7 @@
 <div class="collapse" data-toggle="onclick" id="register">
   <div class="container negmarg">
    <hr>
-  <div class="row container">
-    <!-- Register label -->
-    <div class="col-3"><h2  align="center">Register</h2></div>
-    <div class="col-3"><button class="container-fluid btn btn-danger" data-toggle="popover" title="show/hide personal panel" data-toggle="collapse" data-target="#registertwo" aria-expanded="false" aria-controls="collapseExample">
-    PERSONAL</button></div>
-    <div class="col-3"> <button class="container-fluid btn btn-secondary" data-toggle="popover" title="show/hide personal panel" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">
-    BUSINESS</button></div>
-    <div class="col-3"> <button class="container-fluid btn btn-success" data-toggle="popover" title="show/hide personal panel" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
-    ARTIST</button></div>
-  </div>
-  <br>
-  <div *ngIf="usernameError" class='alert alert-danger'>The username is taken, please try another one</div>
-  <div *ngIf="passwordError" class='alert alert-danger'>The passwords you entered are matched</div>
-  <form (ngSubmit)="register()" #f="ngForm">
-    <div class="collapse" id="registertwo">
-      <div class="card card-body">
-        <!-- PERSONAL SECTION -->
-        <div class="btn btn-danger container container-fluid"> 
-          <h5  class="display-4" align="left" >*PERSONAL</h5>
-          <!-- Form field birthday -->
-          <div class="form-group">
-            <input type="date" name="birthday" placeholder="birthday" required ngModel #birthday="ngModel" class="form-control">
-          </div>
-          <!-- Form field email -->
-          <div class="form-group">
-            <input type="email" name="email" placeholder="email" required ngModel #email="ngModel" class="form-control">
-          </div>
-          <!-- Form field username -->
-          <div class="form-group">
-            <input type="text" name="userName" required ngModel #userName="ngModel" placeholder="username" class="form-control">
-          </div>
-          <!-- Form field firstname -->
-          <div class="form-group">
-            <input type="text" name="firstName" required ngModel #firstName="ngModel" placeholder="firstName" class="form-control">
-          </div>
-          <!-- Form field lastname -->
-          <div class="form-group">
-            <input type="text" name="lastName" required ngModel #lastName="ngModel" placeholder="lastName" class="form-control">
-          </div>
-          <!-- Form field password -->
-          <div class="form-group">
-            <input type="password" name="password" placeholder="password" required ngModel #password="ngModel"  class="form-control">
-          </div>
-          <!--  Form field verify password  -->
-          <div class="form-group">
-            <input type="password" name="verifyPassword" required ngModel #verifyPassword="ngModel"  placeholder="verify password" class="form-control">
-          </div>
-        </div>
-      </div>
-      <br><br>
-    </div>
-    <div class="collapse" id="collapseExample1">
-      <div class="card card-body">
-        <!-- BUSINESS SECTION -->
-        <div class="btn btn-secondary container container-fluid"> 
-          <h5  class="display-4" align="center" >BUSINESS</h5>
-          <!-- form field business contact -->
-          <div  class="form-group">
-            <input style="text-align: center"type="text" name="businessContact" ngModel #businessContact="ngModel"  placeholder="business contact" class="form-control">
-          </div>
-          <!-- form field title -->
-          <div  class="form-group">
-            <input style="text-align: center"type="text" name="businessTitle" ngModel #businessTitle="ngModel" placeholder="business title" class="form-control">
-          </div>
-          <!-- form field organization -->
-          <div  class="form-group">
-            <input style="text-align: center"type="text" name="businessName" ngModel #businessName="ngModel"  placeholder="busines name" class="form-control">
-          </div>
-          <!-- form field address -->
-          <div  class="form-group">
-            <input style="text-align: center"type="text" name="businessAddress" ngModel #businessAddress="ngModel" placeholder="business address" class="form-control">
-          </div>
-          <!-- form field industry -->
-          <div  class="form-group">
-            <input style="text-align: center"type="text" name="businessIndustry" ngModel #businessIndustry="ngModel" placeholder="business industry" class="form-control">
-          </div>
-          <!-- form field website -->
-          <div  class="form-group">
-            <input style="text-align: center"type="text" ngModel #businessWebsite="ngModel" name="businessWebsite" placeholder="business website" class="form-control">
-          </div>
-                    <!-- form field bizz email -->
-          <div  class="form-group">
-            <input style="text-align: center"type="text" ngModel #businessEmail="ngModel" name="businessEmail" placeholder="business email" class="form-control">
-          </div>
-          <!-- form field phone -->
-          <div  class="form-group">
-            <input style="text-align: center"type="text" ngModel #businessPhone="ngModel" name="businessPhone" placeholder="business phone" class="form-control">
-          </div>
-
-        </div>
-      </div>
-      <br><br>
-    </div>
-  <!-- ARTIST SECTION -->
-    <div class="collapse" id="collapseExample2">
-      <div class="card card-body">
-        <div class="btn btn-success container container-fluid"> 
-          <h5  class="display-4" align="right" >ARTIST</h5>
-          <!-- form field email -->
-          <div class="form-group">
-            <input style="text-align: right" type="text" name="artistName" ngModel #artistName="ngModel" placeholder="artist name" class="form-control">
-          </div>
-          <div class="form-group">
-            <input style="text-align: right" type="text" name="artistEmail" ngModel #artistEmail="ngModel" placeholder="artist email" class="form-control">
-          </div>
-          <!-- Form field social media url 1 -->
-          <div class="form-group">
-            <input style="text-align: right" type="text" name="socialMedia1" ngModel #socialMedia1="ngModel" placeholder="social media url 1" class="form-control">
-          </div>          
-          <!-- Form field social media url 2 -->
-          <div class="form-group">
-            <input style="text-align: right" type="text" name="socialMedia2" ngModel #socialMedia2="ngModel" placeholder="social media url 2" class="form-control">
-          </div>
-          <!-- Form field social media url 3 -->
-          <div class="form-group">
-            <input style="text-align: right" type="text" name="socialMedia3" ngModel #socialMedia3="ngModel" placeholder="social media url 3" class="form-control">
-          </div>          
-          <!-- Form field website -->
-          <div class="form-group">
-            <input style="text-align: right" type="text" name="artistWebsite" ngModel #artistWebsite="ngModel" placeholder="artist website" class="form-control">
-          </div>      
-
-          <!-- Form field phone -->
-          <div class="form-group">
-            <input style="text-align: right" type="text" name="artistPhone" ngModel #artistPhone="ngModel" placeholder="artist phone" class="form-control">
-          </div>
-
-        </div>
-      </div>
-      <br><br>
-    </div>
-    <!-- SUBMIT SECTION -->
-    <!--   Register Button   -->
-    <button [disabled]="f.invalid" type="submit" class="btn btn-dark">Register</button>
-    <!--    Cancel  Button   -->
-    <a class= "btn btn-secondary" routerLink="/login">Cancel</a>
-  </form>
-
-<hr>
+  <app-register></app-register>
 </div></div>
 
 

@@ -42,7 +42,15 @@ export class ProfileComponent implements OnInit {
   oldUsername: string;
   usernameTaken: boolean;
   submitSuccess: boolean;
-  user: User;
+  user: User = {
+    birthday: "",
+    email: "",
+    _id: "",
+    userName: "",
+    firstName: "",
+    lastName: "",
+    password: ""
+  };
   aUser: User;
 
   constructor(private activatedRoute: ActivatedRoute, private userService: UserService) { }

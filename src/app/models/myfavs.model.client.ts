@@ -9,12 +9,12 @@ export class MyFavs {
 	
 	
 
-	constructor(_id, myFavs_id) {
-		this._id = this._id;
-		this.myFavs_id = this.myFavs_id;
-		this.date = this.date;
-		this.time = this.time;
-		this.userName = this.UserName;
-		this.pageLink = this.pageLink;
-	}
+	// constructor(_id, myFavs_id) {
+	// 	this._id = this._id;
+	// 	this.myFavs_id = this.myFavs_id;
+	// 	this.date = this.date;
+	// 	this.time = this.time;
+	// 	this.userName = this.UserName;
+	// 	this.pageLink = this.pageLink;
+	// }
 }

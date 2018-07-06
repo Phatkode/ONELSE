@@ -29,33 +29,33 @@ export class User {
 	artistPhone?: string;
 
 
-	constructor(_id, birthday, email, userName, firstName, lastName, password) {
+	// constructor(_id, birthday, email, userName, firstName, lastName, password) {
 			
-	this._id = this._id;
-	this.birthday = birthday;
-	this.email = email;
-	this.userName = userName;
-	this.firstName = firstname;
-	this.lastName: lastName;
-	this.password = password;
+	// this._id = this._id;
+	// this.birthday = birthday;
+	// this.email = email;
+	// this.userName = userName;
+	// this.firstName = firstname;
+	// this.lastName: lastName;
+	// this.password = password;
 
 	
-	this.businessContact = businessContact;
-	this.businessTitle = businessTitle;
-	this.businessName = businessName;
-	this.businessAddress = businessAddress;
-	this.businessIndustry?: businessIndustry;
-	this.businessWebsite = businessWebsite;
-	this.businessEmail = businessEmail;
-	this.businessPhone = businessPhone;
+	// this.businessContact = businessContact;
+	// this.businessTitle = businessTitle;
+	// this.businessName = businessName;
+	// this.businessAddress = businessAddress;
+	// this.businessIndustry?: businessIndustry;
+	// this.businessWebsite = businessWebsite;
+	// this.businessEmail = businessEmail;
+	// this.businessPhone = businessPhone;
 
 	
-	this.artistName = artistName;
-	this.artistEmail = artistEmail;
-	this.socialMedia1 = socialMedia1;
-	this.socialMedia2 = socialMedia2;
-	this.socialMedia3 = socialMedia3;
-	this.artistWebsite = artistWebsite;
-	this.artistPhone = artistPhone;
-	}
+	// this.artistName = artistName;
+	// this.artistEmail = artistEmail;
+	// this.socialMedia1 = socialMedia1;
+	// this.socialMedia2 = socialMedia2;
+	// this.socialMedia3 = socialMedia3;
+	// this.artistWebsite = artistWebsite;
+	// this.artistPhone = artistPhone;
+	// }
 }
