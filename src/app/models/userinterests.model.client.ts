@@ -2,14 +2,14 @@ export class UserInterestBooleans {
 	
 	_id: string;
 	userInterestId: string;
-	events?: boolean;
-	education?: boolean;
-	itemReview?: boolean;
-	smallBizz?: boolean;
-	outdoors?: boolean;
-	family?: boolean;
-	fitness?: boolean;
-	dining?: boolean;
+	events?: string;
+	education?: string;
+	itemReview?: string;
+	smallBizz?: string;
+	outdoors?: string;
+	family?: string;
+	fitness?: string;
+	dining?: string;
 	
 
 	// constructor(_id, userInterestId) {

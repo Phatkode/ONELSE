@@ -1,295 +1,582 @@
-<div class="container">
-	
-	<!-- PERSONAL SECTION -->
-	<div class="row">
+<br>
+<!-- .......................................NON-EDITABLE PROFILE PAGE...................................... -->
+<div *ngIf="!editable">
+	<div class="container">
+		<div class="row">
+			<!-- .......................................ARTIST NON-EDITABLE...................................... -->
+			<div class="btn btn-danger col-md-4">
+				<h5  align="left">*PERSONAL</h5>
+				<div class="form-group">{{user.birthday}}</div>		
+				<div class="form-group">{{user.email}}</div>
+				<div class="form-group">{{user.userName}}</div>
+				<hr>
+				<h5><small>PERSONAL INTERESTS</small></h5>
+				<table class="smallTableText">
+					<tr>   
+						<td><input type="checkbox" name="events" ngModel="{{user.events}}" #events="ngModel" value="events">Events</td>
+						<td><input type="checkbox" name="education" ngModel="{{user.education}}" #education="ngModel" value="education">Education</td>
+						<td><input type="checkbox" name="itemReview" ngModel="{{user.itemReview}}" #itemReview="ngModel" value="itemReview">Item Review</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" name="smallBizz" ngModel="{{user.smallBizz}}" #smallBizz="ngModel" value="smallBizz">Small Bizz</td>
+						<td><input type="checkbox" name="family" ngModel="{{user.outdoors}}" #outdoors="ngModel" value="outdoors">Outdoors</td>
+						<td><input type="checkbox" name="family" ngModel="{{user.family}}" #family="ngModel" value="family">Family</td>						
+					</tr>
+					<tr> 
+						<td><input type="checkbox" name="fitness" ngModel="{{user.fitness}}" #fitness="ngModel" value="fitness">Fitness</td>
+						<td><input type="checkbox" name="dining" ngModel="{{user.dining}}" #dining="ngModel" value="dining">Dining</td>
+					</tr>
+				</table>	
+			</div>
+			<div align="center" class="col-md-4">
+				<br>
+				<p>"USER STATUS's"</p>
+				<img class="img-rounded" src="../../../../images/Prof.png" alt="" width="auto">
+				<br>
+				<p></p>
+				<br>
+				<a (click)="changeEditable()" style="color: white" class="btn-block btn-danger">Edit Profile</a>
+				<br>
+				<a style="color: white" class="btn-block btn-secondary" data-toggle="collapse" data-target="#collapseExampleNonEditBizz" aria-expanded="false" aria-controls="collapseExampleNonEditBizz">Show/Hide "Bizz"</a>
+				<br>
+				<a style="color: white" class="btn-block btn-success" data-toggle="collapse" data-target="#collapseExampleNonEditArts" aria-expanded="false" aria-controls="collapseExampleNonEditArts">Show/Hide "Artz"</a>
+				<p></p>
+				<p></p>
+			</div>
+			<div align="center" class="col-md-4 btn-outline-danger border-red">
+				<div class="row">
+					<div class="container">
+						<br><ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+							<li class="nav-item">
+								<a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">User</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Lyfe</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Acts</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-other" role="tab" aria-controls="pills-other" aria-selected="false">Favs</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-nother" role="tab" aria-controls="pills-nother" aria-selected="false">Circle</a>
+							</li>
+						</ul>
 
-		<!-- FORM FIELDS -->
-		<div class="btn btn-danger col-4">
-			<h5  align="left" >*PERSONAL</h5>
-				<!-- Form field bday -->
-				<div class="form-group">
-					<input type="text" name="birthday" placeholder="birthday" required ngModel="{{user.birthday}}" #birthday="ngModel" class="form-control">
-				</div>		
-				<!-- Form field email -->
-				<div class="form-group">
-					<input type="text" required ngModel="{{user.email}}" name="email" placeholder="email" class="form-control">
-				</div>
-				<!-- Form field Username -->
-				<div class="form-group">
-					<input type="text" required ngModel="{{user.userName}}" name="userName" placeholder="username" class="form-control">
-				</div>
-				<!-- Form field Password -->
-				<div class="form-group">
-					<input type="password" required ngModel="{{user.password}}" name="password" placeholder="password" class="form-control">
-				</div>
-
-				<div class="form-group">
-					<input type="password" name="password" placeholder="verify password" class="form-control">
+						<div class="tab-content" id="pills-tabContent">
+							<div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"><hr>Lorem Ipsum USER is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker i<p></p>
+							</div>
+							<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"><hr>Lorem Ipsum INSPIRATIONS is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker i<p></p>
+							</div>
+							<div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"><hr>Lorem Ipsum ACTIONS is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker i<p></p>
+							</div>
+							<div class="tab-pane fade" id="pills-other" role="tabpanel" aria-labelledby="pills-other-tab"><hr>Lorem Ipsum FAVS is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker i<p></p>
+							</div>
+							<div class="tab-pane fade" id="pills-nother" role="tabpanel" aria-labelledby="pills-nother-tab"><hr>Lorem Ipsum FRIENDS is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker i<p></p>
+							</div>
+						</div>
 					</div>
-				<!-- Form field VerifyPassword -->
-				<div class="collapse" id="savePass">
-
-	<button class="btn btn-light">show old password</button>
-
-					<a style="color: white" class="btn btn-dark">save new password</a><br>
-						
-			
-
 				</div>
-				
-			
-					<button class="btn-block btn-danger" data-toggle="collapse" data-target="#savePass" aria-expanded="false" aria-controls="savePass">edit password</button>
-				
-			
+			</div>
 		</div>
-
-			<!-- PROF PIC & EDIT BUTTON -->
-			<div align="center" class="col-4">
-
-				<!-- <form ngNoForm action="{{baseUrl}}/api/user/{{uid}}/website/{{wid}}/page/{{pid}}/widget/{{wgid}}/upload" method="post" enctype="multipart/form-data"> -->
-<!-- 
-                                <div>
-
-                                <label class='form-group'>Upload</label>
-
-                                         <input  name="myFile"   type="file" class="form-control"/>
-
-                                         <button type="submit" class="btn btn-block btn-primary">Upload Image</button>
-
-                                 </div>
-
-                        </form> -->
-
-                        
-				<img src="" alt="../../../images/Prof.png" width="auto" ><br><p></p><hr><p></p>
-					<a style="color: white" class="btn-block btn-danger" data-toggle="collapse" data-target="#Edit" aria-expanded="false" aria-controls="Edit">Edit Profile</a><br>
-
-
-					<div class="collapse" id="Edit">
-					<a style="color: white" class="btn-block btn-dark">Save Profile</a><br>
-					</div>
-
-
-					<a style="color: white" class="btn-block btn-secondary" data-toggle="collapse" data-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample3">Show/Hide "Bizz"</a><br>
-
-					<a style="color: white" class="btn-block btn-success" data-toggle="collapse" data-target="#collapseExample4" aria-expanded="false" aria-controls="collapseExample4">Show/Hide "Artz"</a><p></p><hr><p></p>
-						
-				
-				<!-- CATEGORIES -->
-				<div class="btn btn-outline-danger col-4">
-
-						<TABLE BORDER="0" WIDTH="30%" ALIGN="CENTER"
-						  CELLPADDING="0" CELLSPACING="0"
-						  >
-						 <TR>
-						   <TD><input type="checkbox" name="bike" value="bike">Bike<br></TD>
-						   <TD><input type="checkbox" name="bike" value="bike">Car<br></TD>
-						   <TD><input type="checkbox" name="bike" value="bike">Bus<br></TD>
-						   <TD><input type="checkbox" name="bike" value="bike">Rocket<br></TD>
-						 </TR>
-						 <TR>
-						   <TD><input type="checkbox" name="bike" value="bike">Plane<br></TD>
-						   <TD><input type="checkbox" name="bike" value="bike">Wing<br></TD>
-						   <TD><input type="checkbox" name="bike" value="bike">Cartwheel<br></TD>
-						   <TD><input type="checkbox" name="bike" value="bike">Glider<br></TD>
-						 </TR> 
-						    <TR> 
-						 	<TD><input type="checkbox" name="bike" value="bike">Plane<br></TD>
-						   <TD><input type="checkbox" name="bike" value="bike">Wing<br></TD>
-						   <TD><input type="checkbox" name="bike" value="bike">Cartwheel<br></TD>
-						   <TD><input type="checkbox" name="bike" value="bike">Glider<br></TD>
-						 </TR>
-						 <TR> 
-						 	<TD><input type="checkbox" name="bike" value="bike">Plane<br></TD>
-						   <TD><input type="checkbox" name="bike" value="bike">Wing<br></TD>
-						   <TD><input type="checkbox" name="bike" value="bike">Cartwheel<br></TD>
-						   <TD><input type="checkbox" name="bike" value="bike">Glider<br></TD>
-						 </TR>
-						</TABLE>
-
-									</div>
-							
-						<hr>
-						
-
-
-
-
-<div class="collapse" id="collapseExample3">
- 
-<div class="container">
-	<div class="row">
-			<div class="btn btn-secondary col-4">
-			<h5  align="center" >BUSINESS</h5>
-
-					<div  class="form-group">
-					<input style="text-align: center"type="text" name="business contact" ngModel="{{user.businessContact}}" placeholder="business contact" class="form-control">
-					</div>
-					<!-- ~~~~~~~~~~~~~~~~~~~ -->
-					<!--  -->
-					<!-- ~~~~~~~~~~~~~~~~~~~ -->	
-					<div  class="form-group">
-					<input style="text-align: center"type="text" ngModel="{{user.businessTitle}}" name="title" placeholder="business title" class="form-control">
-					</div>
-					<!-- ~~~~~~~~~~~~~~~~~~~ -->
-					<!--  -->
-					<!-- ~~~~~~~~~~~~~~~~~~~ -->
-					<div  class="form-group">
-					<input style="text-align: center"type="text" name="businessName" ngModel="{{user.businessName}}" placeholder="business name" class="form-control">
-					</div>
-					<!-- ~~~~~~~~~~~~~~~~~~~ -->
-					<!--  -->
-					<!-- ~~~~~~~~~~~~~~~~~~~ -->				<div  class="form-group">
-					<input style="text-align: center"type="text" name="businessAddress" ngModel="{{user.businessAddress}}" placeholder="business address" class="form-control">
-					</div>
-					<!-- ~~~~~~~~~~~~~~~~~~~ -->
-					<!--  -->
-					<!-- ~~~~~~~~~~~~~~~~~~~ -->
-
-
-					<div  class="form-group">
-					<input style="text-align: center"type="text" name="businessIndustry" ngModel="{{user.businessIndustry}}" placeholder="business Industry" class="form-control">
-					</div>
-					<!-- ~~~~~~~~~~~~~~~~~~~ -->
-					<!--  -->
-					<!-- ~~~~~~~~~~~~~~~~~~~ -->
-					<div  class="form-group">
-					<input style="text-align: center"type="text" name="businessWebsite" ngModel="{{user.businessWebsite}}" placeholder="businessWebsite" class="form-control">
-					</div>
-					<!-- ~~~~~~~~~~~~~~~~~~~ -->
-					<!--  -->
-					<!-- ~~~~~~~~~~~~~~~~~~~ -->
-					<div  class="form-group">
-					<input style="text-align: center"type="text" name="businessPhone" ngModel="{{user.businessPhone}}" placeholder="business phone" class="form-control">
-					</div>
-					<!-- ~~~~~~~~~~~~~~~~~~~ -->
-					<!--  -->
-					<!-- ~~~~~~~~~~~~~~~~~~~ -->
-
-
-			</div>
-				<div align="center" class="col-4">
+		<!-- .......................................BUSINESS NON-EDITABLE...................................... -->
+		<div class="collapse" data-toggle="onclick"  id="collapseExampleNonEditBizz">	
+			<hr>
+			<div class="row">
+				<div class="btn btn-secondary col-md-4">
+					<h5  align="center">BUSINESS</h5>
+					<div  class="form-group">{{user.businessContact}}</div>
+					<div  class="form-group">{{user.businessTitle}}</div>
+					<div  class="form-group">{{user.businessName}}</div>		
+					<div  class="form-group">{{user.businessAddress}}</div>
+					<div  class="form-group">{{user.businessIndustry}}</div>
+					<div  class="form-group">{{user.businessWebsite}}</div>
+					<div  class="form-group">{{user.businessPhone}}</div>
+					<hr>
+					<h5><small>BUSINESS SKILLS</small></h5>
+					<table class="smallTableText">
+						<tr>   
+							<td><input type="checkbox" name="computerElectronics" ngModel="{{user.computerElectronics}}" #computerElectronics="ngModel" value="computerElectronics">computerElectronics</td>
+							<td><input type="checkbox" name="teaching" ngModel="{{user.teaching}}" #teaching="ngModel" value="teaching">teaching</td>
+							<td><input type="checkbox" name="unionUtilities" ngModel="{{user.unionUtilities}}" #unionUtilities="ngModel" value="unionUtilities">unionUtilities</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" name="governmentPublic" ngModel="{{user.governmentPublic}}" #governmentPublic="ngModel" value="governmentPublic">governmentPublic</td>
+							<td><input type="checkbox" name="healthMedicine" ngModel="{{user.healthMedicine}}" #healthMedicine="ngModel" value="healthMedicine">healthMedicine</td>
+							<td><input type="checkbox" name="manufacturing" ngModel="{{user.manufacturing}}" #manufacturing="ngModel" value="manufacturing">manufacturing</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" name="mediaEntertainment" ngModel="{{user.mediaEntertainment}}" #mediaEntertainment="ngModel" value="mediaEntertainment">mediaEntertainment</td>
+							<td><input type="checkbox" name="businessServices" ngModel="{{user.businessServices}}" #businessServices="ngModel" value="businessServices">businessServices</td>
+							<td><input type="checkbox" name="nonprofitAdvocacy" ngModel="{{user.nonprofitAdvocacy}}" #nonprofitAdvocacy="ngModel" value="nonprofitAdvocacy">nonprofitAdvocacy</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" name="realestateConstruction" ngModel="{{user.realestateConstruction}}" #realestateConstruction="ngModel" value="realestateConstruction">realestateConstruction</td>
+							<td><input type="checkbox" name="entrepreneurContractor" ngModel="{{user.entrepreneurContractor}}" #entrepreneurContractor="ngModel" value="entrepreneurContractor">entrepreneurContractor</td>
+							<td><input type="checkbox" name="customerService" ngModel="{{user.customerService}}" #customerService="ngModel" value="customerService">customerService</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" name="trasportationTravel" ngModel="{{user.trasportationTravel}}" #trasportationTravel="ngModel" value="trasportationTravel">trasportationTravel</td>
+							<td><input type="checkbox" name="salesDistribution" ngModel="{{user.salesDistribution}}" #salesDistribution="ngModel" value="salesDistribution">salesDistribution</td>
+							<td><input type="checkbox" name="culinaryArts" ngModel="{{user.culinaryArts}}" #culinaryArts="ngModel" value="culinaryArts">culinaryArts</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" name="professionalArtist" ngModel="{{user.professionalArtist}}" #professionalArtist="ngModel" value="professionalArtist">professionalArtist</td>
+						</tr>
+					</table>
+				</div>
+				<div align="center" class="col-md-4">
 					<br>
-				<img src="../../../images/Agency.jpg" alt="Agency pic" width="auto" ><p></p><hr><p></p>
-				<img src="../../../images/Agency.jpg" alt="Agency pic" width="auto" >
-			</div>				
-			<div class="btn btn-outline-secondary col-4">
-				<TABLE BORDER="0" WIDTH="30%" ALIGN="CENTER"
-  CELLPADDING="0" CELLSPACING="0"
-  >
- <TR>
-   <TD><input type="checkbox" name="bike" value="bike">Bike<br></TD>
-   <TD><input type="checkbox" name="bike" value="bike">Car<br></TD>
-   <TD><input type="checkbox" name="bike" value="bike">Bus<br></TD>
-   <TD><input type="checkbox" name="bike" value="bike">Rocket<br></TD>
- </TR>
- <TR>
-   <TD><input type="checkbox" name="bike" value="bike">Plane<br></TD>
-   <TD><input type="checkbox" name="bike" value="bike">Wing<br></TD>
-   <TD><input type="checkbox" name="bike" value="bike">Cartwheel<br></TD>
-   <TD><input type="checkbox" name="bike" value="bike">Glider<br></TD>
- </TR> 
-    <TR> 
- 	<TD><input type="checkbox" name="bike" value="bike">Plane<br></TD>
-   <TD><input type="checkbox" name="bike" value="bike">Wing<br></TD>
-   <TD><input type="checkbox" name="bike" value="bike">Cartwheel<br></TD>
-   <TD><input type="checkbox" name="bike" value="bike">Glider<br></TD>
- </TR>
- <TR> 
- 	<TD><input type="checkbox" name="bike" value="bike">Plane<br></TD>
-   <TD><input type="checkbox" name="bike" value="bike">Wing<br></TD>
-   <TD><input type="checkbox" name="bike" value="bike">Cartwheel<br></TD>
-   <TD><input type="checkbox" name="bike" value="bike">Glider<br></TD>
- </TR>
-</TABLE>
+					<img src="../../../images/Agency.jpg" alt="Agency pic" width="auto" >
+					<hr>
+					<p>"BIZZ STATUS's"</p>
+					<hr>
+					<img src="../../../images/Agency.jpg" alt="Agency pic" width="auto" >
+					<p></p>
+				</div>
+				<div class="col-md-4 btn-outline-secondary border-grey">
+					<div class="row">
+						<div class="container">
+							<br>
+							<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+								<li class="nav-item">
+									<a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home-two" role="tab" aria-controls="pills-home-two" aria-selected="true">Bizz</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile-two" role="tab" aria-controls="pills-profile-two" aria-selected="false">Scenes</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact-two" role="tab" aria-controls="pills-contact-two" aria-selected="false">Logs</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-other-two" role="tab" aria-controls="pills-other-two" aria-selected="false">Savs</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-nother-two" role="tab" aria-controls="pills-nother-two" aria-selected="false">Links</a>
+								</li>
+							</ul>
+							<div class="tab-content" id="pills-tabContent">
+								<div class="tab-pane fade show active" id="pills-home-two" role="tabpanel" aria-labelledby="pills-home-tab-two"><hr>Lorem Ipsum BIZZ is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker i<p></p>
+								</div>
+								<div class="tab-pane fade" id="pills-profile-two" role="tabpanel" aria-labelledby="pills-profile-tab-two"><hr>Lorem Ipsum VENTURES is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker i<p></p>
+								</div>
+								<div class="tab-pane fade" id="pills-contact-two" role="tabpanel" aria-labelledby="pills-contact-tab-two"><hr>Lorem Ipsum LOGS is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker i<p></p>
+								</div>
+								<div class="tab-pane fade" id="pills-other-two" role="tabpanel" aria-labelledby="pills-other-tab-two"><hr>Lorem Ipsum SAVS is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker i<p></p>
+								</div>
+								<div class="tab-pane fade" id="pills-nother-two" role="tabpanel" aria-labelledby="pills-nother-tab-two"><hr>Lorem Ipsum LINKS is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker i<p></p>
+								</div>
+							</div>
+						</div>	
+					</div>			
+				</div>
 			</div>
+		</div>
+		<hr>
+		<!-- .......................................ARTIST NON-EDITABLE...................................... -->
+		<div class="collapse" id="collapseExampleNonEditArts">
+			<div class="row">
+				<div class="btn btn-success col-md-4">
+					<h5  align="right">ARTIST</h5>
+					<div class="form-group">{{user.artistName}}</div>
+					<div class="form-group">{{user.artistEmail}}</div>
+					<div class="form-group">{{user.socialMedia1}}</div>
+					<div class="form-group">{{user.socialMedia2}}</div>					
+					<div class="form-group">{{user.socialMedia3}}</div>
+					<div class="form-group">{{user.artistWebsite}}</div>
+					<div class="form-group">{{user.artistPhone}}</div>	
+					<hr>
+					<h5><small>ART MEDIUMS</small></h5>
+					<table class="smallTableText">
+						<tr>   
+							<td><input type="checkbox" name="digitalGraphics" ngModel="{{user.digitalGraphics}}" #digitalGraphics="ngModel" value="digitalGraphics">digitalGraphics</td>
+							<td><input type="checkbox" name="canvasArt" ngModel="{{user.canvasArt}}" #canvasArt="ngModel" value="canvasArt">canvasArt</td>
+							<td><input type="checkbox" name="webDesign" ngModel="{{user.webDesign}}" #webDesign="ngModel" value="webDesign">webDesign</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" name="photography" ngModel="{{user.photography}}" #photography="ngModel" value="photography">photography</td>
+							<td><input type="checkbox" name="videography" ngModel="{{user.videography}}" #videography="ngModel" value="videography">videography</td>
+							<td><input type="checkbox" name="lyricalArts" ngModel="{{user.lyricalArts}}" #lyricalArts="ngModel" value="lyricalArts">lyricalArts</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" name="vocalInstrument" ngModel="{{user.vocalInstrument}}" #vocalInstrument="ngModel" value="vocalInstrument">vocalInstrument</td>
+							<td><input type="checkbox" name="theater" ngModel="{{user.theater}}" #theater="ngModel" value="theater">theater</td>
+							<td><input type="checkbox" name="modeling" ngModel="{{user.modeling}}" #modeling="ngModel" value="modeling">modeling</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" name="acting" ngModel="{{user.acting}}" #acting="ngModel" value="acting">acting</td>
+							<td><input type="checkbox" name="comedy" ngModel="{{user.comedy}}" #comedy="ngModel" value="comedy">comedy</td>
+							<td><input type="checkbox" name="dance" ngModel="{{user.dance}}" #dance="ngModel" value="dance">dance</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" name="musicProduction" ngModel="{{user.musicProduction}}" #musicProduction="ngModel" value="musicProduction">musicProduction</td>
+						</tr>
+					</table>	
+				</div>			
+				<div align="center" class="col-md-4">
+					<br>
+					<img src="../../../images/artist.jpg" alt="Artist pic" width="auto" >
+					<hr>
+					<p>"ART STATUS's"</p>
+					<hr>
+					<img src="../../../images/artist.jpg" alt="Artist pic" width="auto" >
+					<br>
+				</div>
+				<div class="col-md-4 btn-outline-success border-green">
+					<div class="row">
+						<div class="container">			
+							<br>
+							<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+								<li class="nav-item">
+									<a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home-three" role="tab" aria-controls="pills-home-three" aria-selected="true">Art</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile-three" role="tab" aria-controls="pills-profile-three" aria-selected="false">Vybz</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact-three" role="tab" aria-controls="pills-contact-three" aria-selected="false">Moves</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-other-three" role="tab" aria-controls="pills-other-three" aria-selected="false">Feels</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-nother-three" role="tab" aria-controls="pills-nother-three" aria-selected="false">Team</a>
+								</li>
+							</ul>
+							<div class="tab-content" id="pills-tabContent">
+								<div class="tab-pane fade show active" id="pills-home-three" role="tabpanel" aria-labelledby="pills-home-tab-three"><hr>Lorem Ipsum ART is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker i<p></p>
+								</div>
+								<div class="tab-pane fade" id="pills-profile-three" role="tabpanel" aria-labelledby="pills-profile-tab-three"><hr>Lorem Ipsum VYBZ is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker i<p></p>
+								</div>
+								<div class="tab-pane fade" id="pills-contact-three" role="tabpanel" aria-labelledby="pills-contact-tab-three">Lorem Ipsum MOVES is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker i<p></p>
+								</div>
+								<div class="tab-pane fade" id="pills-other-three" role="tabpanel" aria-labelledby="pills-other-tab-three"><hr>Lorem Ipsum FEELS is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker i<p></p>
+								</div>
+								<div class="tab-pane fade" id="pills-nother-three" role="tabpanel" aria-labelledby="pills-nother-tab-three"><hr>Lorem Ipsum Team is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker i<p></p>
+								</div>
+							</div> 
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
-<hr>
 </div>
-</div>
-
-
-
-<div class="collapse" id="collapseExample4">
-<div class="container">
-	<div class="row">
-			<div class="btn btn-success col-4">
-			<h5  align="right" >ARTIST</h5>
-					<!-- ~~~~~~~~~~~~~~~~~~~ -->
-					<!-- Form field Username -->
-					<!-- ~~~~~~~~~~~~~~~~~~~ -->
+<!-- .......................................EDITABLE PROFILE SECTION...................................... -->
+<div *ngIf="editable">
+	<div class="container">
+		<form (ngSubmit)="update()" #f="ngForm">
+			<div class="row">
+				<!-- .......................................EDITABLE PERSONAL SECTION...................................... -->
+				<div class="btn btn-danger col-md-4">
+					<h5  align="left" >*PERSONAL</h5>
+					<!-- Form field bday -->
 					<div class="form-group">
-					<input style="text-align: right" type="text" name="email" placeholder="email" class="form-control">
-					</div>					<!-- ~~~~~~~~~~~~~~~~~~~ -->
-					<!-- Form field Username -->
-					<!-- ~~~~~~~~~~~~~~~~~~~ -->
+						<input type="text" name="birthday" placeholder="birthday" required ngModel="{{user.birthday}}" #birthday="ngModel" class="form-control">
+					</div>		
+					<!-- Form field email -->
 					<div class="form-group">
-					<input style="text-align: right" type="text" name="social media url 1" placeholder="social media url 1" class="form-control">
-					</div>					
-					<!-- ~~~~~~~~~~~~~~~~~~~ -->
-					<!-- Form field Username -->
-					<!-- ~~~~~~~~~~~~~~~~~~~ -->
-					<div class="form-group">
-					<input style="text-align: right" type="text" name="social media url 2" placeholder="social media url 2" class="form-control">
+						<input type="text" required ngModel="{{user.email}}" name="email" placeholder="email" class="form-control">
 					</div>
-					<!-- ~~~~~~~~~~~~~~~~~~~ -->
 					<!-- Form field Username -->
-					<!-- ~~~~~~~~~~~~~~~~~~~ -->
 					<div class="form-group">
-					<input style="text-align: right" type="text" name="social media url 3" placeholder="social media url 3" class="form-control">
-					</div>					
-					<!-- ~~~~~~~~~~~~~~~~~~~ -->
-					<!-- Form field Username -->
-					<!-- ~~~~~~~~~~~~~~~~~~~ -->
-					<div class="form-group">
-					<input style="text-align: right" type="text" name="website" placeholder="website" class="form-control">
-					</div>					
-					<!-- ~~~~~~~~~~~~~~~~~~~ -->
-					<!-- Form field Username -->
-					<!-- ~~~~~~~~~~~~~~~~~~~ -->
-					<div class="form-group">
-					<input style="text-align: right" type="text" name="phone" placeholder="phone" class="form-control">
+						<input type="text" required ngModel="{{user.userName}}" name="userName" placeholder="username" class="form-control">
 					</div>
-						
+					<hr>
+					<h5><small>PERSONAL INTERESTS</small></h5>
+					<table class="smallTableText">
+						<tr>   
+							<td><input type="checkbox" name="events" ngModel="{{user.events}}" #events="ngModel" value="events">Events</td>
+							<td><input type="checkbox" name="education" ngModel="{{user.education}}" #education="ngModel" value="education">Education</td>
+							<td><input type="checkbox" name="itemReview" ngModel="{{user.itemReview}}" #itemReview="ngModel" value="itemReview">Item Review</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" name="smallBizz" ngModel="{{user.smallBizz}}" #smallBizz="ngModel" value="smallBizz">Small Bizz</td>
+							<td><input type="checkbox" name="family" ngModel="{{user.outdoors}}" #outdoors="ngModel" value="outdoors">Outdoors</td>
+							<td><input type="checkbox" name="family" ngModel="{{user.family}}" #family="ngModel" value="family">Family</td>						
+						</tr>
+						<tr> 
+							<td><input type="checkbox" name="fitness" ngModel="{{user.fitness}}" #fitness="ngModel" value="fitness">Fitness</td>
+							<td><input type="checkbox" name="dining" ngModel="{{user.dining}}" #dining="ngModel" value="dining">Dining</td>
+						</tr>
+					</table>
+				</div>
+				<!-- PROF PIC & EDIT BUTTON -->
+				<div align="center" class="col-md-4">
+					<p>"USER STATUS's"</p>
+					<img class="img-rounded" src="../../../../images/Prof.png" alt="" width="auto" >
+					<br>
+					<p></p> 
+					<br>
+					<p></p>
+					<button (click)="update()"  type="submit" style="color: white" class="btn-block btn-dark">Save Profile</button>
+					<br>
+					<a style="color: white" class="btn-block btn-secondary" data-toggle="collapse" data-target="#collapseExampleEditBizz" aria-expanded="false" aria-controls="collapseExampleEditBizz">Show/Hide "Bizz"</a>
+					<br>
+					<a style="color: white" class="btn-block btn-success" data-toggle="collapse" data-target="#collapseExampleEditArts" aria-expanded="false" aria-controls="collapseExampleEditArts">Show/Hide "Artz"</a>
+					<p></p>
+					<p></p>
+				</div>
+				<div class="col-md-4 btn-outline-danger border-red">					
+					<div class="row">
+						<div class="container">
+							<br>
+							<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+								<li class="nav-item">
+									<a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">User</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Lyfe</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Acts</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-other" role="tab" aria-controls="pills-other" aria-selected="false">Favs</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-nother" role="tab" aria-controls="pills-nother" aria-selected="false">Circle</a>
+								</li>
+							</ul>
+							<div class="tab-content" id="pills-tabContent">
+								<div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"><hr>Lorem Ipsum USER is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker i<p></p>
+								</div>
+								<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"><hr>Lorem Ipsum INSPIRATIONS is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker i<p></p>
+								</div>
+								<div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"><hr>Lorem Ipsum ACTIONS is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker i<p></p>
+								</div>
+								<div class="tab-pane fade" id="pills-other" role="tabpanel" aria-labelledby="pills-other-tab"><hr>Lorem Ipsum FAVS is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker i<p></p>
+								</div>
+								<div class="tab-pane fade" id="pills-nother" role="tabpanel" aria-labelledby="pills-nother-tab"><hr>Lorem Ipsum FRIENDS is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker i<p></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
-			<div align="center" class="col-4"><br>
-				<img src="../../../images/artist.jpg" alt="Artist pic" width="auto" >
-				<p></p><hr><p></p>
-				<img src="../../../images/artist.jpg" alt="Artist pic" width="auto" >
-			</div>				
-			<div class="btn btn-outline-success col-4">
-				<TABLE BORDER="0" WIDTH="30%" ALIGN="CENTER"
-  CELLPADDING="0" CELLSPACING="0"
-  >
- <TR>
-   <TD><input type="checkbox" name="bike" value="bike">Bike<br></TD>
-   <TD><input type="checkbox" name="bike" value="bike">Car<br></TD>
-   <TD><input type="checkbox" name="bike" value="bike">Bus<br></TD>
-   <TD><input type="checkbox" name="bike" value="bike">Rocket<br></TD>
- </TR>
- <TR>
-   <TD><input type="checkbox" name="bike" value="bike">Plane<br></TD>
-   <TD><input type="checkbox" name="bike" value="bike">Wing<br></TD>
-   <TD><input type="checkbox" name="bike" value="bike">Cartwheel<br></TD>
-   <TD><input type="checkbox" name="bike" value="bike">Glider<br></TD>
- </TR> 
-    <TR> 
- 	<TD><input type="checkbox" name="bike" value="bike">Plane<br></TD>
-   <TD><input type="checkbox" name="bike" value="bike">Wing<br></TD>
-   <TD><input type="checkbox" name="bike" value="bike">Cartwheel<br></TD>
-   <TD><input type="checkbox" name="bike" value="bike">Glider<br></TD>
- </TR>
- <TR> 
- 	<TD><input type="checkbox" name="bike" value="bike">Plane<br></TD>
-   <TD><input type="checkbox" name="bike" value="bike">Wing<br></TD>
-   <TD><input type="checkbox" name="bike" value="bike">Cartwheel<br></TD>
-   <TD><input type="checkbox" name="bike" value="bike">Glider<br></TD>
- </TR>
-</TABLE>
+			<!-- .......................................EDITABLE BUSINESS SECTION...................................... -->
+			<div class="collapse" data-toggle="onclick"  id="collapseExampleEditBizz">
+				<hr>
+				<div class="container">
+					<div class="row">
+						<div class="btn btn-secondary col-md-4">
+							<h5  align="center" >BUSINESS</h5>
+							<div  class="form-group">
+								<input style="text-align: center"type="text" name="business contact" ngModel="{{user.businessContact}}" placeholder="business contact" class="form-control">
+							</div>
+							<div class="form-group">
+								<input style="text-align: center"type="text" ngModel="{{user.businessTitle}}" name="title" placeholder="business title" class="form-control">
+							</div>
+							<div  class="form-group">
+								<input style="text-align: center"type="text" name="businessName" ngModel="{{user.businessName}}" placeholder="business name" class="form-control">
+							</div>
+							<div  class="form-group">
+								<input style="text-align: center"type="text" name="businessAddress" ngModel="{{user.businessAddress}}" placeholder="business address" class="form-control">
+							</div>
+							<div  class="form-group">
+								<input style="text-align: center"type="text" name="businessIndustry" ngModel="{{user.businessIndustry}}" placeholder="business Industry" class="form-control">
+							</div>
+							<div  class="form-group">
+								<input style="text-align: center"type="text" name="businessWebsite" ngModel="{{user.businessWebsite}}" placeholder="businessWebsite" class="form-control">
+							</div>
+							<div  class="form-group">
+								<input style="text-align: center"type="text" name="businessPhone" ngModel="{{user.businessPhone}}" placeholder="business phone" class="form-control">
+							</div>
+							<hr>
+							<h5><small>BUSINESS SKILLS</small></h5>
+							<table class="smallTableText">
+								<tr>   
+									<td><input type="checkbox" name="computerElectronics" ngModel="{{user.computerElectronics}}" #computerElectronics="ngModel" value="computerElectronics">computerElectronics</td>
+									<td><input type="checkbox" name="teaching" ngModel="{{user.teaching}}" #teaching="ngModel" value="teaching">teaching</td>
+									<td><input type="checkbox" name="unionUtilities" ngModel="{{user.unionUtilities}}" #unionUtilities="ngModel" value="unionUtilities">unionUtilities</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" name="governmentPublic" ngModel="{{user.governmentPublic}}" #governmentPublic="ngModel" value="governmentPublic">governmentPublic</td>
+									<td><input type="checkbox" name="healthMedicine" ngModel="{{user.healthMedicine}}" #healthMedicine="ngModel" value="healthMedicine">healthMedicine</td>
+									<td><input type="checkbox" name="manufacturing" ngModel="{{user.manufacturing}}" #manufacturing="ngModel" value="manufacturing">manufacturing</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" name="mediaEntertainment" ngModel="{{user.mediaEntertainment}}" #mediaEntertainment="ngModel" value="mediaEntertainment">mediaEntertainment</td>
+									<td><input type="checkbox" name="businessServices" ngModel="{{user.businessServices}}" #businessServices="ngModel" value="businessServices">businessServices</td>
+									<td><input type="checkbox" name="nonprofitAdvocacy" ngModel="{{user.nonprofitAdvocacy}}" #nonprofitAdvocacy="ngModel" value="nonprofitAdvocacy">nonprofitAdvocacy</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" name="realestateConstruction" ngModel="{{user.realestateConstruction}}" #realestateConstruction="ngModel" value="realestateConstruction">realestateConstruction</td>
+									<td><input type="checkbox" name="entrepreneurContractor" ngModel="{{user.entrepreneurContractor}}" #entrepreneurContractor="ngModel" value="entrepreneurContractor">entrepreneurContractor</td>
+									<td><input type="checkbox" name="customerService" ngModel="{{user.customerService}}" #customerService="ngModel" value="customerService">customerService</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" name="trasportationTravel" ngModel="{{user.trasportationTravel}}" #trasportationTravel="ngModel" value="trasportationTravel">trasportationTravel</td>
+									<td><input type="checkbox" name="salesDistribution" ngModel="{{user.salesDistribution}}" #salesDistribution="ngModel" value="salesDistribution">salesDistribution</td>
+									<td><input type="checkbox" name="culinaryArts" ngModel="{{user.culinaryArts}}" #culinaryArts="ngModel" value="culinaryArts">culinaryArts</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" name="professionalArtist" ngModel="{{user.professionalArtist}}" #professionalArtist="ngModel" value="professionalArtist">professionalArtist</td>
+								</tr>
+							</table>
+						</div>
+						<div align="center" class="col-md-4">
+							<img src="../../../images/Agency.jpg" alt="Agency pic" width="auto" >
+							<hr>
+							<p>"BIZZ STATUS's"</p>
+							<hr>
+							<img src="../../../images/Agency.jpg" alt="Agency pic" width="auto" >
+							<br>
+						</div>				
+						<div class="col-md-4 btn-outline-secondary border-grey">
+							<div class="row">
+								<div class="container">
+									<br>
+									<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+										<li class="nav-item">
+											<a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home-two" role="tab" aria-controls="pills-home-two" aria-selected="true">Bizz</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile-two" role="tab" aria-controls="pills-profile-two" aria-selected="false">Scenes</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact-two" role="tab" aria-controls="pills-contact-two" aria-selected="false">Logs</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-other-two" role="tab" aria-controls="pills-other-two" aria-selected="false">Savs</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-nother-two" role="tab" aria-controls="pills-nother-two" aria-selected="false">Links</a>
+										</li>
+									</ul>
+									<div class="tab-content" id="pills-tabContent">
+										<div class="tab-pane fade show active" id="pills-home-two" role="tabpanel" aria-labelledby="pills-home-tab-two"><hr>Lorem Ipsum BIZZ is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker i<p></p>
+										</div>
+										<div class="tab-pane fade" id="pills-profile-two" role="tabpanel" aria-labelledby="pills-profile-tab-two"><hr>Lorem Ipsum VENTURES is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker i<p></p>
+										</div>
+										<div class="tab-pane fade" id="pills-contact-two" role="tabpanel" aria-labelledby="pills-contact-tab-two"><hr>Lorem Ipsum LOGS is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker i<p></p>
+										</div>
+										<div class="tab-pane fade" id="pills-other-two" role="tabpanel" aria-labelledby="pills-other-tab-two"><hr>Lorem Ipsum SAVS is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker i<p></p>
+										</div>
+										<div class="tab-pane fade" id="pills-nother-two" role="tabpanel" aria-labelledby="pills-nother-tab-two"><hr>Lorem Ipsum LINKS is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker i<p></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
-	</div></div>
-<hr>
-</div>
+			<hr>
+			<!-- .......................................EDITABLE ARTIST SECTION...................................... -->
+			<div class="collapse" id="collapseExampleEditArts">
+				<div class="container">
+					<div class="row">
+						<div class="btn btn-success col-md-4">
+							<h5  align="right" >ARTIST</h5>
+							<div class="form-group">
+								<input style="text-align: right" type="text" name="email" placeholder="email" class="form-control">
+							</div>
+							<div class="form-group">
+								<input style="text-align: right" type="text" name="social media url 1" placeholder="social media url 1" class="form-control">
+							</div>					
+							<!-- ~~~~~~~~~~~~~~~~~~~ -->
+							<!-- Form field Username -->
+							<!-- ~~~~~~~~~~~~~~~~~~~ -->
+							<div class="form-group">
+								<input style="text-align: right" type="text" name="social media url 2" placeholder="social media url 2" class="form-control">
+							</div>
+							<!-- ~~~~~~~~~~~~~~~~~~~ -->
+							<!-- Form field Username -->
+							<!-- ~~~~~~~~~~~~~~~~~~~ -->
+							<div class="form-group">
+								<input style="text-align: right" type="text" name="social media url 3" placeholder="social media url 3" class="form-control">
+							</div>					
+							<!-- ~~~~~~~~~~~~~~~~~~~ -->
+							<!-- Form field Username -->
+							<!-- ~~~~~~~~~~~~~~~~~~~ -->
+							<div class="form-group">
+								<input style="text-align: right" type="text" name="website" placeholder="website" class="form-control">
+							</div>					
+							<!-- ~~~~~~~~~~~~~~~~~~~ -->
+							<!-- Form field Username -->
+							<!-- ~~~~~~~~~~~~~~~~~~~ -->
+							<div class="form-group">
+								<input style="text-align: right" type="text" name="phone" placeholder="phone" class="form-control">
+							</div>
+							<hr>
+							<h5><small>ART MEDIUMS</small></h5>
+							<table class="smallTableText">
+								<tr>   
+									<td><input type="checkbox" name="digitalGraphics" ngModel="{{user.digitalGraphics}}" #digitalGraphics="ngModel" value="digitalGraphics">digitalGraphics</td>
+									<td><input type="checkbox" name="canvasArt" ngModel="{{user.canvasArt}}" #canvasArt="ngModel" value="canvasArt">canvasArt</td>
+									<td><input type="checkbox" name="webDesign" ngModel="{{user.webDesign}}" #webDesign="ngModel" value="webDesign">webDesign</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" name="photography" ngModel="{{user.photography}}" #photography="ngModel" value="photography">photography</td>
+									<td><input type="checkbox" name="videography" ngModel="{{user.videography}}" #videography="ngModel" value="videography">videography</td>
+									<td><input type="checkbox" name="lyricalArts" ngModel="{{user.lyricalArts}}" #lyricalArts="ngModel" value="lyricalArts">lyricalArts</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" name="vocalInstrument" ngModel="{{user.vocalInstrument}}" #vocalInstrument="ngModel" value="vocalInstrument">vocalInstrument</td>
+									<td><input type="checkbox" name="theater" ngModel="{{user.theater}}" #theater="ngModel" value="theater">theater</td>
+									<td><input type="checkbox" name="modeling" ngModel="{{user.modeling}}" #modeling="ngModel" value="modeling">modeling</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" name="acting" ngModel="{{user.acting}}" #acting="ngModel" value="acting">acting</td>
+									<td><input type="checkbox" name="comedy" ngModel="{{user.comedy}}" #comedy="ngModel" value="comedy">comedy</td>
+									<td><input type="checkbox" name="dance" ngModel="{{user.dance}}" #dance="ngModel" value="dance">dance</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" name="musicProduction" ngModel="{{user.musicProduction}}" #musicProduction="ngModel" value="musicProduction">musicProduction</td>
+								</tr>
+								</table>
+							</div>
+							<div align="center" class="col-md-4">
+								<img class="img-rounded" src="../../../images/artist.jpg" alt="Artist pic" width="auto" >
+								<hr>
+								<p>"ART STATUS's"</p>
+								<hr>
+								<img class="img-rounded" src="../../../images/artist.jpg" alt="Artist pic" width="auto" >
+							</div>
+							<div class="col-md-4 btn-outline-success border-green">
+								<div class="row">
+									<div class="container">
+										<br>
+										<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+											<li class="nav-item">
+												<a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home-three" role="tab" aria-controls="pills-home-three" aria-selected="true">Art</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile-three" role="tab" aria-controls="pills-profile-three" aria-selected="false">Vybz</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact-three" role="tab" aria-controls="pills-contact-three" aria-selected="false">Moves</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-other-three" role="tab" aria-controls="pills-other-three" aria-selected="false">Feels</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-nother-three" role="tab" aria-controls="pills-nother-three" aria-selected="false">Team</a>
+											</li>
+										</ul>
+										<div class="tab-content" id="pills-tabContent">
+											<div class="tab-pane fade show active" id="pills-home-three" role="tabpanel" aria-labelledby="pills-home-tab-three"><hr>Lorem Ipsum ART is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker i<p></p>
+											</div>
+											<div class="tab-pane fade" id="pills-profile-three" role="tabpanel" aria-labelledby="pills-profile-tab-three"><hr>Lorem Ipsum VYBZ is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker i<p></p>
+											</div>
+											<div class="tab-pane fade" id="pills-contact-three" role="tabpanel" aria-labelledby="pills-contact-tab-three">Lorem Ipsum MOVES is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker i<p></p>
+											</div>
+											<div class="tab-pane fade" id="pills-other-three" role="tabpanel" aria-labelledby="pills-other-tab-three"><hr>Lorem Ipsum FEELS is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker i<p></p>
+											</div>
+											<div class="tab-pane fade" id="pills-nother-three" role="tabpanel" aria-labelledby="pills-nother-tab-three"><hr>Lorem Ipsum Team is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker i<p></p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<hr>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
 
 
- 

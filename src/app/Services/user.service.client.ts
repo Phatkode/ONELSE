@@ -68,29 +68,14 @@ export class UserService {
   updateUser(userId: string, user: User) { 
 
     const url = this.baseUrl + '/api/user/' + userId;
-
     return this.http.put(url, user).pipe(map(
-       (response: Response) => {
-         return response.json();
-       }
-    ))
-
-    // var oldUser = this.findUserById(userId);
-    // var index = this.users.indexOf(oldUser);
-
-    // this.users[index].username = user.username;
-    // this.users[index].password = user.password;
-    // this.users[index].firstName = user.firstName;
-    // this.users[index].lastName = user.lastName;
-    // this.users[index].email = user.email;
-
+      (response: Response) => {
+        return response.json();
+      }
+      ))
   }
 
   deleteUser(userId: string) { 
-   //   var oldUser = this.findUserById(userId);
-   //   var index = this.users.indexOf(oldUser);
-   //   this.users.splice(index, 1);
-   // }
     const url = this.baseUrl + '/api/user/' + userId;
     return this.http.delete(url).pipe(map(
        (response: Response) => {

@@ -1,0 +1,41 @@
+.smallTableText{
+	font-size: .7rem;
+	border-top: none;
+	border-bottom: none;
+	text-align: left;
+	padding: none;
+	width: 100%;
+}
+
+
+table .td{
+padding: none;
+border-top: none;
+border-bottom: none;
+min-width: unset;
+white-space: wrap;
+border-collapse:collapse;
+border-spacing:0;
+}
+
+table{
+padding: none;
+border-top: none;
+border-bottom: none;
+min-width: unset;
+white-space: wrap;
+border-collapse:collapse;
+border-spacing:0;
+}
+
+table .tr{
+padding: none;
+border-top: none;
+border-bottom: none;
+min-width: unset;
+white-space: wrap;
+border-collapse:collapse;
+border-spacing:0;
+}
+
+

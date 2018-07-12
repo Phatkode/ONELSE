@@ -2,14 +2,25 @@
 
 export class User {
 	_id: string;
+
+// 	personal info
 	birthday: string;
 	email: string;
 	userName: string;
 	firstName: string;
 	lastName: string ;
 	password: string;
+// 	personal booleans
+	events?: boolean;
+	education?: boolean;
+	itemReview?: boolean;
+	smallBizz?: boolean;
+	outdoors?: boolean;
+	family?: boolean;
+	fitness?: boolean;
+	dining?: boolean;
 
-	
+// 	business info	
 	businessContact?: string;
 	businessTitle?: string;
 	businessName?: string;
@@ -18,8 +29,25 @@ export class User {
 	businessWebsite?: string;
 	businessEmail?: string;
 	businessPhone?: string;
+// 	business booleans
+	businessServices?: boolean;
+	computerElectronics?: boolean;
+	teaching?: boolean;
+	unionUtilities?: boolean;
+	governmentPublic?: boolean;
+	healthMedicine?: boolean;
+	manufacturing?: boolean;
+	mediaEntertainment?: boolean;
+	nonprofitAdvocacy?: boolean;
+	realestateConstruction?: boolean;
+	entrepreneurContractor?: boolean;
+	customerService?: boolean;	
+	trasportationTravel?: boolean;
+	salesDistribution?: boolean;
+	culinaryArts?: boolean;
+	professionalArtist?: boolean;
 
-
+// 	artist info
 	artistName?: string;
 	artistEmail?: string;
 	socialMedia1?: string;
@@ -27,35 +55,19 @@ export class User {
 	socialMedia3?: string;
 	artistWebsite?: string;
 	artistPhone?: string;
+// 	artist booleans
+	digitalGraphics?: boolean;
+	canvasArt?: boolean;
+	webDesign?: boolean;
+	photography?: boolean;
+	videography?: boolean;
+	lyricalArts?: boolean;
+	vocalInstrument?: boolean;
+	theater?: boolean;
+	modeling?: boolean;
+	acting?: boolean;
+	comedy?: boolean;
+	dance?: boolean;
+	musicProduction?: boolean;
 
-
-	// constructor(_id, birthday, email, userName, firstName, lastName, password) {
-			
-	// this._id = this._id;
-	// this.birthday = birthday;
-	// this.email = email;
-	// this.userName = userName;
-	// this.firstName = firstname;
-	// this.lastName: lastName;
-	// this.password = password;
-
-	
-	// this.businessContact = businessContact;
-	// this.businessTitle = businessTitle;
-	// this.businessName = businessName;
-	// this.businessAddress = businessAddress;
-	// this.businessIndustry?: businessIndustry;
-	// this.businessWebsite = businessWebsite;
-	// this.businessEmail = businessEmail;
-	// this.businessPhone = businessPhone;
-
-	
-	// this.artistName = artistName;
-	// this.artistEmail = artistEmail;
-	// this.socialMedia1 = socialMedia1;
-	// this.socialMedia2 = socialMedia2;
-	// this.socialMedia3 = socialMedia3;
-	// this.artistWebsite = artistWebsite;
-	// this.artistPhone = artistPhone;
-	// }
 }

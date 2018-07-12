@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms'
 import {UserService} from '../../../Services/user.service.client'
-
+// declare var jQuery: any;
 import { User } from '../../../models/user.model.client'
 import { Router } from '@angular/router'
 
@@ -25,13 +25,19 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
+// closeLogin() {
+//     jQuery("#login").collapse('hide');
+//   }
+
   login(){
     this.userName = this.loginForm.value.userName;
     this.password = this.loginForm.value.password;
     this.userService.findUserByCredentials(this.userName, this.password).subscribe(
       (user: User) => {
         this.errorFlag = false;
+        // this.closeLogin()
         this.router.navigate(['user', user._id]);
+
       },
       (error: any) => {
         this.errorFlag = true;
@@ -40,3 +46,4 @@ export class LoginComponent implements OnInit {
   }
 
 }
+

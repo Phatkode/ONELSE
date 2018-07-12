@@ -18,8 +18,21 @@ var users = [
 app.get('/api/user', findUser);
 app.get('/api/user/:uid', findUserById);
 app.post("/api/user", createUser);
-// app.put("/api/user", updateUser);
+app.put("/api/user/:uid", updateUser);
 
+
+
+function updateUser(req, res) {
+	var user = req.body;
+	var uid = req.params['uid'];
+	user._id = uid;
+	for(var i=0;i<users.length;i++){
+		if(users[i]._id === uid) {
+			users[i] = user;
+		}
+	}
+	res.json(user);
+}
 
 // find user by given id
  function findUserById(req, res){

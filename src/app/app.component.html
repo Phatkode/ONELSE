@@ -1,126 +1,81 @@
-
 <!-- LSE upper header -->
-<div class=" justify-content-center row upper-header bg-white">
-    <div class="col-2">
-        <img class="logoPadding" width="88%" src="../images/LSE LOGO2.jpg">  
+<div class=" justify-content-center row bg-white">
+      <div class="col-2 .d-md-none .d-lg-block ">
+          <img class="logoPadding" width="88%" src="../images/LSE LOGO2.jpg">  
     </div>
-
-  
-   <div class="col-6  text-muted text-center header-mission"> <h4 class="header-mission-top-margin "><strong data-toggle="collapse" data-target="#visionsfour" aria-expanded="false" aria-controls="collapseExample" class="text">"A resource for arts that inspire come-unity!"</strong></h4>
+    <div class="col-md-6 text-muted text-center header-mission"> 
+          <h4 class="header-mission-top-margin "><strong data-toggle="collapse" data-target="#visionsfour" aria-expanded="false" aria-controls="collapseExample" class="text">"A resource for arts that inspire come-unity!"</strong></h4>
     </div>
-    <div class="nav-text col-2 sw-noPadding bg-secondary btn-block">
-        <button class= "btn btn-secondary btn-block btn-top-padding" data-toggle="collapse" data-target="#login" aria-expanded="false" aria-controls="collapseExample"> <i class="fas fa-key header-icons-padding"></i>LOGIN</button>
+    <div class="nav-text col-md-2 sw-noPadding bg-secondary btn-block">
+          <button (click)="closeRegister()" class= "btn btn-secondary btn-block btn-top-padding upper-header" data-toggle="collapse" data-target="#login" aria-expanded="false" aria-controls="collapseExample"> <i class="fas fa-key header-icons-padding"></i>LOGIN</button>
     </div>  
-    <div class="nav-text col-2 sw-noPadding bg-success btn-block">
-        <button class="btn btn-success btn-block btn-top-padding" data-toggle="collapse" data-target="#register" aria-expanded="false" aria-controls="collapseExample"><i class="fas fa-user-circle header-icons-padding"></i>REGISTER</button>
+    <div class="nav-text col-md-2 sw-noPadding bg-success btn-block">
+          <button (click)="closeLogin()" class="btn btn-success btn-block btn-top-padding upper-header" data-toggle="collapse" data-target="#register" aria-expanded="false" aria-controls="collapseExample"><i class="fas fa-user-circle header-icons-padding"></i>REGISTER</button>
     </div>
 </div>
 
 <div class="row bg-white header-row-slim">
-    <div class="col-4"></div>
-    <div class="col-4"></div>
-    <div class="col-4 align-content-center">
-        <!-- LSE lower header -->
-        <div class="justify-content-center row nav-text">
+      <div class="col-md-4"></div>
+      <div class="col-md-4"></div>
+      <div class="col-md-4 align-content-center">
+          <!-- LSE lower header -->
+          <div class="justify-content-center row nav-text">
             <ul class="nav nav-pills ">
-                <li class="nav-item dropdown">
-                    <a class="legend-center nav-link dropdown" data-toggle="dropdown" href="#"  aria-haspopup="true" aria-expanded="false">community.</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" routerLink="/community/vlog">Vlog</a>
-                        <a class="dropdown-item" routerLink="/community/bulletin">Word-of-Mouth</a>
-                    </div>
-                </li>
-            </ul>
-            <ul class="nav nav-pills">                       
-                <li class="nav-item dropdown">
-                  <a class="legend-center nav-link dropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">art.</a>
-                  <div class="dropdown-menu">
-                      <a class="dropdown-item" routerLink="/art/events">Events</a>
-                      <a class="dropdown-item" routerLink="/art/shopping">Shop</a>
-                  </div>
-              </li>
-            </ul>
-            <ul class="nav nav-pills">  
-                <li class="nav-item dropdown">
-                    <a class="legend-center nav-link dropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">resource.</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" routerLink="/resource/calendar">Calendar</a>
-                        <a class="dropdown-item" routerLink="/resource/services">Services</a>
-                    </div>
-                </li>
-            </ul>
-        </div>  
+              <li class="nav-item dropdown">
+                <a class="legend-center nav-link dropdown" data-toggle="dropdown" href="#"  aria-haspopup="true" aria-expanded="false">community.</a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" routerLink="/community/vlog">Vlog</a>
+                  <a class="dropdown-item" routerLink="/community/bulletin">Word-of-Mouth</a>
+            </div>
+      </li>
+</ul>
+<ul class="nav nav-pills">                       
+  <li class="nav-item dropdown">
+      <a class="legend-center nav-link dropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">art.</a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" routerLink="/art/events">Events</a>
+        <a class="dropdown-item" routerLink="/art/shopping">Shop</a>
+  </div>
+</li>
+</ul>
+<ul class="nav nav-pills">  
+      <li class="nav-item dropdown">
+        <a class="legend-center nav-link dropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">resource.</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" routerLink="/resource/calendar">Calendar</a>
+          <a class="dropdown-item" routerLink="/resource/services">Services</a>
     </div>
+</li>
+</ul>
+</div>  
 </div>
-  <!--     Container     -->
+</div>
+<!--     Container     -->
 <div class="collapse"  id="login">
-  <div class="container negmarg">
-    <hr>
-    <div class="display-4 text-center text-muted">ENTER LOGIN</div> <hr>
-       
-      <form (ngSubmit)="login()" #f="ngForm">
-        <!-- Form Field (Username) -->
-        <div class="form-group">
-          <input required style="text-align: center" type="text" name="userName" placeholder="username" class="form-control" ngModel #userName="ngModel">
-        </div>
-        
-        <!-- Form Field (Password) -->
-        <div class="form-group">
-          <input  required style="text-align: center"  type="text" name="password" placeholder="password" class="form-control" ngModel #password="ngModel">
-        </div>    
-
-        <!-- Sumbit Button -->
-        <button class="form btn btn-dark btn-block" type="submit">Submit Login</button>
-</form>
-<hr>
-</div>
-<br>
-
-  
+<app-checkout></app-checkout>
 </div>
 
 
 <div class="collapse" data-toggle="onclick" id="register">
-  <div class="container negmarg">
-   <hr>
-  <app-register></app-register>
-</div></div>
+      <div class="container negmarg">
+            <hr>
+            <app-register></app-register>
+      </div></div>
 
 
 
-<router-outlet></router-outlet>
+      <router-outlet></router-outlet>
 
 <!-- 
-      
-    ~~~~~~~~~~~~~~ -->
-    <!-- Footer Nav Bar -->     
-    <!-- ~~~~~~~~~~~~~~ -->
-    <div class="align-content-center container nobordernow">
+
+      ~~~~~~~~~~~~~~ -->
+      <!-- Footer Nav Bar -->     
+      <!-- ~~~~~~~~~~~~~~ -->
+      <div class="align-content-center container nobordernow">
 
 
-        <!-- CSS Code: Place this code in the document's head (between the 'head' tags) -->
-        <style>
-        table.GeneratedTable {
-          width: 100%;
-          background-color: transparent;
-          border-collapse: collapse;
-          border-width: 2px;
-          border-color: transparent;
-          border-style: solid;
-          color: #000000;
-      }
-
-      table.GeneratedTable td, table.GeneratedTable th {
-          border-width: 2px;
-          border-color: transparent;
-          border-style: none;
-          padding: 3px;
-      }
-
-      table.GeneratedTable thead {
-          background-color: transparent;
-      }
-  </style>
+          <!-- CSS Code: Place this code in the document's head (between the 'head' tags) -->
+        
 
 
 
@@ -128,14 +83,11 @@
   <nav id="bottom" class="navbar navbar-dark bg-success fixed-bottom" >
 
 
-    <!-- HTML Code: Place this code in the document's body (between the 'body' tags) where the table should appear -->
-    <table class="GeneratedTable">
-      <thead>
-        <tr>
-           <th>
-
-
-          
+      <!-- HTML Code: Place this code in the document's body (between the 'body' tags) where the table should appear -->
+      <table class="GeneratedTable">
+            <thead>
+                <tr>
+                     <th>
 
 
 
@@ -145,58 +97,61 @@
 
 
 
-    </th>
+
+
+
+                     </th>
 
 
 
 
 
-    <th><a routerLink="/home"><i class="fab fa-houzz footer-icons-white werth"></i></a></th>
-    <th><a routerLink="/login"><i class="fas fa-key footer-icons-white werth"></i></a></th>
-    <th><a routerLink="/register"><i class="fas fa-clipboard-list footer-icons-white werth"></i></a></th>
-    <th><a routerLink="/profile"><i class="fas fa-user-circle footer-icons-white werth"></i></a></th>
-    <th><a routerLink="/community/vlog"><i class="fas fa-video footer-icons-white werth"></i></a></th>
-    <th><a routerLink="/community/bulletin"><i class="far fa-comment-dots footer-icons-white werth"></i></a></th>
-    <th><a routerLink="/art/events"><i class="fas fa-bolt footer-icons-white werth"></i></a></th>
-    <th><a routerLink="/art/shopping"><i class="fas fa-store-alt footer-icons-white werth"></i></a></th>
-    <th><a routerLink="/resource/calendar"><i class="far fa-calendar-alt footer-icons-white werth"></i></a></th>
-    <th><a routerLink="/resource/services"><i class="fas fa-hand-holding-heart footer-icons-white werth"></i></a></th>
-    <th><a routerLink="/user/:cid/art/checkout"><i class="fas fa-at footer-icons-white werth"></i></a></th>
-    <th><a routerLink="/user/:cid/art/shopping"><i class="fas fa-shopping-cart footer-icons-white werth"></i></a></th>
-    <th><a routerLink="/user/:cid/art/billconfirm"><i class="fas fa-sign-out-alt footer-icons-white werth"></i></a></th>
-</tr>
-</thead>
+                     <th><a routerLink="/home"><i class="fab fa-houzz footer-icons-white werth"></i></a></th>
+                     <th><a routerLink="/login"><i class="fas fa-key footer-icons-white werth"></i></a></th>
+                     <th><a routerLink="/register"><i class="fas fa-clipboard-list footer-icons-white werth"></i></a></th>
+                     <th><a routerLink="/profile"><i class="fas fa-user-circle footer-icons-white werth"></i></a></th>
+                     <th><a routerLink="/community/vlog"><i class="fas fa-video footer-icons-white werth"></i></a></th>
+                     <th><a routerLink="/community/bulletin"><i class="far fa-comment-dots footer-icons-white werth"></i></a></th>
+                     <th><a routerLink="/art/events"><i class="fas fa-bolt footer-icons-white werth"></i></a></th>
+                     <th><a routerLink="/art/shopping"><i class="fas fa-store-alt footer-icons-white werth"></i></a></th>
+                     <th><a routerLink="/resource/calendar"><i class="far fa-calendar-alt footer-icons-white werth"></i></a></th>
+                     <th><a routerLink="/resource/services"><i class="fas fa-hand-holding-heart footer-icons-white werth"></i></a></th>
+                     <th><a routerLink="/user/:cid/art/checkout"><i class="fas fa-at footer-icons-white werth"></i></a></th>
+                     <th><a routerLink="/user/:cid/art/shopping"><i class="fas fa-shopping-cart footer-icons-white werth"></i></a></th>
+                     <th><a routerLink="/user/:cid/art/billconfirm"><i class="fas fa-sign-out-alt footer-icons-white werth"></i></a></th>
+               </tr>
+         </thead>
 
-</table>
-<!-- Codes by Quackit.com -->
+   </table>
+   <!-- Codes by Quackit.com -->
 
-<div align="align-content-center" class="container">
+   <div align="align-content-center" class="container">
 
 
 <!-- 
 <table class="GeneratedTable">
-  <thead>
-    <tr><th><a routerLink="/''"></i>1. Home</a></th>
-    <tr><th><a routerLink="/login"></i>2. Login</a></th>
-    <tr><th><a routerLink="/register"></i>3. Register</a></th>
-    <tr><th><a routerLink="/profile"></i>4. Profile</a></th>
-    <tr><th><a routerLink="/community/vlog"></i>5. VlogLyfe</a></th>
-    <tr><th><a routerLink="/community/vloggerpages"></i>6.</a>VloggerPage</th>
-    <tr><th><a routerLink="/user/:uid/:vid/community/myvlog"></i>7.</a>Post Vlog</th>
-    <tr><th><a routerLink="/community/bulletin"></i>8.</a>WordOfMouth</th>
-    <tr><th><a routerLink="/user/:uid/:bid/community/bulletin/post"></i>9.</a>ShoutOut</th>
-    <tr><th><a routerLink="/art/events"></i>10</a>Events</th>
-    <tr><th><a routerLink="/art/shopping"></i>11</a>Shop</th>
-    <tr><th><a routerLink="/user/:cid/art/shopping"></i>12</a>Shopping cart</th>
-    <tr><th><a routerLink="/resource/calendar"></i>13</a>Calendar</th>
-    <tr><th><a routerLink="/user/:uid/resource/calendarpost"></i>14</a>Calendar Post</th>
-    <tr><th><a routerLink="/resource/services"></i>15</a>Services</th>
-    <tr><th><a routerLink="/user/:uid/:vid/community/myvlog/preview"></i>16</a>Bid Request</th>
-    <tr><th><a routerLink="/user/:cid/art/billconfirm"></i>17</a>LogOut</th>
-    <tr><th><a routerLink="/user/:cid/art/checkout"></i>18</a>About Us</th>
-  
+<thead>
+<tr><th><a routerLink="/''"></i>1. Home</a></th>
+<tr><th><a routerLink="/login"></i>2. Login</a></th>
+<tr><th><a routerLink="/register"></i>3. Register</a></th>
+<tr><th><a routerLink="/profile"></i>4. Profile</a></th>
+<tr><th><a routerLink="/community/vlog"></i>5. VlogLyfe</a></th>
+<tr><th><a routerLink="/community/vloggerpages"></i>6.</a>VloggerPage</th>
+<tr><th><a routerLink="/user/:uid/:vid/community/myvlog"></i>7.</a>Post Vlog</th>
+<tr><th><a routerLink="/community/bulletin"></i>8.</a>WordOfMouth</th>
+<tr><th><a routerLink="/user/:uid/:bid/community/bulletin/post"></i>9.</a>ShoutOut</th>
+<tr><th><a routerLink="/art/events"></i>10</a>Events</th>
+<tr><th><a routerLink="/art/shopping"></i>11</a>Shop</th>
+<tr><th><a routerLink="/user/:cid/art/shopping"></i>12</a>Shopping cart</th>
+<tr><th><a routerLink="/resource/calendar"></i>13</a>Calendar</th>
+<tr><th><a routerLink="/user/:uid/resource/calendarpost"></i>14</a>Calendar Post</th>
+<tr><th><a routerLink="/resource/services"></i>15</a>Services</th>
+<tr><th><a routerLink="/user/:uid/:vid/community/myvlog/preview"></i>16</a>Bid Request</th>
+<tr><th><a routerLink="/user/:cid/art/billconfirm"></i>17</a>LogOut</th>
+<tr><th><a routerLink="/user/:cid/art/checkout"></i>18</a>About Us</th>
 
-  </thead>
+
+</thead>
 
 </table> -->
 
@@ -231,9 +186,9 @@ postcalendar          { path : 'user/:uid/resource/calendarpost' , component: Ca
 
 
 <div id="mySidenav" class="sidenav">
-  <a id="about">  <div class="dropdown-item "><i class="fas fa-list-ul "></i>
-              <div type="text" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                
+      <a id="about">  <div class="dropdown-item "><i class="fas fa-list-ul "></i>
+            <div type="text" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
             </div>
             <div class="bg-dark dropdown-menu float-right text-indent">
                 <a class="" routerLink="/''">1. Home</a><br>
@@ -254,6 +209,6 @@ postcalendar          { path : 'user/:uid/resource/calendarpost' , component: Ca
                 <a routerLink="/user/:uid/:vid/community/myvlog/preview">16. Bid Request</a><br>
                 <a routerLink="/user/:cid/art/billconfirm">17. LogOut</a><br>
                 <a routerLink="/user/:cid/art/checkout">18. About Us</a><br>
-            </div>
-        </div></a>
+          </div>
+    </div></a>
 </div>

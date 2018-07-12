@@ -2,11 +2,9 @@ export class BusinessIndustryBooleans {
 	
 	_id: string;
 	businessIndustryId: string;
-	acgricultureAnimals?: boolean;
 	businessServices?: boolean;
 	computerElectronics?: boolean;
-	protectiveServices?: boolean;
-	education?: boolean;
+	teaching?: boolean;
 	unionUtilities?: boolean;
 	governmentPublic?: boolean;
 	healthMedicine?: boolean;

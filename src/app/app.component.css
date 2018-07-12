@@ -74,3 +74,24 @@
 .werth{
     font-size: 20px;
 }
+
+table.GeneratedTable {
+    width: 100%;
+    background-color: transparent;
+    border-collapse: collapse;
+    border-width: 2px;
+    border-color: transparent;
+    border-style: solid;
+    color: #000000;
+}
+
+table.GeneratedTable td, table.GeneratedTable th {
+    border-width: 2px;
+    border-color: transparent;
+    border-style: none;
+    padding: 3px;
+}
+
+table.GeneratedTable thead {
+    background-color: transparent;
+}
