@@ -1,21 +1,21 @@
-export class WordOfMouth {
+export class ShoutOut {
 	
 	_id: string;
 	wordOfMouth_id: string;
-	artEventsFun: boolean;
-	education: boolean;
-	itemReview: boolean;
-	outdoors: boolean;
-	family: boolean;
-	fitness: boolean;
-	dining: boolean;
-	mainType: string;
-	womName: string;
-	description: string;
-	location: string;
-	date: string;
-	time: string;
-	website?: string;
+	artEventsFunWom: boolean;
+	educationWom: boolean;
+	itemReviewWom: boolean;
+	outdoorsWom: boolean;
+	familyWom: boolean;
+	fitnessWom: boolean;
+	diningWom: boolean;
+	mainTypeWom: string;
+	nameWom: string;
+	descriptionWom: string;
+	locationWom: string;
+	dateWom: string;
+	timeWom: string;
+	websiteWom?: string;
 	
 	
 

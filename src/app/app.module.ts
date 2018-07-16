@@ -25,8 +25,9 @@ import { LoginComponent } from './components/user/login/login.component';
 
 import { Routing } from './app.routing';
 import { VloggerpagesComponent } from './components/community/vlog/vloggerpages/vloggerpages.component';
-
+import { ShoutOutService } from './Services/shoutout.service.client';
 import { UserService } from './Services/user.service.client'
+import { CalPostService } from './Services/calendarpost.service.client'
 
 @NgModule({
   declarations: [
@@ -55,9 +56,11 @@ import { UserService } from './Services/user.service.client'
     BrowserModule,
     Routing,
     FormsModule,
-    HttpModule
+    HttpModule,
+
   ],
-  providers: [UserService],
+  providers: [UserService, ShoutOutService, CalPostService],
   bootstrap: [AppComponent]
+
 })
 export class AppModule { }
