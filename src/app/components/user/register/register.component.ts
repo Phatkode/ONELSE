@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms'
 import { UserService } from '../../../Services/user.service.client'
 import { User } from '../../../models/user.model.client'
 import { Router } from '@angular/router'
+declare var jQuery: any;
 
 @Component({
   selector: 'app-register',
@@ -42,11 +43,16 @@ export class RegisterComponent implements OnInit {
   artistPhone: string;
 
   constructor(private userService: UserService, private router: Router) { }
-
   ngOnInit() {
       this.passwordError = false;
       this.usernameError = false;
   }
+
+
+  closeRegister() {
+    jQuery("#register").collapse('hide')
+  }
+
 
   register(){
   	// personal
@@ -61,7 +67,7 @@ export class RegisterComponent implements OnInit {
   	this.businessContact = this.registerForm.value.businessContact;
   	this.businessTitle = this.registerForm.value.businessTitle;
   	this.businessName = this.registerForm.value.businessName;
-  	this.businessAddress = this.registerForm.value.BusinessAddress;
+  	this.businessAddress = this.registerForm.value.businessAddress;
   	this.businessIndustry = this.registerForm.value.businessIndustry;
   	this.businessWebsite = this.registerForm.value.businessWebsite;
 	  this.businessEmail = this.registerForm.value.businessEmail;
@@ -80,12 +86,9 @@ export class RegisterComponent implements OnInit {
     } else {
         this.passwordError = false;
         this.userService.findUserByUsername(this.userName).subscribe(
-            (user: User) => {
-                this.usernameError = true;
-            },
-            (error: any) => {
-                const newUser: User = {
-                    _id: "",
+            (data: any) => {
+                if(!data) {
+                      const newUser: User = {
                     birthday: this.birthday,
                     email: this.email,
                     userName: this.userName,
@@ -109,14 +112,21 @@ export class RegisterComponent implements OnInit {
                     artistWebsite: this.artistWebsite,
                     artistPhone: this.artistPhone
                 };
+                     
                 this.userService.createUser(newUser).subscribe(
-                    (user: User) => {
-                        var id = user._id;
+                    (data: User) => {
+                        var id = data._id;
                         this.router.navigate(['user', id]);
+                    },
+                    (error: any) => {
+                      this.usernameError = true;
                     }
-                )
+                );
             }
-        )
+            this.closeRegister();
+       
+          }
+        );
     }
   }
 }

@@ -59,11 +59,10 @@ export class UserService {
     const url = this.baseUrl + '/api/user?userName='+userName + '&password=' + password;
           return this.http.get(url).pipe(map(
 				(response: Response) => {
-          console.log(response.json())
 					return response.json();
 				}
-          	))
-        }
+        ))
+      }
 
   updateUser(userId: string, user: User) { 
 

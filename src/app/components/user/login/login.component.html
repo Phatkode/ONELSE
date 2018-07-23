@@ -1,79 +1,162 @@
 
+      <div class="container negmarg">
+            <hr>
+            <div class="display-4 text-center text-muted">ENTER LOGIN</div> <hr>
 
-<div class="row">
-<div class="col-md-4">
+            <span class="alert alert-danger form-control" *ngIf="userName.invalid && userName.touched">Please enter username!</span>
+            <span class="alert alert-danger form-control" *ngIf="password.invalid && password.touched">Please enter password!</span>
+          
+			<div *ngIf="errorFlag" class="alert alert-danger">Invalid username or password</div>
+            <form (ngSubmit)="login()" #f="ngForm">
+                <!-- Form Field (Username) -->
+                <div class="form-group">
+                    <input required style="text-align: center" type="text" name="userName" placeholder="username" class="form-control" ngModel #userName="ngModel">
+              </div>
 
-<div class="containerpermission container">
-  <img src="../../../images/IMAG1.jpg" alt="Avatar" class="image">
-  <div class="bg-danger overlay">
-    <div data-toggle="collapse" data-target="#visions" aria-expanded="farse" aria-controls="collapseExample" class="text"><i>community.</i></div>
+              <!-- Form Field (Password) -->
+              <div class="form-group">
+                    <input  required style="text-align: center"  type="password" name="password" placeholder="password" class="form-control" ngModel #password="ngModel">
+              </div>    
+
+              <!-- Sumbit Button -->
+              <button [disabled]="f.invalid" class="form btn btn-dark btn-block" type="submit">Submit Login</button>
+        </form>
+        <hr>
   </div>
-</div></div>
+  <br>
 
-<div class="col-md-4">
 
-<div class="containerpermission container">
-  <img src="../../../images/IMAG2.jpg" alt="Avatar" class="image">
-  <div class="bg-secondary overlay">
-    <div data-toggle="collapse" data-target="#visionstoo" aria-expanded="farse" aria-controls="collapseExample" class="text"><i>art.</i></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <br> -->
+<!-- Container -->
+<!-- <div class="container">
+
+	<div class="row"> -->
+	<!-- Register label -->
+	
+
+	
+
+
+
+
+<!-- <div class="col-md-3"><h2  align="center">ABOUT US</h2></div>
+<div class="col-md-3"><button class="container-fluid btn btn-danger" data-toggle="popover" title="show/hide personal panel" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    MISSION</button></div>
+<div class="col-md-3">	<button class="container-fluid btn btn-secondary" data-toggle="popover" title="show/hide personal panel" data-toggle="collapse" data-target="#collapseExampleOne" aria-expanded="false" aria-controls="collapseExample1">
+    LEGACY</button></div>
+<div class="col-md-3">	<button class="container-fluid btn btn-success" data-toggle="popover" title="show/hide personal panel" data-toggle="collapse" data-target="#collapseExampleTwo" aria-expanded="false" aria-controls="collapseExampl">
+    ARAFAT AKBAR</button></div>
+ -->
+
+
+<!--   
+ 
+
+
+
+
+	</div>
+	<br>
+
+
+
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+  				
+	<div class="btn btn-danger container container-fluid"> 
+		<h5  class="display-4" align="left" >LSE MISSION</h5>
+			
+			
+			<hr>
+			<p>MISSION</p><br>
+
+	</div>
+</div>
+<br><br>
   </div>
-</div></div>
+</div>
+ -->
 
-<div class="col-md-4">
 
-<div class="containerpermission container">
-  <img src="../../../images/IMAG3.jpg" alt="Avatar" class="image">
-  <div class="bg-success overlay">
-    <div data-toggle="collapse" data-target="#visionsthree" aria-expanded="farse" aria-controls="collapseExample" class="text"><i>resource.</i></div>
+
+
+
+<!-- 
+
+<div class="container">
+<div class="collapse" id="collapseExampleOne">
+  <div class="card card-body"> -->
+<!-- BUSINESS SECTION -->
+	<!-- <div class="btn btn-secondary container container-fluid"> 
+		<h5  class="display-4" align="center" >LSE LEGACY</h5>
+
+		<hr>
+			<p>FOUNDATION</p><br>
+
+			<hr>
+			<p>LEGACY</p><br>
+
+			<hr>
+			<p>VISION</p><br>
+
+	</div>
+</div>
+<br><br>
   </div>
-</div></div>
-</div>
+</div> -->
+
+<!-- ARTIST SECTION -->
+<!-- <div class="container">
+	<div class="collapse" id="collapseExampleTwo">
+  <div class="card card-body">
+	<div class="btn btn-success container container-fluid"> 
+		<h5  class="display-4" align="right" >ARAFAT AKBAR</h5>
+		
 
 
-<div class="collapse" id="visionsfour">
-	<div class="align-content-center row">
-		<div class="col-md-5 column-content">	
-			<h6  class="display-4 vertical-mid"><small class="text-muted">LSE</small><i class="">.vision</i>  |</h6>
-		</div> 
-		<div  align="left" class="col-md-7">		
-			<hr><h6 class="textbordermiddle text-left">Lightspeed is a resource for arts that inspire community. We use the power of art to promote culture, “love” and “light”. Our work builds community, inspires healthy lifestyles and supports the business of art.  Our service model is currently under construction but please explore this abbreviated site and discover the great people, creativity and resources we have to offer.  Love and Light."<i class="float-right far fa-window-close"></i></h6><hr>
-		</div>
+		<hr>
+			<p>BUSINESS</p><br>
+
+			<hr>
+			<p>ART</p><br>
+
+			<hr>
+			<p>LINKS</p><br>
+
 	</div>
 </div>
+<br><br>
+  </div>
 
 
 
 
-
-<div class="bg-danger collapse" id="visions">	
-<div class="bg danger row">
-		<div align="right" class="header-center col-md-5 bg-danger ">	
-			<h6 class="visionsfont bg-danger display-4 "><small>COMMUNITY</small><i class="cream-color">.focus</i> |</h6>
-		</div>  
-		<div  align="left" class="textbordermiddle text-left bg-danger col-md-7">		
-			<hr><h6 class="textbordermiddle text-left visionsfont">People are better together and everyone gains in exchanges where people feel safe to share life. We measure our success based on our ability to create places where life, culture and diversity can thrive. LSE is diligently and creatively working to make it easy for people to build community around experiences, common interests, business, and events.  Checkout our Vlog Pages and be inspired by the action or checkout our word of mouth feed to share your world and find activities others recommend in world's near you."<i class="float-right far fa-window-close"></i></h6><hr>
-		</div>
-	</div>
 </div>
-
-
-<div class="bg-secondary collapse" id="visionstoo">			
-			<div class="bg-secondary row">
-		<div align="right" class="bg-secondary header-center col-md-5">	
-			<h5 class="display-4 visionsfont "><small>ART</small><i class="cream-color">.driven</i> |</h5>
-		</div> 
-		<div  align="left" class="textbordermiddle bg-secondary col-md-7">		
-			<hr><h6 class="textbordermiddle text-left visionsfont">“Art is life itself” and “there is no action void of art”. To LSE this says art is not just something we enjoy, it is a fundamental part of life and survival.  Not only do we want to promote the art of your life, we want to help you appreciate more art in your life through connections to events, businesses and individuals creating ways for you to discover, experience and patronize content producers.  Checkout our events and gift shop page and appreciate the art."<i class="float-right far fa-window-close"></i></h6><hr>
-		</div>
-	</div>
-</div>
-
-<div class="bg-success collapse" id="visionsthree">			
-			<div class="bg-success row">
-		<div align="right" class="bg-success col-md-5 header-center">	
-			<h5 class="display-4 visionsfont"><small>RESOURCE</small><i class="cream-color">.full</i> |</h5>
-		</div> 
-		<div align="left" class="hrtwo textbordermiddle col-md-7">		
-			<hr><h6 class="textbordermiddle text-left visionsfont">the core of LSE revolves around community.  We not only want to see people benefit from cooperation, but we also believe teamwork is the best model for individual success. but as a company we want to be a model of cooperation and team spirit.  We believe our individual success in the art world does not compete with our commitment to support the arts.  In this way we take the success of the arts, the development of culture.  By honoring small sacrifices "<i class="float-right far fa-window-close"></i></h6><hr>
-		</div>
-	</div>
+						 -->

@@ -2,8 +2,12 @@ export class UserImages {
 	
 	_id: string;
 	userImages_id: string;
-	userImage: string;
-	userCoverImage: string;
+	userCoverImage?: string;
+	userProfileImage: string;
+	userBusinessImageOne?: string;
+	userBusinessImageTwo?: string;
+	userArtistImageOne?: string;
+	userArtistImageTwo?: string;
 
 	
 	

@@ -1,8 +1,6 @@
 
-
 export class User {
-	_id: string;
-
+	_id?: string;
 // 	personal info
 	birthday: string;
 	email: string;
@@ -19,7 +17,6 @@ export class User {
 	family?: boolean;
 	fitness?: boolean;
 	dining?: boolean;
-
 // 	business info	
 	businessContact?: string;
 	businessTitle?: string;
@@ -46,7 +43,6 @@ export class User {
 	salesDistribution?: boolean;
 	culinaryArts?: boolean;
 	professionalArtist?: boolean;
-
 // 	artist info
 	artistName?: string;
 	artistEmail?: string;

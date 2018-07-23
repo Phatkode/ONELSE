@@ -1,27 +1,28 @@
-<div class="row container">
-    <!-- Register label -->
-    <div class="col-md-md-3">
-        <h2  align="center">Register</h2>
-    </div>
-
-    <div class="col-md-md-3">
-        <button class="container-fluid btn btn-danger" data-toggle="popover" title="show/hide personal panel" data-toggle="collapse" data-target="#registertwo" aria-expanded="false" aria-controls="collapseExample">
-        PERSONAL</button></div>
+    <div class="row container">
+        <!-- Register label -->
         <div class="col-md-md-3">
-          <button class="container-fluid btn btn-secondary" data-toggle="popover" title="show/hide personal panel" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">
-              BUSINESS
-          </button></div>
-          <div class="col-md-md-3">
-            <button class="container-fluid btn btn-success" data-toggle="popover" title="show/hide personal panel" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
-            ARTIST
-            </button>
-         </div>
-      </div>
-      <br>
-      
-      <div *ngIf="usernameError" class='alert alert-danger'>The username is taken, please try another one</div>
-      <div *ngIf="passwordError" class='alert alert-danger'>The passwords you entered are matched</div>
-      <form (ngSubmit)="register()" #f="ngForm">
+            <h2  align="center">Register</h2>
+        </div>
+
+        <div class="col-md-md-3">
+            <button class="container-fluid btn btn-danger" data-toggle="popover" title="show/hide personal panel" data-toggle="collapse" data-target="#registertwo" aria-expanded="false" aria-controls="collapseExample">
+            PERSONAL</button>
+        </div>
+            <div class="col-md-md-3">
+              <button class="container-fluid btn btn-secondary" data-toggle="popover" title="show/hide personal panel" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">
+                  BUSINESS
+              </button></div>
+              <div class="col-md-md-3">
+                <button class="container-fluid btn btn-success" data-toggle="popover" title="show/hide personal panel" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
+                    ARTIST
+                </button>
+            </div>
+        </div>
+        <br>
+
+        <div *ngIf="usernameError" class='alert alert-danger'>The username is taken, please try another one</div>
+        <div *ngIf="passwordError" class='alert alert-danger'>The passwords you entered are matched</div>
+        <form (ngSubmit)="register()" #f="ngForm">
           <div class="collapse" id="registertwo">
             <div class="card card-body">
               <!-- PERSONAL SECTION -->
@@ -86,7 +87,7 @@
       </div>
       <!-- form field website -->
       <div  class="form-group">
-          <input style="text-align: center"type="text" ngModel #businessWebsite="ngModel" name="businessWebsite" placeholder="business website" class="form-control">
+          <input style="text-align: center"type="text" name="businessWebsite" ngModel #businessWebsite="ngModel"  placeholder="business website" class="form-control">
       </div>
       <!-- form field bizz email -->
       <div  class="form-group">
@@ -143,7 +144,7 @@
 <!--   Register Button   -->
 <button [disabled]="f.invalid" type="submit" class="btn btn-dark">Register</button>
 <!--    Cancel  Button   -->
-<a class= "btn btn-secondary" routerLink="/login">Cancel</a>
+<button class= "btn btn-secondary" (click)="closeRegister()" type="button">Cancel</button>
 </form>
 
 <hr>

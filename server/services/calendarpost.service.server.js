@@ -31,7 +31,6 @@ app.delete("/api/user/:uid", deleteShoutOut);
  	res.json(ShoutOuts);
 }
 
-
 function findShoutOutsByUser(req, res){
 	var uid = req.params["uid"];	
  	for (let x = 0; x <ShoutOuts.length; x++){
@@ -42,7 +41,6 @@ function findShoutOutsByUser(req, res){
  	}
  }
 
-
 function postShoutOut(req, res){
 	var ShoutOut = req.body;
 	shoutOut_id = Math.floor(Math.random() * 10000).toString();
@@ -50,7 +48,6 @@ function postShoutOut(req, res){
 	res.json(ShoutOut);
 	}
 }
-
 
 function updateShoutOut(req, res){
 	var ShoutOut = req.body;

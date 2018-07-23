@@ -1,9 +1,11 @@
 <br>
+<div *ngIf="submitSuccess" class="alert alert-success">Update successfully!</div>
 <!-- .......................................NON-EDITABLE PROFILE PAGE...................................... -->
 <div *ngIf="!editable">
 	<div class="container">
 		<div class="row">
 			<!-- .......................................ARTIST NON-EDITABLE...................................... -->
+
 			<div class="btn btn-danger col-md-4">
 				<h5  align="left">*PERSONAL</h5>
 				<div class="form-group">{{user.birthday}}</div>		
@@ -13,18 +15,18 @@
 				<h5><small>PERSONAL INTERESTS</small></h5>
 				<table class="smallTableText">
 					<tr>   
-						<td><input type="checkbox" name="events" ngModel="{{user.events}}" #events="ngModel" value="events">Events</td>
-						<td><input type="checkbox" name="education" ngModel="{{user.education}}" #education="ngModel" value="education">Education</td>
-						<td><input type="checkbox" name="itemReview" ngModel="{{user.itemReview}}" #itemReview="ngModel" value="itemReview">Item Review</td>
+						<td class="oleoScript" *ngIf="user.events">Events</td>
+						<td class="oleoScript"  *ngIf="user.education">Education</td>
+						<td class="oleoScript"  *ngIf="user.itemReview">Item Review</td>
 					</tr>
 					<tr>
-						<td><input type="checkbox" name="smallBizz" ngModel="{{user.smallBizz}}" #smallBizz="ngModel" value="smallBizz">Small Bizz</td>
-						<td><input type="checkbox" name="family" ngModel="{{user.outdoors}}" #outdoors="ngModel" value="outdoors">Outdoors</td>
-						<td><input type="checkbox" name="family" ngModel="{{user.family}}" #family="ngModel" value="family">Family</td>						
+						<td class="oleoScript"  *ngIf="user.smallBizz">Small Bizz</td>
+						<td class="oleoScript"  *ngIf="user.outdoors">Outdoors</td>
+						<td class="oleoScript"  *ngIf="user.family">Family</td>				
 					</tr>
 					<tr> 
-						<td><input type="checkbox" name="fitness" ngModel="{{user.fitness}}" #fitness="ngModel" value="fitness">Fitness</td>
-						<td><input type="checkbox" name="dining" ngModel="{{user.dining}}" #dining="ngModel" value="dining">Dining</td>
+						<td class="oleoScript"  *ngIf="user.fitness">Fitness</td>
+						<td class="oleoScript"  *ngIf="user.dining">Dining</td>
 					</tr>
 				</table>	
 			</div>
@@ -97,32 +99,32 @@
 					<h5><small>BUSINESS SKILLS</small></h5>
 					<table class="smallTableText">
 						<tr>   
-							<td><input type="checkbox" name="computerElectronics" ngModel="{{user.computerElectronics}}" #computerElectronics="ngModel" value="computerElectronics">computerElectronics</td>
-							<td><input type="checkbox" name="teaching" ngModel="{{user.teaching}}" #teaching="ngModel" value="teaching">teaching</td>
-							<td><input type="checkbox" name="unionUtilities" ngModel="{{user.unionUtilities}}" #unionUtilities="ngModel" value="unionUtilities">unionUtilities</td>
+							<td class="oleoScript"  *ngIf="user.computerElectronics">computerElectronics</td>
+							<td class="oleoScript"  *ngIf="user.teaching">teaching</td>
+							<td class="oleoScript"  *ngIf="user.unionUtilities">unionUtilities</td>
 						</tr>
 						<tr>
-							<td><input type="checkbox" name="governmentPublic" ngModel="{{user.governmentPublic}}" #governmentPublic="ngModel" value="governmentPublic">governmentPublic</td>
-							<td><input type="checkbox" name="healthMedicine" ngModel="{{user.healthMedicine}}" #healthMedicine="ngModel" value="healthMedicine">healthMedicine</td>
-							<td><input type="checkbox" name="manufacturing" ngModel="{{user.manufacturing}}" #manufacturing="ngModel" value="manufacturing">manufacturing</td>
+							<td class="oleoScript"  *ngIf="user.governmentPublic">governmentPublic</td>
+							<td class="oleoScript"  *ngIf="user.healthMedicine">healthMedicine</td>
+							<td class="oleoScript"  *ngIf="user.manufacturing">manufacturing</td>
 						</tr>
 						<tr>
-							<td><input type="checkbox" name="mediaEntertainment" ngModel="{{user.mediaEntertainment}}" #mediaEntertainment="ngModel" value="mediaEntertainment">mediaEntertainment</td>
-							<td><input type="checkbox" name="businessServices" ngModel="{{user.businessServices}}" #businessServices="ngModel" value="businessServices">businessServices</td>
-							<td><input type="checkbox" name="nonprofitAdvocacy" ngModel="{{user.nonprofitAdvocacy}}" #nonprofitAdvocacy="ngModel" value="nonprofitAdvocacy">nonprofitAdvocacy</td>
+							<td class="oleoScript"  *ngIf="user.mediaEntertainment">mediaEntertainment</td>
+							<td class="oleoScript"  *ngIf="user.businessServices">businessServices</td>
+							<td class="oleoScript"  *ngIf="user.nonprofitAdvocacy">nonprofitAdvocacy</td>
 						</tr>
 						<tr>
-							<td><input type="checkbox" name="realestateConstruction" ngModel="{{user.realestateConstruction}}" #realestateConstruction="ngModel" value="realestateConstruction">realestateConstruction</td>
-							<td><input type="checkbox" name="entrepreneurContractor" ngModel="{{user.entrepreneurContractor}}" #entrepreneurContractor="ngModel" value="entrepreneurContractor">entrepreneurContractor</td>
-							<td><input type="checkbox" name="customerService" ngModel="{{user.customerService}}" #customerService="ngModel" value="customerService">customerService</td>
+							<td class="oleoScript"  *ngIf="user.realestateConstruction">realestateConstruction</td>
+							<td class="oleoScript"  *ngIf="user.entrepreneurContractor">entrepreneurContractor</td>
+							<td class="oleoScript"  *ngIf="user.customerService">customerService</td>
 						</tr>
 						<tr>
-							<td><input type="checkbox" name="trasportationTravel" ngModel="{{user.trasportationTravel}}" #trasportationTravel="ngModel" value="trasportationTravel">trasportationTravel</td>
-							<td><input type="checkbox" name="salesDistribution" ngModel="{{user.salesDistribution}}" #salesDistribution="ngModel" value="salesDistribution">salesDistribution</td>
-							<td><input type="checkbox" name="culinaryArts" ngModel="{{user.culinaryArts}}" #culinaryArts="ngModel" value="culinaryArts">culinaryArts</td>
+							<td class="oleoScript"  *ngIf="user.trasportationTravel">trasportationTravel</td>
+							<td class="oleoScript"  *ngIf="user.salesDistribution">salesDistribution</td>
+							<td class="oleoScript"  *ngIf="user.culinaryArts">culinaryArts</td>
 						</tr>
 						<tr>
-							<td><input type="checkbox" name="professionalArtist" ngModel="{{user.professionalArtist}}" #professionalArtist="ngModel" value="professionalArtist">professionalArtist</td>
+							<td class="oleoScript"  *ngIf="user.professionalArtist">professionalArtist</td>
 						</tr>
 					</table>
 				</div>
@@ -190,27 +192,27 @@
 					<h5><small>ART MEDIUMS</small></h5>
 					<table class="smallTableText">
 						<tr>   
-							<td><input type="checkbox" name="digitalGraphics" ngModel="{{user.digitalGraphics}}" #digitalGraphics="ngModel" value="digitalGraphics">digitalGraphics</td>
-							<td><input type="checkbox" name="canvasArt" ngModel="{{user.canvasArt}}" #canvasArt="ngModel" value="canvasArt">canvasArt</td>
-							<td><input type="checkbox" name="webDesign" ngModel="{{user.webDesign}}" #webDesign="ngModel" value="webDesign">webDesign</td>
+							<td class="oleoScript"  *ngIf="user.digitalGraphics">digitalGraphics</td>
+							<td class="oleoScript"  *ngIf="user.canvasArt">canvasArt</td>
+							<td class="oleoScript"  *ngIf="user.webDesign">webDesign</td>
 						</tr>
 						<tr>
-							<td><input type="checkbox" name="photography" ngModel="{{user.photography}}" #photography="ngModel" value="photography">photography</td>
-							<td><input type="checkbox" name="videography" ngModel="{{user.videography}}" #videography="ngModel" value="videography">videography</td>
-							<td><input type="checkbox" name="lyricalArts" ngModel="{{user.lyricalArts}}" #lyricalArts="ngModel" value="lyricalArts">lyricalArts</td>
+							<td class="oleoScript"  *ngIf="user.photography">photography</td>
+							<td class="oleoScript"  *ngIf="user.videography">videography</td>
+							<td class="oleoScript"  *ngIf="user.lyricalArts">lyricalArts</td>
 						</tr>
 						<tr>
-							<td><input type="checkbox" name="vocalInstrument" ngModel="{{user.vocalInstrument}}" #vocalInstrument="ngModel" value="vocalInstrument">vocalInstrument</td>
-							<td><input type="checkbox" name="theater" ngModel="{{user.theater}}" #theater="ngModel" value="theater">theater</td>
-							<td><input type="checkbox" name="modeling" ngModel="{{user.modeling}}" #modeling="ngModel" value="modeling">modeling</td>
+							<td class="oleoScript"  *ngIf="user.vocalInstrument">vocalInstrument</td>
+							<td class="oleoScript"  *ngIf="user.theater">theater</td>
+							<td class="oleoScript"  *ngIf="user.modeling">modeling</td>
 						</tr>
 						<tr>
-							<td><input type="checkbox" name="acting" ngModel="{{user.acting}}" #acting="ngModel" value="acting">acting</td>
-							<td><input type="checkbox" name="comedy" ngModel="{{user.comedy}}" #comedy="ngModel" value="comedy">comedy</td>
-							<td><input type="checkbox" name="dance" ngModel="{{user.dance}}" #dance="ngModel" value="dance">dance</td>
+							<td class="oleoScript"  *ngIf="user.acting">acting</td>
+							<td class="oleoScript"  *ngIf="user.comedy">comedy</td>
+							<td class="oleoScript"  *ngIf="user.dance">dance</td>
 						</tr>
 						<tr>
-							<td><input type="checkbox" name="musicProduction" ngModel="{{user.musicProduction}}" #musicProduction="ngModel" value="musicProduction">musicProduction</td>
+							<td class="oleoScript"  *ngIf="user.musicProduction">musicProduction</td>
 						</tr>
 					</table>	
 				</div>			
@@ -287,18 +289,20 @@
 					<h5><small>PERSONAL INTERESTS</small></h5>
 					<table class="smallTableText">
 						<tr>   
-							<td><input type="checkbox" name="events" ngModel="{{user.events}}" #events="ngModel" value="events">Events</td>
-							<td><input type="checkbox" name="education" ngModel="{{user.education}}" #education="ngModel" value="education">Education</td>
-							<td><input type="checkbox" name="itemReview" ngModel="{{user.itemReview}}" #itemReview="ngModel" value="itemReview">Item Review</td>
+							<td>
+								<input type="checkbox" name="events" ngModel="{{user.events}}" #events="ngModel">Events
+							</td>
+							<td><input type="checkbox" name="education" ngModel="{{user.education}}" #education="ngModel" >Education</td>
+							<td><input type="checkbox" name="itemReview" ngModel="{{user.itemReview}}" #itemReview="ngModel" >Item Review</td>
 						</tr>
 						<tr>
-							<td><input type="checkbox" name="smallBizz" ngModel="{{user.smallBizz}}" #smallBizz="ngModel" value="smallBizz">Small Bizz</td>
-							<td><input type="checkbox" name="family" ngModel="{{user.outdoors}}" #outdoors="ngModel" value="outdoors">Outdoors</td>
+							<td><input type="checkbox" name="smallBizz" ngModel="{{user.smallBizz}}" #smallBizz="ngModel" >Small Bizz</td>
+							<td><input type="checkbox" name="outdoors" ngModel="{{user.outdoors}}" #outdoors="ngModel" >Outdoors</td>
 							<td><input type="checkbox" name="family" ngModel="{{user.family}}" #family="ngModel" value="family">Family</td>						
 						</tr>
 						<tr> 
-							<td><input type="checkbox" name="fitness" ngModel="{{user.fitness}}" #fitness="ngModel" value="fitness">Fitness</td>
-							<td><input type="checkbox" name="dining" ngModel="{{user.dining}}" #dining="ngModel" value="dining">Dining</td>
+							<td><input type="checkbox" name="fitness" ngModel="{{user.fitness}}" #fitness="ngModel">Fitness</td>
+							<td><input type="checkbox" name="dining" ngModel="{{user.dining}}" #dining="ngModel">Dining</td>
 						</tr>
 					</table>
 				</div>
@@ -307,10 +311,17 @@
 					<p>"USER STATUS's"</p>
 					<img class="img-rounded" src="../../../../images/Prof.png" alt="" width="auto" >
 					<br>
-					<p></p> 
-					<br>
+						<form ngNoForm action="{{baseUrl}}/api/user/{{uid}}/upload" method="post" enctype="multipart/form-data">
+                                <div>
+                                <label class='form-group'>Upload</label>
+                                         <input  name="myFile"   type="file" class="form-control"/>
+                                         <br>
+                                         <button type="submit" class="btn btn-block btn-outline-primary">Upload Image</button>
+                                 </div>
+                        </form>
+					<br>					
 					<p></p>
-					<button (click)="update()"  type="submit" style="color: white" class="btn-block btn-dark">Save Profile</button>
+					<button type="submit" style="color: white" class="btn-block btn-dark">Save Profile</button>
 					<br>
 					<a style="color: white" class="btn-block btn-secondary" data-toggle="collapse" data-target="#collapseExampleEditBizz" aria-expanded="false" aria-controls="collapseExampleEditBizz">Show/Hide "Bizz"</a>
 					<br>
@@ -363,10 +374,10 @@
 						<div class="btn btn-secondary col-md-4">
 							<h5  align="center" >BUSINESS</h5>
 							<div  class="form-group">
-								<input style="text-align: center"type="text" name="business contact" ngModel="{{user.businessContact}}" placeholder="business contact" class="form-control">
+								<input style="text-align: center"type="text" name="businessContact" ngModel="{{user.businessContact}}" placeholder="business contact" class="form-control">
 							</div>
 							<div class="form-group">
-								<input style="text-align: center"type="text" ngModel="{{user.businessTitle}}" name="title" placeholder="business title" class="form-control">
+								<input style="text-align: center"type="text" ngModel="{{user.businessTitle}}" name="businessTitle" placeholder="business title" class="form-control">
 							</div>
 							<div  class="form-group">
 								<input style="text-align: center"type="text" name="businessName" ngModel="{{user.businessName}}" placeholder="business name" class="form-control">
@@ -471,34 +482,34 @@
 						<div class="btn btn-success col-md-4">
 							<h5  align="right" >ARTIST</h5>
 							<div class="form-group">
-								<input style="text-align: right" type="text" name="email" placeholder="email" class="form-control">
+								<input style="text-align: right" type="text" name="email" ngModel="{{user.email}}" class="form-control">
 							</div>
 							<div class="form-group">
-								<input style="text-align: right" type="text" name="social media url 1" placeholder="social media url 1" class="form-control">
+								<input style="text-align: right" type="text" name="social media url 1" ngModel="{{user.socialMedia1}}"  class="form-control">
 							</div>					
 							<!-- ~~~~~~~~~~~~~~~~~~~ -->
 							<!-- Form field Username -->
 							<!-- ~~~~~~~~~~~~~~~~~~~ -->
 							<div class="form-group">
-								<input style="text-align: right" type="text" name="social media url 2" placeholder="social media url 2" class="form-control">
+								<input style="text-align: right" type="text" name="social media url 2" ngModel="{{user.socialMedia2}}" class="form-control">
 							</div>
 							<!-- ~~~~~~~~~~~~~~~~~~~ -->
 							<!-- Form field Username -->
 							<!-- ~~~~~~~~~~~~~~~~~~~ -->
 							<div class="form-group">
-								<input style="text-align: right" type="text" name="social media url 3" placeholder="social media url 3" class="form-control">
+								<input style="text-align: right" type="text" name="social media url 3" ngModel="{{user.socialMedia3}}" class="form-control">
 							</div>					
 							<!-- ~~~~~~~~~~~~~~~~~~~ -->
 							<!-- Form field Username -->
 							<!-- ~~~~~~~~~~~~~~~~~~~ -->
 							<div class="form-group">
-								<input style="text-align: right" type="text" name="website" placeholder="website" class="form-control">
+								<input style="text-align: right" type="text" name="website" ngModel="{{user.artistWebsite}}" class="form-control">
 							</div>					
 							<!-- ~~~~~~~~~~~~~~~~~~~ -->
 							<!-- Form field Username -->
 							<!-- ~~~~~~~~~~~~~~~~~~~ -->
 							<div class="form-group">
-								<input style="text-align: right" type="text" name="phone" placeholder="phone" class="form-control">
+								<input style="text-align: right" type="text" name="phone" ngModel="{{user.artistPhone}}" class="form-control">
 							</div>
 							<hr>
 							<h5><small>ART MEDIUMS</small></h5>

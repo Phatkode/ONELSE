@@ -10,7 +10,7 @@ import { Router } from '@angular/router'
   templateUrl: './calendarpost.component.html',
   styleUrls: ['./calendarpost.component.css']
 })
-export class CalendarpostComponent implements OnInit {
+export class CalendarPostComponent implements OnInit {
 
 
 

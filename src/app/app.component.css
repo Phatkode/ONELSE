@@ -72,7 +72,21 @@
 }
 
 .werth{
-    font-size: 20px;
+    font-size: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 6px;
+    color:white;
+    text-align: center;
+}
+
+.werthYellow{
+    font-size: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 6px;
+    color:yellow;
+    text-align: center;
 }
 
 table.GeneratedTable {
@@ -95,3 +109,4 @@ table.GeneratedTable td, table.GeneratedTable th {
 table.GeneratedTable thead {
     background-color: transparent;
 }
+

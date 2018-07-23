@@ -2,55 +2,67 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-
+import { Routing } from './app.routing';
 import { AppComponent } from './app.component';
-import { EventsComponent } from './components/art/events/events.component';
-import { BillconfirmComponent } from './components/art/shopping/billconfirm/billconfirm.component';
-import { CheckoutComponent } from './components/art/shopping/checkout/checkout.component';
-import { ShoppingcartComponent } from './components/art/shopping/shoppingcart/shoppingcart.component';
-import { ShoppingComponent } from './components/art/shopping/shopping.component';
-import { BulletinComponent } from './components/community/bulletin/bulletin.component';
-import { VlogComponent } from './components/community/vlog/vlog.component';
-import { PostbulletinComponent } from './components/community/bulletin/postbulletin/postbulletin.component';
-import { MyvlogComponent } from './components/community/vlog/myvlog/myvlog.component';
-import { MyvlogpreviewComponent } from './components/community/vlog/myvlogpreview/myvlogpreview.component';
-import { CalendarComponent } from './components/resource/calendar/calendar.component';
-import { CalendarpostComponent } from './components/resource/calendar/calendarpost/calendarpost.component';
-import { ServicesComponent } from './components/resource/services/services.component';
 import { ComponentsComponent } from './components/components.component';
-import { UserComponent } from './components/user/user.component';
-import { ProfileComponent } from './components/user/profile/profile.component';
+
+// GUESTS
+import { HomeComponent } from './components/homepage/home/home.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 import { RegisterComponent } from './components/user/register/register.component';
 import { LoginComponent } from './components/user/login/login.component';
-
-import { Routing } from './app.routing';
-import { VloggerpagesComponent } from './components/community/vlog/vloggerpages/vloggerpages.component';
+// COMMUNITY
+import { VlogLyfeComponent } from './components/community/vloglyfe/vloglyfe.component';
+import { InspirationsComponent } from './components/community/vloglyfe/inspirations/inspirations.component';
+import { ShoutOutsComponent } from './components/community/shoutouts/shoutouts.component';
+// ART
+import { EventsComponent } from './components/art/events/events.component';
+import { StoreComponent } from './components/art/store/store.component';
+// RESOURCE
+import { CalendarComponent } from './components/resource/calendar/calendar.component';
+import { ServicesComponent } from './components/resource/services/services.component';
+import { RequestBidComponent } from './components/resource/services/request-bid/request-bid.component'
+// USER PAGES
+import { UserPaygeComponent } from './components/user/userpayge.component';
+import { ProfileComponent } from './components/user/profile/profile.component';
+import { PostVlogComponent } from './components/community/vloglyfe/postvlog/postvlog.component';
+import { PostShoutOutComponent } from './components/community/shoutouts/postshoutout/postshoutout.component';
+import { ShoppingCartComponent } from './components/art/store/shoppingcart/shoppingcart.component';
+import { CalendarPostComponent } from './components/resource/calendar/calendarpost/calendarpost.component';
+// CLIENT SERVICES
 import { ShoutOutService } from './Services/shoutout.service.client';
 import { UserService } from './Services/user.service.client'
-import { CalPostService } from './Services/calendarpost.service.client'
+import { CalPostService } from './Services/calendarpost.service.client';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    EventsComponent,
-    BillconfirmComponent,
-    CheckoutComponent,
-    ShoppingcartComponent,
-    ShoppingComponent,
-    BulletinComponent,
-    VlogComponent,
-    PostbulletinComponent,
-    MyvlogComponent,
-    MyvlogpreviewComponent,
-    CalendarComponent,
-    CalendarpostComponent,
-    ServicesComponent,
     ComponentsComponent,
-    UserComponent,
-    ProfileComponent,
+// GUEST
+    HomeComponent,
+    AboutUsComponent,
     RegisterComponent,
     LoginComponent,
-    VloggerpagesComponent
+// COMMUNITY
+    VlogLyfeComponent,
+    InspirationsComponent,
+    ShoutOutsComponent,
+// ART
+    EventsComponent,
+    StoreComponent,
+// RESOURCE
+    CalendarComponent,
+    ServicesComponent,
+    RequestBidComponent,
+// USER
+    UserPaygeComponent,    
+    ProfileComponent,
+    PostVlogComponent,
+    PostShoutOutComponent,    
+    ShoppingCartComponent,
+    CalendarPostComponent,
+
   ],
   imports: [
     BrowserModule,

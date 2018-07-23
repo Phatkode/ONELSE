@@ -1,51 +1,59 @@
 import {Routes, RouterModule} from "@angular/router";
 import {ModuleWithProviders} from "@angular/core";
+import { ComponentsComponent } from './components/components.component';
+import { AppComponent } from './app.component';
 
+
+// GUESTS
+import { HomeComponent } from './components/homepage/home/home.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { RegisterComponent } from './components/user/register/register.component';
 import { ProfileComponent } from './components/user/profile/profile.component';
-import { AppComponent } from './app.component';
+import { UserPaygeComponent } from './components/user/userpayge.component';
+// COMMUNITY
+import { ShoutOutsComponent } from './components/community/shoutouts/shoutouts.component';
+import { PostShoutOutComponent } from './components/community/shoutouts/postshoutout/postshoutout.component';
+import { VlogLyfeComponent } from './components/community/vloglyfe/vloglyfe.component';
+import { InspirationsComponent } from './components/community/vloglyfe/inspirations/inspirations.component';
+import { PostVlogComponent } from './components/community/vloglyfe/postvlog/postvlog.component';
+// ART
 import { EventsComponent } from './components/art/events/events.component';
-import { BillconfirmComponent } from './components/art/shopping/billconfirm/billconfirm.component';
-import { CheckoutComponent } from './components/art/shopping/checkout/checkout.component';
-import { ShoppingcartComponent } from './components/art/shopping/shoppingcart/shoppingcart.component';
-import { ShoppingComponent } from './components/art/shopping/shopping.component';
-import { BulletinComponent } from './components/community/bulletin/bulletin.component';
-import { VlogComponent } from './components/community/vlog/vlog.component';
-import { PostbulletinComponent } from './components/community/bulletin/postbulletin/postbulletin.component';
-import { MyvlogComponent } from './components/community/vlog/myvlog/myvlog.component';
-import { MyvlogpreviewComponent } from './components/community/vlog/myvlogpreview/myvlogpreview.component';
+import { StoreComponent } from './components/art/store/store.component';
+import { ShoppingCartComponent } from './components/art/store/shoppingcart/shoppingcart.component';
+// RESOURCE
 import { CalendarComponent } from './components/resource/calendar/calendar.component';
-import { CalendarpostComponent } from './components/resource/calendar/calendarpost/calendarpost.component';
+import { CalendarPostComponent } from './components/resource/calendar/calendarpost/calendarpost.component';
 import { ServicesComponent } from './components/resource/services/services.component';
-import { ComponentsComponent } from './components/components.component';
-import { UserComponent } from './components/user/user.component';
-import { VloggerpagesComponent } from './components/community/vlog/vloggerpages/vloggerpages.component';
+import { RequestBidComponent } from './components/resource/services/request-bid/request-bid.component';
 
 
-
-// Import all other components here 
-
+// Import all other components here
 const APP_ROUTES : Routes = [
-  { path : '', component : LoginComponent},
+  // GENERAL
+  { path : '', component : HomeComponent},
+  { path : 'home', component : HomeComponent},
+  { path : 'about-us', component : AboutUsComponent},
   { path : 'login', component : LoginComponent},
   { path : 'register', component: RegisterComponent},
-  { path : 'user/:uid' , component: ProfileComponent},
-  { path : 'community/vlog' , component: VlogComponent},
-  { path : 'community/vloggerpages' , component: VloggerpagesComponent},
-  { path : 'community/bulletin' , component: BulletinComponent},
-  { path : 'user/:uid/community/myvlog' , component: MyvlogComponent},
-  { path : 'user/:uid/:vid/community/myvlog/preview' , component: MyvlogpreviewComponent},
-  { path : 'user/:uid/:bid/community/bulletin/post' , component: PostbulletinComponent},
+  // COMMUNITY
+  { path : 'community/vloglyfe' , component: VlogLyfeComponent}, 
+  { path : 'community/vloglyfe/inspirations' , component: InspirationsComponent},
+  { path : 'community/shoutouts' , component: ShoutOutsComponent},
+  // ART
   { path : 'art/events' , component: EventsComponent},
-  { path : 'art/shopping' , component: ShoppingComponent},
-  { path : 'user/:cid/art/shopping' , component: ShoppingcartComponent},
-  { path : 'user/:cid/art/checkout' , component: CheckoutComponent},
-  { path : 'user/:cid/art/billconfirm' , component: BillconfirmComponent},
+  { path : 'art/store' , component: StoreComponent},
+  // RESOURCE
   { path : 'resource/calendar' , component: CalendarComponent},
   { path : 'resource/services' , component: ServicesComponent},
-  { path : 'user/:uid/resource/calendarpost' , component: CalendarpostComponent}
-
+  { path : 'resource/services/request-bid' , component: RequestBidComponent},
+  // USERS (place UID in later)
+  { path : 'user/:uid' , component: ProfileComponent},
+  { path : 'user/:uid/userpayge' , component: UserPaygeComponent}, 
+  { path : 'user/:uid/community/vloglyfe/postvlog' , component: PostVlogComponent},
+  { path : 'user/:uid/community/shoutout/post' , component: PostShoutOutComponent},
+  { path : 'user/:uid/art/store/shoppingcart' , component: ShoppingCartComponent},
+  { path : 'user/:uid/resource/calendarpost' , component: CalendarPostComponent}
 ];
 
 // Export the routes as module providers
