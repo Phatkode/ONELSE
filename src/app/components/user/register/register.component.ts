@@ -1,9 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms'
-import { UserService } from '../../../Services/user.service.client'
+import { UserService } from '../../../services/user.service.client'
 import { User } from '../../../models/user.model.client'
 import { Router } from '@angular/router'
 declare var jQuery: any;
+import { SharedService } from '../../../services/shared.service.client'
 
 @Component({
   selector: 'app-register',
@@ -42,7 +43,7 @@ export class RegisterComponent implements OnInit {
   artistWebsite: string;
   artistPhone: string;
 
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(private SharedService: SharedService, private UserService: UserService, private router: Router) { }
   ngOnInit() {
       this.passwordError = false;
       this.usernameError = false;
@@ -85,10 +86,10 @@ export class RegisterComponent implements OnInit {
         this.passwordError = true;
     } else {
         this.passwordError = false;
-        this.userService.findUserByUsername(this.userName).subscribe(
+        this.UserService.findUserByUsername(this.userName).subscribe(
             (data: any) => {
                 if(!data) {
-                      const newUser: User = {
+                  const newUser: User = {
                     birthday: this.birthday,
                     email: this.email,
                     userName: this.userName,
@@ -111,18 +112,23 @@ export class RegisterComponent implements OnInit {
                     socialMedia3: this.socialMedia3,
                     artistWebsite: this.artistWebsite,
                     artistPhone: this.artistPhone
-                };
+                  };
                      
-                this.userService.createUser(newUser).subscribe(
-                    (data: User) => {
-                        var id = data._id;
-                        this.router.navigate(['user', id]);
-                    },
-                    (error: any) => {
-                      this.usernameError = true;
-                    }
-                );
-            }
+              this.UserService.register(newUser)
+             .subscribe(
+               (data: User) => {
+                   this.SharedService.user = data;
+                   console.log(data);
+                   this.router.navigate(['/user']);
+                  },
+                  (error: any) => {
+                    this.usernameError = true;
+                   }
+                  );
+                   } else {
+                       this.usernameError = true;
+                   }
+                
             this.closeRegister();
        
           }

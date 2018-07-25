@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { Routing } from './app.routing';
 import { AppComponent } from './app.component';
 import { ComponentsComponent } from './components/components.component';
+import { AuthGuard } from './services/auth-guard.service';
 
 // GUESTS
 import { HomeComponent } from './components/homepage/home/home.component';
@@ -30,9 +31,10 @@ import { PostShoutOutComponent } from './components/community/shoutouts/postshou
 import { ShoppingCartComponent } from './components/art/store/shoppingcart/shoppingcart.component';
 import { CalendarPostComponent } from './components/resource/calendar/calendarpost/calendarpost.component';
 // CLIENT SERVICES
-import { ShoutOutService } from './Services/shoutout.service.client';
-import { UserService } from './Services/user.service.client'
-import { CalPostService } from './Services/calendarpost.service.client';
+import { ShoutOutService } from './services/shoutout.service.client';
+import { UserService } from './services/user.service.client'
+import { CalPostService } from './services/calendarpost.service.client';
+import { SharedService } from './services/shared.service.client';
 
 
 @NgModule({
@@ -71,7 +73,12 @@ import { CalPostService } from './Services/calendarpost.service.client';
     HttpModule,
 
   ],
-  providers: [UserService, ShoutOutService, CalPostService],
+  providers: [UserService, 
+              ShoutOutService, 
+              CalPostService,
+              SharedService,
+              AuthGuard
+              ],
   bootstrap: [AppComponent]
 
 })

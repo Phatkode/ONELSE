@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms'
-import {UserService} from '../../../Services/user.service.client'
+import {UserService} from '../../../services/user.service.client'
 // declare var jQuery: any;
 import { User } from '../../../models/user.model.client'
 import { Router } from '@angular/router'
@@ -17,10 +17,10 @@ export class HomeComponent implements OnInit {
   userName: string;
   password: string;
   errorFlag: boolean;
-  // userService: UserService;
+  // UserService: UserService;
   // router: Router;
 
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(private UserService: UserService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit {
   login(){
     this.userName = this.loginForm.value.userName;
     this.password = this.loginForm.value.password;
-    this.userService.findUserByCredentials(this.userName, this.password).subscribe(
+    this.UserService.findUserByCredentials(this.userName, this.password).subscribe(
       (user: User) => {
         this.errorFlag = false;
         // this.closeLogin()

@@ -1,114 +1,155 @@
 <!-- LSE upper header -->
-<div class=" justify-content-center row bg-white">
-      <div class="col-2 .d-md-none .d-lg-block ">
-          <img class="logoPadding" width="88%" src="../images/LSE LOGO2.jpg">  
+<div class="row bg-white">
+    <div class="col-2 .d-md-none .d-lg-block ">
+        <img class="logoPadding align-bottom" width="100%" src="../images/LSE LOGO2.jpg">  
     </div>
-    <div class="col-md-6 text-muted text-center header-mission"> 
-          <h4 class="header-mission-top-margin "><strong data-toggle="collapse" data-target="#visionsfour" aria-expanded="false" aria-controls="collapseExample" class="text">"A resource for arts that inspire come-unity!"</strong></h4>
+    <div class="col-md-6 header-mission"> 
+        <h4 class="header-mission-top-margin ">
+            <strong data-toggle="collapse" data-target="#visionsfour" aria-expanded="false" aria-controls="collapseExample" class="text">"A resource for arts that inspire come-unity!"
+            </strong>
+        </h4>
     </div>
-    <div class="nav-text col-md-2 sw-noPadding bg-secondary btn-block">
-          <button (click)="closeRegister()" class= "btn btn-secondary btn-block btn-top-padding upper-header" data-toggle="collapse" data-target="#login" aria-expanded="false" aria-controls="collapseExample"> <i class="fas fa-key header-icons-padding"></i>LOGIN</button>
-             <!-- <a routerLink="/user/:cid/art/billconfirm"><i class="fas fa-sign-out-alt footer-icons-white werth"></i></a> -->
+    <div class="nav-text col-md-2 sw-noPadding btn-block">
+        <button *ngIf="SharedService.user" (click)="closeRegister()"(click)="closeLogin()" (click)="logout()" 
+        class= "btn btn-danger btn-block btn-top-padding upper-header">
+            <i class="fas fa-sign-out-alt header-icons-padding"></i>LOGOUT
+        </button>
+        <button *ngIf="!SharedService.user"   (click)="closeRegister()" 
+        class= "btn btn-secondary btn-block btn-top-padding upper-header" data-toggle="collapse" data-target="#login" aria-expanded="false" aria-controls="collapseExample">
+            <i class="fas fa-key header-icons-padding"></i>LOGIN
+        </button>
     </div>  
-    <div class="nav-text col-md-2 sw-noPadding bg-success btn-block">
-          <button (click)="closeLogin()" class="btn btn-success btn-block btn-top-padding upper-header" data-toggle="collapse" data-target="#register" aria-expanded="false" aria-controls="collapseExample"><i class="fas fa-user-circle header-icons-padding"></i>REGISTER</button>
+    <div class="nav-text col-md-2 sw-noPadding btn-block registerSpace">
+        <button (click)="closeLogin()" class="btn btn-success btn-block upper-header" data-toggle="collapse" data-target="#register" aria-expanded="false" aria-controls="collapseExample"><i class="fas fa-user-circle "></i>REGISTER
+        </button>
     </div>
 </div>
-
 <div class="row bg-white header-row-slim">
-      <div class="col-md-4"></div>
-      <div class="col-md-4"></div>
-      <div class="col-md-4 align-content-center">
-          <!-- LSE lower header -->
-          <div class="justify-content-center row nav-text">
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4 align-content-center">
+        <!-- LSE lower header -->
+        <div class="justify-content-center row nav-text">
             <ul class="nav nav-pills ">
-              <li class="nav-item dropdown">
-                <a class="legend-center nav-link dropdown" data-toggle="dropdown" href="#"  aria-haspopup="true" aria-expanded="false">community.</a>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" routerLink="/community/vloglyfe">Vlog</a>
-                  <a class="dropdown-item" routerLink="/community/shoutouts">ShoutOuts</a>
-            </div>
-      </li>
-</ul>
-<ul class="nav nav-pills">                       
-  <li class="nav-item dropdown">
-      <a class="legend-center nav-link dropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">art.</a>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" routerLink="/art/events">Events</a>
-        <a class="dropdown-item" routerLink="/art/store">Shop</a>
-  </div>
-</li>
-</ul>
-<ul class="nav nav-pills">  
-      <li class="nav-item dropdown">
-        <a class="legend-center nav-link dropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">resource.</a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" routerLink="/resource/calendar">Calendar</a>
-          <a class="dropdown-item" routerLink="/resource/services">Services</a>
+                <li class="nav-item dropdown">
+                    <a class="legend-center nav-link dropdown" data-toggle="dropdown" href="#"  aria-haspopup="true" aria-expanded="false">community.</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" routerLink="/community/vloglyfe">Vlog</a>
+                        <a class="dropdown-item" routerLink="/community/shoutouts">ShoutOuts</a>
+                    </div>
+                </li>
+            </ul>
+            <ul class="nav nav-pills">                       
+                <li class="nav-item dropdown">
+                    <a class="legend-center nav-link dropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">art.</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" routerLink="/art/events">Events</a>
+                        <a class="dropdown-item" routerLink="/art/store">Shop</a>
+                    </div>
+                </li>
+            </ul>
+            <ul class="nav nav-pills">  
+                <li class="nav-item dropdown">
+                    <a class="legend-center nav-link dropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">resource.</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" routerLink="/resource/calendar">Calendar</a>
+                        <a class="dropdown-item" routerLink="/resource/services">Services</a>
+                    </div>
+                </li>
+            </ul>
+        </div>  
     </div>
-</li>
-</ul>
-</div>  
-</div>
 </div>
 <!--     Container     -->
 <div class="collapse"  id="login">
-<app-login></app-login>
+    <app-login></app-login>
 </div>
 
 
 <div class="collapse" data-toggle="onclick" id="register">
-      <div class="container negmarg">
-            <hr>
-            <app-register></app-register>
-      </div>
+    <div class="container negmarg">
+        <hr>
+        <app-register></app-register>
+    </div>
 </div>
 
 
 
-      <router-outlet></router-outlet>
+<router-outlet></router-outlet>
 
 <!-- 
 
-      ~~~~~~~~~~~~~~ -->
-      <!-- Footer Nav Bar -->     
-      <!-- ~~~~~~~~~~~~~~ -->
-      <div class="align-content-center container nobordernow">
-
-
-          <!-- CSS Code: Place this code in the document's head (between the 'head' tags) -->
-        
-
-
-  <nav id="bottom" class="navbar navbar-dark bg-success fixed-bottom" >
-
-      <div class="col-md-1"><i class="fas fa-list werthYellow" data-toggle="collapse" data-target="#footerIconsReveal" aria-expanded="false" aria-controls="footerIconsReveal"></i></div>
-      <div class="col-md-11">      <div class="collapse" data-toggle="onclick" id="footerIconsReveal">
-            <a routerLink="/home"><i data-toggle="popover" title="Home" data-content="Home" class="fab fa-houzz footer-icons-white werth"></i></a>
-             <a routerLink="/profile"><i data-toggle="popover" title="Profile" data-content="Profile" class="fas fa-user-circle footer-icons-white werth"></i></a>
-             <a routerLink="/community/vloglyfe"><i data-toggle="popover" title="VlogLyfe" data-content="VlogLyfe" class="fas fa-video footer-icons-white werth"></i></a>
-             <a routerLink="/community/shoutouts"><i data-toggle="popover" title="ShoutOuts" data-content="ShoutOuts" class="far fa-comment-dots footer-icons-white werth"></i></a>
-             <a routerLink="/art/events"><i data-toggle="popover" title="events" data-content="Events" class="fas fa-bolt footer-icons-white werth"></i></a>
-             <a routerLink="/art/store"><i data-toggle="popover" title="Store" data-content="Store" class="fas fa-store-alt footer-icons-white werth"></i></a>
-             <a routerLink="/resource/calendar"><i data-toggle="popover" title="Calendar" data-content="Calendar" class="far fa-calendar-alt footer-icons-white werth"></i></a>
-             <a routerLink="/resource/services"><i data-toggle="popover" title="Services" data-content="Services" class="fas fa-hand-holding-heart footer-icons-white werth"></i></a>
-             <a routerLink="/about-us"><i data-toggle="popover" title="About Us" data-content="About Us" class="fas fa-at footer-icons-white werth"></i></a>
-             <a routerLink="/user/:cid/art/store/shoppingcart"><i data-toggle="popover" title="Shopping Cart" data-content="Shopping Cart" class="fas fa-shopping-cart footer-icons-white werth"></i></a>
-              
-               <a data-toggle="popover" title="Search" data-content="Search"><i class="fas fa-search werth" data-toggle="collapse" data-target="#mainSearchBarReveal" aria-expanded="false" aria-controls="mainSearchBarReveal"></i></a>          
-             
-
-
-             <div class="collapse" data-toggle="onclick" id="mainSearchBarReveal"><hr>
-             <input type="text" class="form-control" placeholder="Search..">
-      </div>    
-      </div></div>
-      
- 
-      
-      <div align="align-content-center" class="container">
-</div>
-</nav>
+    ~~~~~~~~~~~~~~ -->
+    <!-- Footer Nav Bar -->     
+    <!-- ~~~~~~~~~~~~~~ -->
+    <!-- CSS Code: Place this code in the document's head (between the 'head' tags) -->
+    <nav class="bg-success fixed-bottom" >
+        <div class="row footer">
+            <div class="col-md-2">
+                <div class="row">
+                    <div class="col-2">
+                        <i (mouseenter)="showButton('NAVIGATION')" (mouseleave)="ngOnInit()" class="fas fa-list werthYellowList" data-toggle="collapse" data-target="#footerIconsReveal" aria-expanded="false" aria-controls="footerIconsReveal"></i>
+                    </div>
+                    <div class="col-10">
+                        <div class="innerHTMLHoverHome">
+                            <a href="">
+                                <div class="new-popup-home">
+                                    <span class="werthYellowSmall vertical-midclass oleoScript">{{buttonContext}}</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">      
+                <div class="collapse" id="footerIconsReveal">
+                    <a routerLink="/home">
+                        <i (mouseenter)="showButton('HOME')" (mouseleave)="ngOnInit()" class="fab fa-houzz footer-icons-white werth new-popup-home"></i>
+                    </a>
+                    <a routerLink="/user">
+                        <i (mouseenter)="showButton('PROFILE')" (mouseleave)="ngOnInit()" class="fas fa-user-circle footer-icons-white werth"></i>
+                    </a>
+                    <a routerLink="/community/vloglyfe">
+                        <i (mouseenter)="showButton('VLOGLYFE')" (mouseleave)="ngOnInit()" class="fas fa-video footer-icons-white werth"></i>
+                    </a>
+                    <a routerLink="/community/shoutouts">
+                        <i (mouseenter)="showButton('SHOUTOUTS')" (mouseleave)="ngOnInit()" class="far fa-comment-dots footer-icons-white werth"></i>
+                    </a>
+                    <a routerLink="/art/events">
+                        <i (mouseenter)="showButton('EVENTS')" (mouseleave)="ngOnInit()" class="fas fa-bolt footer-icons-white werth"></i>
+                    </a>
+                    <a routerLink="/art/store">
+                        <i (mouseenter)="showButton('STORE')" (mouseleave)="ngOnInit()" class="fas fa-store-alt footer-icons-white werth"></i>
+                    </a>
+                    <a routerLink="/resource/calendar">
+                        <i (mouseenter)="showButton('CALENDAR')" (mouseleave)="ngOnInit()" class="far fa-calendar-alt footer-icons-white werth"></i>
+                    </a>
+                    <a routerLink="/resource/services">
+                        <i (mouseenter)="showButton('SERVICES')" (mouseleave)="ngOnInit()" class="fas fa-hand-holding-heart footer-icons-white werth"></i>
+                    </a>
+                    <a routerLink="/about-us">
+                        <i (mouseenter)="showButton('ABOUT-US')" (mouseleave)="ngOnInit()" class="fas fa-at footer-icons-white werth"></i>
+                    </a>
+                    <a routerLink="/user/:cid/art/store/shoppingcart">
+                        <i (mouseenter)="showButton('CART')" (mouseleave)="ngOnInit()" class="fas fa-shopping-cart footer-icons-white werth"></i>
+                    </a>
+                    <a data-toggle="popover" title="Search" data-content="Search">
+                        <i (mouseenter)="showButton('SEARCH')" (mouseleave)="ngOnInit()" class="fas fa-search footer-icons-white werth" data-toggle="collapse" data-target="#mainSearchBarReveal" aria-expanded="false" aria-controls="mainSearchBarReveal">   
+                        </i>
+                    </a>
+                    
+                    <div class="collapse" data-toggle="onclick" id="mainSearchBarReveal"><hr>
+                            <input type="text" class="form-control" placeholder="Search..">
+                    </div>
+                            <div class="col-md-6">         
+                                    <div class="collapse" data-toggle="onclick" id="mainSearchBarReveal">
+                                            <input type="text" class="form-control searchBarHeight" placeholder="Search..">
+                                    </div>
+                            </div>    
+                    </div>
+                </div>
+            </div>
+        </nav>
 
 
 

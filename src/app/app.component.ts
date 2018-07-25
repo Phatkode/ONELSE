@@ -1,9 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms'
-import {UserService} from './Services/user.service.client'
+import {UserService} from './services/user.service.client'
 declare var jQuery: any;
 import { User } from './models/user.model.client'
-import { Router } from '@angular/router'
+import { ActivatedRoute, Router } from '@angular/router'
+import { SharedService } from './services/shared.service.client'
 
 @Component({
   selector: 'app-root',
@@ -14,8 +15,13 @@ import { Router } from '@angular/router'
 
 export class AppComponent implements OnInit {
 
+	buttonContext: string;
 
-	ngOnInit(){}
+	constructor(private SharedService: SharedService, private UserService: UserService, private router: Router) { }
+
+	ngOnInit(){
+		this.buttonContext = "";
+	}
 
 
 	closeLogin() {
@@ -24,5 +30,15 @@ export class AppComponent implements OnInit {
 
 	closeRegister() {
 		jQuery("#register").collapse('hide');
+	}
+
+	logout() {
+		this.UserService.logout().subscribe(
+		     (data: any) => this.router.navigate(['/home'])
+   		);
+	}
+
+	showButton(button: string) {
+		this.buttonContext = button;
 	}
 }

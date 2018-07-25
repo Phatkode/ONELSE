@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router'
-import { ShoutOutService } from '../../../../Services/shoutout.service.client'
+import { ShoutOutService } from '../../../../services/shoutout.service.client'
 import { ShoutOutModel }  from '../../../../models/shoutout.model.client';
 import { NgForm } from '@angular/forms'
 import { Router } from '@angular/router'

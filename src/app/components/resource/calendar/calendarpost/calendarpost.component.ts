@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router'
-import { CalPostService } from '../../../../Services/calendarpost.service.client'
+import { CalPostService } from '../../../../services/calendarpost.service.client'
 import { CalendarPostModel }  from '../../../../models/calendarpost.model.client';
 import { NgForm } from '@angular/forms'
 import { Router } from '@angular/router'

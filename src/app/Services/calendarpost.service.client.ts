@@ -13,9 +13,11 @@ export class CalPostService {
   baseUrl = environment.baseUrl;
   
 
-  constructor(private http: Http) { }}
+  constructor(private http: Http) { }
 
-export class CalendarPost {}
+}
+
+
     
 
 //     CalPosts: CalPost = [
