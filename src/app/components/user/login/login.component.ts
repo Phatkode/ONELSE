@@ -47,7 +47,11 @@ export class LoginComponent implements OnInit {
               this.errorFlag = false;
               this.closeLogin();
               this.SharedService.user = user;
-              this.router.navigate(['user'])
+              this.UserService.findPictureForUser(user._id).subscribe(
+                (res: any) => {
+                  this.router.navigate(['user'])
+                }
+              )
             }
          },
          (error: any) =>{

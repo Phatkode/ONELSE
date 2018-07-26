@@ -65,5 +65,12 @@ export class User {
 	comedy?: boolean;
 	dance?: boolean;
 	musicProduction?: boolean;
+	// 	Images
+	profileImage?: string;
+	paygeImage?: string;
+	businessImageOne?: string;
+	businessImageTwo?: string;
+	artistImageOne?: string;
+	artistImageTwo?: string;
 
 }

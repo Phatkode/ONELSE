@@ -1,4 +1,6 @@
-
+.mainText{
+    justify-content: flex-end;
+}
 .footer {
     vertical-align: middle;
     padding-top: 15px;
@@ -14,7 +16,8 @@
 }
 
 .registerSpace{
-    padding-right: 30px;
+    padding-right: 15px;
+    padding-left: 15px;
     border-right: 30px;
 }
 
@@ -24,7 +27,7 @@
 }
 
 .upper-header{
-    margin-top: 10%;
+/*    margin-top: 10%;*/
 }
 
 .btn-top-padding{

@@ -33,8 +33,10 @@
 			<div align="center" class="col-md-4">
 				<br>
 				<p>"USER STATUS's"</p>
-				<img class="img-rounded" src="../../../../images/Prof.png" alt="" width="auto">
-				<br>
+				<!-- <img *ngIf="{{user.image}}" class="img-rounded" src="../../../../images/Prof.png" alt="" width="auto"> -->
+				<!-- <img class="img-rounded" src="../../../../images/Prof.png" alt="" width="auto"> -->
+				<img class="img-rounded profileUpload" src="{{user.profileImage}}" alt="" width="100%">
+				<br> 
 				<p></p>
 				<br>
 				<a (click)="changeEditable()" style="color: white" class="btn-block btn-danger">Edit Profile</a>
@@ -309,7 +311,8 @@
 				<!-- PROF PIC & EDIT BUTTON -->
 				<div align="center" class="col-md-4">
 					<p>"USER STATUS's"</p>
-					<img class="img-rounded" src="../../../../images/Prof.png" alt="" width="auto" >
+					<img class="img-rounded profileUpload" src="{{user.profileImage}}" alt="" width="100%">
+				<br> 
 					<br>
 						<form ngNoForm action="{{baseUrl}}/api/user/{{uid}}/upload" method="post" enctype="multipart/form-data">
                                 <div>

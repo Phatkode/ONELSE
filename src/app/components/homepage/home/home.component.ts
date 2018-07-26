@@ -1,9 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms'
-import {UserService} from '../../../services/user.service.client'
+import { UserService } from '../../../services/user.service.client'
 // declare var jQuery: any;
 import { User } from '../../../models/user.model.client'
 import { Router } from '@angular/router'
+declare var jQuery: any;
 
 @Component({
   selector: 'app-home',
@@ -11,6 +12,9 @@ import { Router } from '@angular/router'
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+
+users: User[];
+
 
  @ViewChild('f') loginForm: NgForm;
 
@@ -22,7 +26,15 @@ export class HomeComponent implements OnInit {
 
   constructor(private UserService: UserService, private router: Router) { }
 
-  ngOnInit() {
+  ngOnInit(){
+        this.UserService.findUsers().subscribe(
+            (users:User[]) => {
+                this.users = users;
+                for(let user of users) {
+                    this.UserService.findPictureForUser(user._id).subscribe();
+                }
+            }
+        );
   }
 
 // closeLogin() {

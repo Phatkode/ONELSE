@@ -2,6 +2,8 @@ module.exports = function(app){
 
 	var userModel = require('../model/user/user.model.server.js')
 	/*npm install multer ---save*/
+	const pictureModel = require('../model/picture/picture.model.server');
+    var fs = require('fs');
 	var passport = require('passport');
 	var LocalStrategy = require('passport-local').Strategy;
 	var multer = require('multer'); 
@@ -24,7 +26,7 @@ module.exports = function(app){
 //         {_id: "456", birthday:"1/1/2001",userName: "shiyu", password: "shiyu", firstName: "Shiyu", lastName: "Wang", email: "swang@ulem.org"}
 //         ];	
 
-app.get('/api/user', findUser);
+app.get('/api/user', findUsers);
 app.get('/api/user/:uid', findUserById);
 app.post("/api/user", createUser);
 app.put("/api/user/:uid", updateUser);
@@ -33,6 +35,7 @@ app.post('/api/register', register);
 app.post('/api/login', passport.authenticate('local'), login);
 app.post('/api/logout', logout);
 app.post ('/api/loggedIn', loggedIn);
+app.get('/api/user/:uid/download', downloadPic);
 
 
 function loggedIn(req, res) {
@@ -94,24 +97,59 @@ function deserializeUser(user, done) {
 		);
 }
 
-function uploadImage(req, res){
-	const uid = req.params['uid'];
-// const wid = req.params['wid'];
-// const pid = req.params['pid'];
-// const wgid = req.params['wgid'];
-// getting the uploaded file
-var myFile = req.file;
-// looking for the user with uid in database
-userModel.findUserById(uid).then(
-	(user) => {
-		user.image
-	}
-	)
+ function uploadImage(req, res) {
+        const uid = req.params['uid'];
+        const image = req.file;
 
-widget.url = '/assets/uploads/'+myFile.filename;
-var callbackUrl = req.headers.origin + "/user/" + uid + "/website/" + wid + "/page/" + pid + "/widget/" + wgid;
-res.redirect(callbackUrl);
-}
+        const callbackUrl   = req.headers.origin + "/user";
+        const picture = {
+            name: image.path,
+            data: "",
+            mimetype: image.mimetype,
+            user: uid
+        }
+
+        fs.readFile(picture.name, (err, data) => {
+            picture.data = data;
+            pictureModel.deletePictureForUser(uid).then(
+                pictureModel.createPicture(picture).then(
+                    (picture) => {
+                        userModel.findUserById(uid).then(
+                            (user) => {
+                                user.profileImage = '/assets/uploads/' + image.filename;
+                                userModel.updateUser(uid, user).then(
+                                    (data) => {
+                                        res.redirect(callbackUrl);
+                                    }
+                                );
+                            }
+                        );     
+                    }
+                )
+            )
+        })    
+    }
+
+function downloadPic(req, res) {
+        var uid = req.params['uid'];
+
+        pictureModel.findPictureForUser(uid).then(
+            picture => {
+                if(picture) {
+                    fs.access(picture.name, fs.constants.F_OK, (err) => {
+                        if(err) {
+                            fs.appendFile(picture.name, picture.data, (err) =>{
+                            })
+                        }
+                    });
+                }
+                res.json(null);
+            }
+        );
+   }
+
+
+
 
 
 function updateUser(req, res) {
@@ -135,7 +173,7 @@ function findUserById(req, res){
 
 
 
-function findUser(req, res) {
+function findUsers(req, res) {
 	const userName = req.query['userName'];
 	const password = req.query['password'];
 
@@ -157,7 +195,7 @@ if(userName) {
 		);
 	return;
 }
-res.json(user);
+res.json(null);
 }
 
 

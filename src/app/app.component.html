@@ -1,15 +1,15 @@
 <!-- LSE upper header -->
-<div class="row bg-white">
-    <div class="col-2 .d-md-none .d-lg-block ">
-        <img class="logoPadding align-bottom" width="100%" src="../images/LSE LOGO2.jpg">  
+<div class="row bg-white text-center">
+    <div class="col-3 .d-md-none .d-lg-block ">
+        <img class="logoPadding" width="300px" src="../images/LSE LOGO2.jpg">  
     </div>
-    <div class="col-md-6 header-mission"> 
-        <h4 class="header-mission-top-margin ">
-            <strong data-toggle="collapse" data-target="#visionsfour" aria-expanded="false" aria-controls="collapseExample" class="text">"A resource for arts that inspire come-unity!"
+    <div class="col-md-5 header-mission"> 
+        <h4 class="header-mission-top-margin">
+            <strong data-toggle="collapse" data-target="#visionsfour" aria-expanded="false" aria-controls="collapseExample" class="registerSpace mainText">"A resource for arts that inspire come-unity!"
             </strong>
         </h4>
     </div>
-    <div class="nav-text col-md-2 sw-noPadding btn-block">
+    <div class="nav-text col-md-2 sw-noPadding btn-block registerSpace">
         <button *ngIf="SharedService.user" (click)="closeRegister()"(click)="closeLogin()" (click)="logout()" 
         class= "btn btn-danger btn-block btn-top-padding upper-header">
             <i class="fas fa-sign-out-alt header-icons-padding"></i>LOGOUT
@@ -17,8 +17,8 @@
         <button *ngIf="!SharedService.user"   (click)="closeRegister()" 
         class= "btn btn-secondary btn-block btn-top-padding upper-header" data-toggle="collapse" data-target="#login" aria-expanded="false" aria-controls="collapseExample">
             <i class="fas fa-key header-icons-padding"></i>LOGIN
-        </button>
-    </div>  
+        </button><br>
+    </div>
     <div class="nav-text col-md-2 sw-noPadding btn-block registerSpace">
         <button (click)="closeLogin()" class="btn btn-success btn-block upper-header" data-toggle="collapse" data-target="#register" aria-expanded="false" aria-controls="collapseExample"><i class="fas fa-user-circle "></i>REGISTER
         </button>

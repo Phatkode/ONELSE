@@ -140,4 +140,26 @@ register(newUser) {
        }
     ))
   }
+
+
+
+
+findUsers() {
+        const url = this.baseUrl + '/api/user'
+        return this.http.get(url).pipe(map(
+            (response: Response) => {
+                return response.json();
+            }
+            ));
+    }
+
+
+   findPictureForUser(uid: string) {
+        const url  = this.baseUrl + '/api/user/' + uid + '/download';
+        return this.http.get(url).pipe(map(
+            (res: Response) => {
+                return res.json();
+            }
+        ));
+    }
 }

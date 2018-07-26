@@ -67,6 +67,14 @@ var UserSchema = mongoose.Schema({
 	comedy: Boolean,
 	dance: Boolean,
 	musicProduction: Boolean,
+	     //   Images
+    profileImage: {type:String, default: "../../../../images/Prof.png"},
+    paygeImage: String,
+    businessImageOne: String,
+    businessImageTwo: String,
+    artistImageOne: String,
+    artistImageTwo: String,
+  // Data
 	dateCreated: {type: Date, default: Date.now}
 }, {collection: 'user'})
 

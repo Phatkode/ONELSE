@@ -79,6 +79,15 @@ import { SharedService} from '../../../services/shared.service.client'
         comedy: boolean;
         dance: boolean;
         musicProduction: boolean;
+          //   Images
+        profileImage: string;
+        paygeImage: string;
+        businessImageOne: string;
+        businessImageTwo: string;
+        artistImageOne: string;
+        artistImageTwo: string;
+        // Data
+        dateCreated: Date;
         // ????
         oldUsername: string;
         usernameTaken: boolean;
@@ -90,7 +99,7 @@ import { SharedService} from '../../../services/shared.service.client'
           userName: "",
           firstName: "",
           lastName: "",
-          password: ""
+          password: "",
         };
         aUser: User;
 
