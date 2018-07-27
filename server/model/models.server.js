@@ -9,7 +9,7 @@ if(process.env.MLAB_USERNAME_WEBDEV) { // check if running remotely
 
   connectionString = 'mongodb://' + username + ':' + password;
 
-  connectionString += '@ds0000.mlab.com:29004/dasdasds'; // use yours
+  connectionString += '@ds225078.mlab.com:25078/heroku_k0x8svr0'; // use yours
 
 }
 
