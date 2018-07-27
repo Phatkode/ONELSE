@@ -70,10 +70,10 @@ var UserSchema = mongoose.Schema({
 	     //   Images
     profileImage: {type:String, default: "../../../../images/Prof.png"},
     paygeImage: String,
-    businessImageOne: String,
-    businessImageTwo: String,
-    artistImageOne: String,
-    artistImageTwo: String,
+    businessImageOne: {type:String, default: "../../../../images/Agency.jpg"},
+    businessImageTwo: {type:String, default: "../../../../images/Agency.jpg"},
+    artistImageOne: {type:String, default: "../../../../images/artist.jpg"},
+    artistImageTwo: {type:String, default: "../../../../images/artist.jpg"},
   // Data
 	dateCreated: {type: Date, default: Date.now}
 }, {collection: 'user'})

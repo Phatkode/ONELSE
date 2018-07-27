@@ -48,7 +48,7 @@ function loggedIn(req, res) {
 
 function logout(req, res) {
 	req.logOut();
-	res.send(200);
+	res.sendStatus(200);
 }
 
 
@@ -99,24 +99,36 @@ function deserializeUser(user, done) {
 
  function uploadImage(req, res) {
         const uid = req.params['uid'];
+        const type = req.query['type']
         const image = req.file;
 
         const callbackUrl   = req.headers.origin + "/user";
         const picture = {
             name: image.path,
             data: "",
+            type: type,
             mimetype: image.mimetype,
             user: uid
         }
 
         fs.readFile(picture.name, (err, data) => {
             picture.data = data;
-            pictureModel.deletePictureForUser(uid).then(
+            pictureModel.deletePictureForUser(uid, type).then(
                 pictureModel.createPicture(picture).then(
                     (picture) => {
                         userModel.findUserById(uid).then(
                             (user) => {
-                                user.profileImage = '/assets/uploads/' + image.filename;
+                            	if(type === "profileImage") { 
+                            		user.profileImage = '/assets/uploads/' + image.filename;
+                            	} else if (type === "businessImageOne") {
+                            		user.businessImageOne = '/assets/uploads/' + image.filename;
+                            	} else if ( type === "businessImageTwo") {
+                            		user.businessImageTwo = '/assets/uploads/' + image.filename;
+                            	} else if ( type === "artistImageOne") {
+                            		user.artistImageOne = '/assets/uploads/' + image.filename;
+                            	} else if ( type === "artistImageTwo") {
+                            		user.artistImageTwo = '/assets/uploads/' + image.filename;
+                            	}
                                 userModel.updateUser(uid, user).then(
                                     (data) => {
                                         res.redirect(callbackUrl);
@@ -132,22 +144,22 @@ function deserializeUser(user, done) {
 
 function downloadPic(req, res) {
         var uid = req.params['uid'];
-
         pictureModel.findPictureForUser(uid).then(
-            picture => {
-                if(picture) {
-                    fs.access(picture.name, fs.constants.F_OK, (err) => {
-                        if(err) {
-                            fs.appendFile(picture.name, picture.data, (err) =>{
+            pictures => {
+            	if (pictures) {
+            		for(let i=0;i < pictures.length;i++) {
+            			fs.access(pictures[i].name, fs.constants.F_OK, (err) => {
+            				if(err) {
+                        	    fs.appendFile(pictures[i].name, pictures[i].data, (err) =>{
                             })
-                        }
-                    });
-                }
-                res.json(null);
+            			}
+            		})
+            	}
             }
-        );
-   }
-
+            res.json(null);
+   		}
+   	)
+}
 
 
 

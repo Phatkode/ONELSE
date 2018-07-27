@@ -11,11 +11,11 @@ function createPicture(picture) {
 }
 
 function findPictureForUser(uid) {
-	return PictureModel.findOne({user: uid});
+	return PictureModel.find({user: uid});
 }
 
-function deletePictureForUser(uid) {
-	return PictureModel.remove({user:uid});
+function deletePictureForUser(uid, type) {
+	return PictureModel.remove({user:uid, type: type});
 }
 
 module.exports = PictureModel;

@@ -31,13 +31,15 @@
 				</table>	
 			</div>
 			<div align="center" class="col-md-4">
-				<br>
-				<p>"USER STATUS's"</p>
+				
+				
 				<!-- <img *ngIf="{{user.image}}" class="img-rounded" src="../../../../images/Prof.png" alt="" width="auto"> -->
 				<!-- <img class="img-rounded" src="../../../../images/Prof.png" alt="" width="auto"> -->
 				<img class="img-rounded profileUpload" src="{{user.profileImage}}" alt="" width="100%">
-				<br> 
 				<p></p>
+				<br>
+				<p>"USER STATUS's"</p>
+				<hr>
 				<br>
 				<a (click)="changeEditable()" style="color: white" class="btn-block btn-danger">Edit Profile</a>
 				<br>
@@ -132,11 +134,11 @@
 				</div>
 				<div align="center" class="col-md-4">
 					<br>
-					<img src="../../../images/Agency.jpg" alt="Agency pic" width="auto" >
+					<img class="img-rounded profileUpload" src="{{user.businessImageOne}}" alt="" width="100%">
 					<hr>
 					<p>"BIZZ STATUS's"</p>
 					<hr>
-					<img src="../../../images/Agency.jpg" alt="Agency pic" width="auto" >
+					<img class="img-rounded profileUpload" src="{{user.businessImageTwo}}" alt="" width="100%">
 					<p></p>
 				</div>
 				<div class="col-md-4 btn-outline-secondary border-grey">
@@ -220,11 +222,11 @@
 				</div>			
 				<div align="center" class="col-md-4">
 					<br>
-					<img src="../../../images/artist.jpg" alt="Artist pic" width="auto" >
+					<img class="img-rounded profileUpload" src="{{user.artistImageOne}}" alt="" width="100%">
 					<hr>
 					<p>"ART STATUS's"</p>
 					<hr>
-					<img src="../../../images/artist.jpg" alt="Artist pic" width="auto" >
+					<img class="img-rounded profileUpload" src="{{user.artistImageTwo}}" alt="" width="100%">
 					<br>
 				</div>
 				<div class="col-md-4 btn-outline-success border-green">
@@ -310,19 +312,22 @@
 				</div>
 				<!-- PROF PIC & EDIT BUTTON -->
 				<div align="center" class="col-md-4">
-					<p>"USER STATUS's"</p>
+					
 					<img class="img-rounded profileUpload" src="{{user.profileImage}}" alt="" width="100%">
-				<br> 
 					<br>
-						<form ngNoForm action="{{baseUrl}}/api/user/{{uid}}/upload" method="post" enctype="multipart/form-data">
+					<br> 
+						<div class="collapse" id="uploadRevealProfile">
+							<form ngNoForm action="{{baseUrl}}/api/user/{{uid}}/upload?type=profileImage" method="post" enctype="multipart/form-data">
                                 <div>
-                                <label class='form-group'>Upload</label>
                                          <input  name="myFile"   type="file" class="form-control"/>
                                          <br>
                                          <button type="submit" class="btn btn-block btn-outline-primary">Upload Image</button>
                                  </div>
-                        </form>
-					<br>					
+                        	</form>
+							<br>
+						</div>	
+					<a data-toggle="collapse" data-target="#uploadRevealProfile" aria-expanded="false" aria-controls="uploadRevealProfile"><p>"USER STATUS's"</p></a>
+					<hr>				
 					<p></p>
 					<button type="submit" style="color: white" class="btn-block btn-dark">Save Profile</button>
 					<br>
@@ -331,8 +336,8 @@
 					<a style="color: white" class="btn-block btn-success" data-toggle="collapse" data-target="#collapseExampleEditArts" aria-expanded="false" aria-controls="collapseExampleEditArts">Show/Hide "Artz"</a>
 					<p></p>
 					<p></p>
-				</div>
-				<div class="col-md-4 btn-outline-danger border-red">					
+					</div>
+					<div class="col-md-4 btn-outline-danger border-red">
 					<div class="row">
 						<div class="container">
 							<br>
@@ -431,12 +436,40 @@
 							</table>
 						</div>
 						<div align="center" class="col-md-4">
-							<img src="../../../images/Agency.jpg" alt="Agency pic" width="auto" >
+							<a data-toggle="collapse" data-target="#uploadRevealBusinessOne" aria-expanded="false" aria-controls="uploadRevealProfile">
+							<img class="img-rounded profileUpload" src="{{user.businessImageOne}}" alt="" width="100%">
+							</a>
+							<br>
+							<br> 
+								<div class="collapse" id="uploadRevealBusinessOne">
+									<form ngNoForm action="{{baseUrl}}/api/user/{{uid}}/upload?type=businessImageOne" method="post" enctype="multipart/form-data">
+		                                <div>
+		                                         <input  name="myFile"   type="file" class="form-control"/>
+		                                         <br>
+		                                         <button type="submit" class="btn btn-block btn-outline-primary">Upload Image</button>
+		                                 </div>
+		                        	</form>
+									<br>
+								</div>	
+							<br>	
 							<hr>
 							<p>"BIZZ STATUS's"</p>
 							<hr>
-							<img src="../../../images/Agency.jpg" alt="Agency pic" width="auto" >
+							<a data-toggle="collapse" data-target="#uploadRevealBusinessTwo" aria-expanded="false" aria-controls="uploadRevealProfile">
+							<img class="img-rounded profileUpload" src="{{user.businessImageTwo}}" alt="" width="100%">
+							</a>
 							<br>
+							<br> 
+								<div class="collapse" id="uploadRevealBusinessTwo">
+									<form ngNoForm action="{{baseUrl}}/api/user/{{uid}}/upload?type=businessImageTwo" method="post" enctype="multipart/form-data">
+		                                <div>
+		                                         <input  name="myFile"   type="file" class="form-control"/>
+		                                         <br>
+		                                         <button type="submit" class="btn btn-block btn-outline-primary">Upload Image</button>
+		                                 </div>
+		                        	</form>
+									<br>
+								</div>	
 						</div>				
 						<div class="col-md-4 btn-outline-secondary border-grey">
 							<div class="row">
@@ -543,11 +576,39 @@
 								</table>
 							</div>
 							<div align="center" class="col-md-4">
-								<img class="img-rounded" src="../../../images/artist.jpg" alt="Artist pic" width="auto" >
+								<a data-toggle="collapse" data-target="#uploadRevealArtistOne" aria-expanded="false" aria-controls="uploadRevealProfile">
+								<img class="img-rounded profileUpload" src="{{user.artistImageOne}}" alt="" width="100%">>
+								</a>
+								<br>
+								<br> 
+								<div class="collapse" id="uploadRevealArtistOne">
+									<form ngNoForm action="{{baseUrl}}/api/user/{{uid}}/upload?type=artistImageOne" method="post" enctype="multipart/form-data">
+		                                <div>
+		                                         <input  name="myFile"   type="file" class="form-control"/>
+		                                         <br>
+		                                         <button type="submit" class="btn btn-block btn-outline-primary">Upload Image</button>
+		                                 </div>
+		                        	</form>
+									<br>
+								</div>	
 								<hr>
 								<p>"ART STATUS's"</p>
 								<hr>
-								<img class="img-rounded" src="../../../images/artist.jpg" alt="Artist pic" width="auto" >
+								<a data-toggle="collapse" data-target="#uploadRevealArtistTwo" aria-expanded="false" aria-controls="uploadRevealArtistTwo">
+								<img class="img-rounded profileUpload" src="{{user.artistImageTwo}}" alt="" width="100%">
+								</a>
+								<br>
+								<br> 
+								<div class="collapse" id="uploadRevealArtistTwo">
+									<form ngNoForm action="{{baseUrl}}/api/user/{{uid}}/upload?type=artistImageTwo" method="post" enctype="multipart/form-data">
+		                                <div>
+		                                         <input  name="myFile"   type="file" class="form-control"/>
+		                                         <br>
+		                                         <button type="submit" class="btn btn-block btn-outline-primary">Upload Image</button>
+		                                 </div>
+		                        	</form>
+									<br>
+								</div>	
 							</div>
 							<div class="col-md-4 btn-outline-success border-green">
 								<div class="row">
