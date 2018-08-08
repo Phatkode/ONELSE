@@ -6,7 +6,7 @@
                   <div class="container">
                         <div class="panel panel-default">
                               <div class="panel-body">
-                                    <h4><small>POST TO</small>WORD of MOUTH</h4>
+                                    <h4  class="display-4"><small><i>post </i></small>SHOUT | <i>OUT!</i></h4>
                                     <div class="align-content-center text-center row ">
                                           <form class="form-control transparentBox" (ngSubmit)="postShoutOut()" #g="ngForm">
                                                 <table class="smallTableText">
@@ -26,40 +26,39 @@
                                                 </table>  
                                                 <br>
                                                       <div class="form-group">
-                                                            <div class="form-group">
-                                                                  <select class="form-control" name="typeShout" ngModel #typeShout="ngModel" >
-                                                                        <option value="" disabled selected>*Select your option</option>
-                                                                        <option>Event</option>
-                                                                        <option>Dining</option>
-                                                                        <option>Fitness</option>
-                                                                        <option>Family</option>
-                                                                        <option>Item</option>
-                                                                        <option>Small Bizz</option>
-                                                                        <option>Outdoors</option>
-                                                                        <option>Education</option>
-                                                                  </select>
+                                                            <input ngModel="{{ShoutOut.nameShout}}" #nameShout="ngModel" placeholder="name of business/event/item" type="name" class="form-control" name="nameShout">
+                                                      </div>
+                                                      <div class="form-group">
+                                                            <input ngModel="{{ShoutOut.descriptionShout}}" #descriptionShout="ngModel" placeholder="Description" type="textarea" class="form-control" name="descriptionShout">
+                                                      </div>
+                                                      <div class="form-group">
+                                                            <input ngModel="{{ShoutOut.locationShout}}" #locationShout="ngModel" placeholder="Location" type="textarea" class="form-control" name="locationShout">
+                                                      </div>
+                                                      <div class="form-group">
+                                                            <input ngModel="{{ShoutOut.dateShout}}" #dateShout="ngModel" placeholder="Date" type="date" class="form-control" name="dateShout">
+                                                      </div>
+                                                      <div class="form-group">
+                                                            <input ngModel="{{ShoutOut.timeShout}}" #timeShout="ngModel" placeholder="Time" type="time" class="form-control" name="timeShout">
+                                                      </div>
+                                                      <div class="form-group">
+                                                            <input ngModel="{{ShoutOut.websiteShout}}" #websiteShout="ngModel"  placeholder="Website" type="URL" class="form-control" name="websiteShout">
+                                                      </div>
+                                                      <div class="form-group">
+                                                            <input ngModel="{{ShoutOut.shoutOutImage}}" #shoutOutImage="ngModel" class="form-control" placeholder="Image Url"  #url="ngModel" type="text" name="shoutOutImage">
+                                                      </div>
+                                                      <form ngNoForm action="{{baseUrl}}/api/shoutOut/upload/{{uid}}/{{sid}}" placeholder="upload Image" method="post" enctype="multipart/form-data">
+                                                            <div class="input-group mb-3">
+                                                                  <input type="file" class="form-control" name="myFile" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                                                  <div class="input-group-append">
+                                                                        <button class="btn btn-secondary" type="submit" (click)="tempSave()">Upload</button>
+                                                                  </div>
                                                             </div>
-                                                      </div>
-                                                      <div class="form-group">
-                                                            <input ngModel #nameShout="ngModel" value="" placeholder="name of business/event/item" type="name" class="form-control" name="name">
-                                                      </div>
-                                                      <div class="form-group">
-                                                            <input ngModel="{{descriptionShout}}" #descriptionShout="ngModel" value="" placeholder="description" type="textarea" class="form-control" name="description">
-                                                      </div>
-                                                      <div class="form-group">
-                                                            <input ngModel="{{locationShout}}" #locationShout="ngModel" value="" placeholder="location" type="textarea" class="form-control" name="location">
-                                                      </div>
-                                                      <div class="form-group">
-                                                            <input ngModel="{{dateShout}}" #dateShout="ngModel" value="" placeholder="date" type="date" class="form-control" name="date">
-                                                      </div>
-                                                      <div class="form-group">
-                                                            <input ngModel="{{timeShout}}" #timeShout="ngModel" value="" placeholder="time" type="time" class="form-control" name="email">
-                                                      </div>
-                                                      <div class="form-group">
-                                                            <input ngModel="{{websiteShout}}" #websiteShout="ngModel" value="" placeholder="website" type="URL" class="form-control" name="website">
-                                                      </div>
+                                                      </form>
+                                                      <br>
                                                       <button type="submit" class="btn btn-success btn-block">Submit</button>
+                                                      <br>
                                                       <button routerLink="/community/shoutouts" class="btn btn-danger btn-block">Cancel</button>
+                                                      <br>
                                           </form>
                                           <div class="panel-footer"></div>
                                     </div>

@@ -1,10 +1,10 @@
 export class ShoutOutModel {
-	
-	_id: string;
-	shoutOut_id: string;
+	_id?: string;
+	userId: string;
 	artEventsFunShout: boolean;
 	educationShout: boolean;
 	itemReviewShout: boolean;
+	smallBizzShout: boolean;
 	outdoorsShout: boolean;
 	familyShout: boolean;
 	fitnessShout: boolean;
@@ -16,8 +16,5 @@ export class ShoutOutModel {
 	dateShout: string;
 	timeShout: string;
 	websiteShout?: string;
-	
-	
-
-
+	shoutOutImage?: string;
 }

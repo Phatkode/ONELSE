@@ -236,72 +236,7 @@ import { SharedService} from '../../../services/shared.service.client'
                      if(!this.user.musicProduction) {
                     this.user.musicProduction = null;
                     }
-                  // console.log(this.user.events);
-                  // personal
-         //          this.birthday = this.user.birthday;
-         //          this.email = this.user.email;
-         //          this.userName = this.user.userName;
-         //          this.firstName = this.user.firstName;
-         //          this.lastName = this.user.lastName;
-         //          this.password = this.user.password;
-         //          // personal booleans
-         //          this.events = this.user.events;
-         //          this.education = this.user.education;
-         //          this.itemReview = this.user.itemReview;
-         //          this.smallBizz = this.user.smallBizz;
-         //          this.outdoors = this.user.outdoors;
-         //          this.family = this.user.family;
-         //          this.fitness = this.user.fitness;
-         //          this.dining = this.user.dining;
 
-      			// // business
-         //          this.businessContact = this.user.businessContact;
-         //          this.businessTitle = this.user.businessTitle;
-         //          this.businessName = this.user.businessName;
-         //          this.businessAddress = this.user.businessAddress;
-         //          this.businessIndustry = this.user.businessIndustry;
-         //          this.businessWebsite = this.user.businessWebsite;
-         //          this.businessEmail = this.user.businessEmail;
-         //          this.businessPhone = this.user.businessPhone;
-         //          // personal booleans
-         //          this.businessServices = this.user.businessServices;
-         //          this.computerElectronics = this.user.computerElectronics;
-         //          this.teaching = this.user.teaching;
-         //          this.unionUtilities = this.user.unionUtilities;
-         //          this.governmentPublic = this.user.governmentPublic;
-         //          this.healthMedicine = this.user.healthMedicine;
-         //          this.manufacturing = this.user.manufacturing;
-         //          this.mediaEntertainment = this.user.mediaEntertainment;
-         //          this.nonprofitAdvocacy = this.user.nonprofitAdvocacy;
-         //          this.realestateConstruction = this.user.realestateConstruction;
-         //          this.entrepreneurContractor = this.user.entrepreneurContractor;
-         //          this.customerService = this.user.customerService;
-         //          this.trasportationTravel = this.user.trasportationTravel;
-         //          this.salesDistribution = this.user.salesDistribution;
-         //          this.culinaryArts = this.user.culinaryArts;
-         //          this.professionalArtist = this.user.professionalArtist;
-      			// // artist
-         //          this.artistName = this.user.artistName;
-         //          this.artistEmail = this.user.artistEmail;
-         //          this.socialMedia1 = this.user.socialMedia1;
-         //          this.socialMedia2 = this.user.socialMedia2;
-         //          this.socialMedia3 = this.user.socialMedia3;
-         //          this.artistWebsite = this.user.artistWebsite;
-         //          this.artistPhone = this.user.artistPhone;
-         //    // artist booleans
-         //          this.digitalGraphics = this.digitalGraphics;
-         //          this.canvasArt = this.user.canvasArt;
-         //          this.webDesign = this.user.webDesign;
-         //          this.photography = this.user.photography;
-         //          this.videography = this.user.videography;
-         //          this.lyricalArts = this.user.lyricalArts;
-         //          this.vocalInstrument = this.user.vocalInstrument;
-         //          this.theater = this.user.theater;
-         //          this.modeling = this.user.modeling;
-         //          this.acting = this.user.acting;
-         //          this.comedy = this.user.comedy;
-         //          this.dance = this.user.dance;
-         //          this.musicProduction = this.user.musicProduction;
                 }
               );
             })

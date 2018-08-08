@@ -5,6 +5,8 @@ declare var jQuery: any;
 import { User } from './models/user.model.client'
 import { ActivatedRoute, Router } from '@angular/router'
 import { SharedService } from './services/shared.service.client'
+import { ShoutOutService } from './services/shoutout.service.client';
+import { ShoutOutModel }  from './models/shoutout.model.client';
 
 @Component({
   selector: 'app-root',
@@ -16,14 +18,23 @@ import { SharedService } from './services/shared.service.client'
 export class AppComponent implements OnInit {
 
 	buttonContext: string;
+	tipContext: string;
 
-	constructor(public SharedService: SharedService, private UserService: UserService, private router: Router) { }
+	constructor(public SharedService: SharedService, private UserService: UserService, private router: Router, private shoutOutService: ShoutOutService) { }
 
 	ngOnInit(){
+		const sid = this.shoutOutService['sid'];
 		this.buttonContext = "";
-	}
+		this.tipContext = "";
+		this.shoutOutService.retrieveShoutOutPics();
+    }
 
-
+    hideButton(){
+		this.buttonContext = "";
+		this.tipContext = "";
+    }
+         
+   
 	closeLogin() {
 		jQuery("#login").collapse('hide');
 	}
@@ -40,5 +51,11 @@ export class AppComponent implements OnInit {
 
 	showButton(button: string) {
 		this.buttonContext = button;
+
 	}
+
+	tipButton(button: string) {
+	this.tipContext = button;
+	}
+	
 }

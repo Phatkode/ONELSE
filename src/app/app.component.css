@@ -1,3 +1,5 @@
+.center
+
 .mainText{
     justify-content: flex-end;
 }
@@ -16,19 +18,18 @@
 }
 
 .registerSpace{
-    padding-right: 15px;
-    padding-left: 15px;
-    border-right: 30px;
+align-content: right;
 }
 
 .header-mission-top-margin{
-    margin-top: 4%;
     font-weight: lighter;
+    font-size: 200%;
 }
 
-.upper-header{
-/*    margin-top: 10%;*/
+/*.upper-header{
+    margin: auto;
 }
+*/
 
 .btn-top-padding{
 	padding: .25rem .75rem;
@@ -104,7 +105,7 @@
 }
 
 .werthYellowSmall{
-    font-size: 22px;
+    font-size: 20px;
     padding: none;
     border: 0px;
     color:yellow;

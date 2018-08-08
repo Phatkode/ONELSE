@@ -1,8 +1,8 @@
-import {Routes, RouterModule} from "@angular/router";
-import {ModuleWithProviders} from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
+import { ModuleWithProviders } from "@angular/core";
 import { ComponentsComponent } from './components/components.component';
 import { AppComponent } from './app.component';
-import {AuthGuard} from './services/auth-guard.service';
+import { AuthGuard } from './services/auth-guard.service';
 
 // GUESTS
 import { HomeComponent } from './components/homepage/home/home.component';
@@ -50,10 +50,10 @@ const APP_ROUTES : Routes = [
   // USERS (place UID in later)
   { path : 'user' , component: ProfileComponent, canActivate: [AuthGuard]},
   { path : 'user/:uid/userpayge' , component: UserPaygeComponent, canActivate: [AuthGuard]},
-  { path : 'user/:uid/community/vloglyfe/postvlog' , component: PostVlogComponent, canActivate: [AuthGuard]},
-  { path : 'user/:uid/community/shoutout/post' , component: PostShoutOutComponent, canActivate: [AuthGuard]},
+  { path : 'user/:uid/community/vloglyfe/postvlog/:vlid' , component: PostVlogComponent, canActivate: [AuthGuard]},
+  { path : 'user/:uid/community/shoutout/:sid' , component: PostShoutOutComponent, canActivate: [AuthGuard]},
   { path : 'user/:uid/art/store/shoppingcart' , component: ShoppingCartComponent, canActivate: [AuthGuard]},
-  { path : 'user/:uid/resource/calendarpost' , component: CalendarPostComponent, canActivate: [AuthGuard]}
+  { path : 'user/:uid/resource/calendarPost/:cid' , component: CalendarPostComponent, canActivate: [AuthGuard]}
 ];
 
 // Export the routes as module providers

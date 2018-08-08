@@ -15,109 +15,83 @@
                         <div class="panel panel-default">
                               <div class="panel-body">
                                     <h4><small>POST TO</small>CALENDAR</h4>
-
-                                    <table>
-                                          <tr>
-
-                                              <td>
-                                                <div class="form-check form-check-inline">
-                                                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                                                  <label class="form-check-label" for="inlineRadio1">Events</label>
-                                            </div>
-                                      </td>
-
-                                      <td>
-                                          <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                                            <label class="form-check-label" for="inlineRadio2">Education</label>
-                                      </div>
-                                </td>
-
-                                <td>
-                                    <div class="form-check form-check-inline">
-                                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-                                          <label class="form-check-label" for="inlineRadio3">Item Review</label>
-                                    </div>
-                              </td>
-
-                              <td>
-                                    <div class="form-check form-check-inline">
-                                          <input class="form-check form-check-inline" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4">
-                                          <label class="form-check-label" for="inlineRadio4">Small Bizz</label>
-                                    </div>
-                              </td>
-
-                        </tr>
-
-                        <td>
-                              <input class="form-check form-check-inline" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option5">
-                              <label class="form-check-label" for="inlineRadio5">Outdoors</label>
-                        </td>
-                        <td><input class="form-check form-check-inline" type="radio" name="inlineRadioOptions" id="inlineRadio6" value="option6">
-                              <label class="form-check-label" for="inlineRadio6">Family</label>
-                        </td>
-                        <td><input class="form-check form-check-inline" type="radio" name="inlineRadioOptions" id="inlineRadio7" value="option7">
-                              <label class="form-check-label" for="inlineRadio7">Fitness</label>
-                        </td>
-                        <td><input class="form-check form-check-inline" type="radio" name="inlineRadioOptions" id="inlineRadio8" value="option8">
-                              <label class="form-check-label" for="inlineRadio8">Dining</label>
-                        </td>
-                  </table>
-
-
-
+                                    <form class="form-control transparentBox" (ngSubmit)="createCalendarPost()" #i="ngForm">
+                                    <table class="smallTableText">
+                                                      <thead> </thead>  
+                                                            <td><input type="checkbox" ngModel name="artEventsFunCal" #artEventsFunShout="ngModel">Art/Events/Fun</td>
+                                                            <td><input type="checkbox" ngModel name="educationCal" #educationShout="ngModel">Education</td>
+                                                            <td><input type="checkbox" ngModel name="itemReviewCal" #itemReviewShout="ngModel">Item Review</td>
+                                                      <tr>
+                                                            <td><input type="checkbox" ngModel name="smallBizzCal" #smallBizzShout="ngModel">Small Bizz</td>
+                                                            <td><input type="checkbox" ngModel name="outdoorsCal" #outdoorsShout="ngModel">Outdoors</td>
+                                                            <td><input type="checkbox" ngModel name="familyCal" #familyShout="ngModel">Family</td>           
+                                                      </tr>
+                                                      <tr> 
+                                                            <td><input type="checkbox" ngModel name="fitnessCal" #fitnessShout="ngModel" name="fitnessShout">Fitness</td>
+                                                            <td><input type="checkbox" ngModel name="diningShout" #diningShout="ngModel">Dining</td>
+                                                      </tr>
+                                                </table>  
 
                   <br>
-                  <form class="form-group" action="/action_page.php">
                         <div class="form-group">
-
-
-                              <input placeholder="EventName" type="url" class="form-control" id="url">
+                              <input placeholder="EventName" type="url" class="form-control" ngModel #calPostEventName="ngModel" name="calPostEventName">
                         </div>
                         <div class="form-group">
 
-                              <input placeholder="Description" type="text" class="form-control" id="title">
+                              <input placeholder="Description" type="text" class="form-control" ngModel #calPostDescription="ngModel" name="calPostDescription">
                         </div>
                         <div class="form-group">
 
-                              <input placeholder="Date" type="text" class="form-control" id="headline">
+                              <input placeholder="Date" type="text" class="form-control" ngModel #calPostDate="ngModel" name="calPostDate">
                         </div>
                         <div class="form-group">
 
-                              <input placeholder="Time" type="textarea" class="form-control" id="blog">
+                              <input placeholder="Time" type="textarea" class="form-control" ngModel #calPostTime="ngModel" name="calPostTime">
                         </div>
                         <div class="form-group">
 
-                              <input placeholder="location" type="textarea" class="form-control" id="blog">
+                              <input placeholder="location" type="textarea" class="form-control" ngModel #calPostLocation="ngModel" name="calPostLocation">
                         </div>
                         <div class="form-group">
 
-                              <input placeholder="website" type="textarea" class="form-control" id="blog">
+                              <input placeholder="website" type="textarea" class="form-control" ngModel #calPostWebsite="ngModel" name="calPostWebsite">
                         </div>
                         <div class="form-group">
 
-                              <input placeholder="duration" type="textarea" class="form-control" id="blog">
+                              <input placeholder="duration" type="textarea" class="form-control" ngModel #calPostDuration="ngModel" name="calPostDuration">
                         </div>
                         <div class="form-group">
 
-                              <input placeholder="email" type="textarea" class="form-control" id="blog">
+                              <input placeholder="email" type="textarea" class="form-control" ngModel #calPostEmail="ngModel" name="calPostEmail">
                         </div>
                         <div class="form-group">
 
-                              <input placeholder="phone" type="images" class="form-control" id="images">
+                              <input placeholder="phone" type="images" class="form-control" ngModel #calPostEmail="ngModel" name="calPostEmail">
 
                         </div>
                         <div class="form-group">
 
-                              <input placeholder="image 1" type="images" class="form-control" id="images">
+                              <input placeholder="image 1" type="images" class="form-control" ngModel #calPostImageOne="ngModel" name="calPostImageOne">
                         </div>
                         <div class="form-group">
-                              <input placeholder="image 2" type="images2" class="form-control" id="images2">
+                              <input placeholder="image 2" type="images2" class="form-control" ngModel #calPostImageTwo="ngModel" name="calPostImageTwo">
                         </div>
-
-
-
-
+                        <form ngNoForm action="{{baseUrl}}/api/shoutOut/upload/{{uid}}/{{cid}}" placeholder="upload Image" method="post" enctype="multipart/form-data">
+                                                            <div class="input-group mb-3">
+                                                                  <input type="file" class="form-control" name="myFile" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                                                  <div class="input-group-append">
+                                                                        <button class="btn btn-secondary" type="submit">Image 1</button>
+                                                                  </div>
+                                                            </div>
+                                                      </form>
+                              <form ngNoForm action="{{baseUrl}}/api/shoutOut/upload/{{uid}}/{{cid}}" placeholder="upload Image" method="post" enctype="multipart/form-data">
+                                                            <div class="input-group mb-3">
+                                                                  <input type="file" class="form-control" name="myFile" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                                                  <div class="input-group-append">
+                                                                        <button class="btn btn-secondary" type="submit">Image 2</button>
+                                                                  </div>
+                                                            </div>
+                                                      </form>
                         <button type="submit" class="btn btn-success btn-block">Submit</button>
                         <button routerLink="/resource/calendar" type="submit" class="btn btn-danger btn-block">Cancel</button>
                   </form>
@@ -130,7 +104,7 @@
 </div>
 
 </div>
-<div class="card-footer text-muted">"stick in a bundle; are unbreakable.<p></p><i><small>~ African Proverb"</small></i></div>
+<div class="card-footer text-muted">"sticks in a bundle; are unbreakable.<p></p><i><small>~ African Proverb"</small></i></div>
 </div>
 
 

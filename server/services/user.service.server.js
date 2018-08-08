@@ -147,10 +147,10 @@ function downloadPic(req, res) {
         pictureModel.findPictureForUser(uid).then(
             pictures => {
             	if (pictures) {
-            		for(let i=0;i < pictures.length;i++) {
-            			fs.access(pictures[i].name, fs.constants.F_OK, (err) => {
+            		for(let picture of pictures) {
+            			fs.access(picture.name, fs.constants.F_OK, (err) => {
             				if(err) {
-                        	    fs.appendFile(pictures[i].name, pictures[i].data, (err) =>{
+                        	    fs.appendFile(picture.name, picture.data, (err) =>{
                             })
             			}
             		})
@@ -207,7 +207,7 @@ if(userName) {
 		);
 	return;
 }
-res.json(null);
+	res.json(null);
 }
 
 

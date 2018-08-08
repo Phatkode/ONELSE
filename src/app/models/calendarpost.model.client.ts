@@ -1,7 +1,7 @@
 export class CalendarPostModel {
 	
-	_id: string;
-	calendarPost_id: string;
+	_id?: string;
+	userId: string;
 	calPostEventName: string;
 	calPostDescription: string;
 	calPostDate: string;
@@ -13,4 +13,12 @@ export class CalendarPostModel {
 	calPostEmail: string;
 	calPostImageOne?: string;
 	calPostImageTwo?: string;
+	artEventsFunCal?: Boolean;
+	educationCal?: Boolean;
+	itemReviewCal?: Boolean;
+	smallBizzCal?: Boolean;
+	outdoorsCal?: Boolean;
+	familyCal?: Boolean;
+	fitnessCal?: Boolean;
+	diningCal?: Boolean;
 }

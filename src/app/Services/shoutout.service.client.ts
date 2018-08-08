@@ -1,78 +1,73 @@
 import  { Injectable } from '@angular/core'
-import  { ShoutOutModel } from '../models/shoutout.model.client'
 import  { map } from "rxjs/operators"
 import {Http, Response} from '@angular/http'
-
 import { environment } from '../../environments/environment'
+import { ShoutOutModel} from '../models/shoutout.model.client'
+import { User } from '../models/user.model.client'
+import {Router} from '@angular/router';
+import {SharedService} from './shared.service.client';
+
+
+
 
 // injecting service into module
 @Injectable()
-
 export class ShoutOutService {
-
-  baseUrl = environment.baseUrl;
+	baseUrl = environment.baseUrl;
   
+		constructor(private http: Http) { }
 
-  constructor(private http: Http) { }
+		// adds the page parameter instance to the local pages array. The new page's websiteId is set to the websiteId parameter
+		postShoutOut(shoutOut : ShoutOutModel) {
+		    const url = this.baseUrl + '/api/user/' + shoutOut.userId + '/shoutOut';
+		    return this.http.post(url, shoutOut).pipe(map(
+		    	(response: Response) => {
+		        	return response.json();
+				}
+			));
+		  }
 
-   
- // adds the page parameter instance to the local pages array. The new page's websiteId is set to the websiteId parameter
-  createShoutOut(shoutOut_id: string, ShoutOut : ShoutOutModel) {
-    const url = this.baseUrl + '/api/website/'+ shoutOut_id +'/ShoutOut';
-    return this.http.post(url, ShoutOut).pipe(map(
-      (response: Response) => {
-        return response.json();
-}))}
-//   findShoutOutById(shoutOut_id, string) {
-//     const url = this.baseUrl + '/api/user/' + shoutOut_id;
-//     return this.http.get(url).pipe(map(
-//       (response: Response) => {
-//         return response.json();
-//       }
-//     ))
+		updateShoutOut(shoutOut: ShoutOutModel) {
+			const url = this.baseUrl + '/api/shoutOut';
+			return this.http.put(url, shoutOut).pipe(map(
+		    	(response: Response) => {
+		        	return response.json();
+				}
+			));
+		}
+ 
 
-//     // for (let x = 0; x < this.users.length; x++) {
-//     //   if (this.users[x]._id === userId) {  
-//     //     return this.users[x]; 
-//     //   }
-//     // }
-//   }
+   retrieveShoutOutPics() {
+        const url  = this.baseUrl + '/api/shoutOut/upload';
+        return this.http.get(url).pipe(map(
+            (res: Response) => {
+                return res.json();
+            }
+        ));
+    }
 
-//   findShoutOutByShoutOutname(nameShoutOut, string) { 
-//   const url = this.baseUrl + '/api/user?nameShoutOut=' + nameShoutOut;
-//   return this.http.get(url).pipe(map(
-//     (response: Response) => {
-//       return response.json();
-//     }
-//   )) 
-//   }
 
-//   findUserByCredentials(userName: string, password: string) { 
-//     const url = this.baseUrl + '/api/user?userName='+userName + '&password=' + password;
-//           return this.http.get(url).pipe(map(
-// 				(response: Response) => {
-//           console.log(response.json())
-// 					return response.json();
-// 				}
-//           	))
-//         }
+		findShoutOutById(sid: string) {
+			const url = this.baseUrl + '/api/shoutOut/' + sid;
+			return this.http.get(url).pipe(map(
+	            (response: Response) => {
+	                return response.json();
+	            }
+	        ));
+		}
 
-//   updateUser(userId: string, user: User) { 
+		loadAllShoutOuts() {
+			
+	        const url = this.baseUrl + '/api/shoutOuts'
 
-//     const url = this.baseUrl + '/api/user/' + userId;
-//     return this.http.put(url, user).pipe(map(
-//       (response: Response) => {
-//         return response.json();
-//       }
-//       ))
-//   }
+	        return this.http.get(url).pipe(map(
+	            (response: Response) => {
+	                return response.json();
+	            }
+	        ));
+	    }
 
-//   deleteUser(userId: string) { 
-//     const url = this.baseUrl + '/api/user/' + userId;
-//     return this.http.delete(url).pipe(map(
-//        (response: Response) => {
-//          return response.json();
-//        }
-//     ))
-//   }
 }
+
+
+

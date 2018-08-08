@@ -6,6 +6,7 @@ var PictureSchema = mongoose.Schema({
 	type: String,
 	mimetype: String,
 	user: {type: mongoose.Schema.Types.ObjectId, ref: 'UserModel'},
+	shoutOut: {type: mongoose.Schema.Types.ObjectId, ref: 'ShoutOutModel'},
 	dateCreated: {type: Date, default: Date.now}
 }, {collection: 'picture'});
 
