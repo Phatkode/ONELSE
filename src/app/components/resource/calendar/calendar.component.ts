@@ -12,7 +12,7 @@ import { CalendarPostModel} from '../../../models/calendarpost.model.client'
   styleUrls: ['./calendar.component.css']
 })
 export class CalendarComponent implements OnInit {
-  	cid: string;
+  	uid: string;
     calendarPosts: CalendarPostModel[];
 
   constructor(private activatedRoute: ActivatedRoute, private sharedService: SharedService, private router: Router, private calPostService: CalPostService, private userService: UserService) { }
@@ -91,7 +91,7 @@ export class CalendarComponent implements OnInit {
 				calPostImageOne: "",
 				calPostImageTwo: ""
 			};
-
+				console.log(newCalendarPost);
 			 this.calPostService.createCalendarPost(newCalendarPost).subscribe(
 				(calendarPost: CalendarPostModel) => {
 					this.router.navigate(['user', this.sharedService.user._id ,'resource' , 'calendarPost', calendarPost._id]);
@@ -100,10 +100,6 @@ export class CalendarComponent implements OnInit {
     		)
 		})
 	}
-
-
-
-
 
 }
 

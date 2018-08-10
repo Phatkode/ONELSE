@@ -160,7 +160,7 @@ baseUrl = environment.baseUrl;
 					this.router.navigate(['/community/shoutouts']);
         		}
     		)
-      	}
+    }
 
 
       tempSave(){

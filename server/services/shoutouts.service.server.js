@@ -9,7 +9,6 @@ module.exports = function(app){
 		app.post("/api/user/:userId/shoutOut", postShoutOut);
 		app.get('/api/shoutOut/upload', downloadPic)
 		app.post("/api/shoutOut/upload/:uid/:sid", upload.single('myFile'), uploadImage);
-		// app.post('/api/login', passport.authenticate('local'), login);
 		app.get('/api/shoutouts', loadAllShoutOuts);
 		app.get('/api/shoutout/:sid', findShoutOutById);
 		app.put('/api/shoutOut', updateShoutOut);

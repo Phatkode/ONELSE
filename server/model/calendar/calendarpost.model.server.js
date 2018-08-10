@@ -19,7 +19,7 @@ function loadAllCalendarPosts(){
 
 function updateCalendarPost(calendarPost) {
 	return CalendarPostModel.update({_id: calendarPost._id}, calendarPost);
-}
+}	
 
 function findCalendarPostById(cid){
 	return CalendarPostModel.findById(cid);

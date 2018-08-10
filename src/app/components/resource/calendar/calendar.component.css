@@ -8,3 +8,67 @@
 
 .white-space-nowrap{
 white-space: normal;}
+
+
+
+.smallTableText{
+	font-size: .7rem;
+	border-top: none;
+	border-bottom: none;
+	text-align: center;
+	padding: none;
+	width: 100%;
+	background-color: transparent;
+	fill: transparent;
+}
+
+
+table .td{
+padding: none;
+border-top: none;
+border-bottom: none;
+min-width: unset;
+white-space: wrap;
+border-collapse:collapse;
+border-spacing:0;
+background-color: transparent;
+fill: transparent;
+}
+
+table{
+padding: none;
+border-top: none;
+border-bottom: none;
+min-width: unset;
+white-space: wrap;
+border-collapse:collapse;
+border-spacing:0;
+background-color: transparent;
+fill: transparent;
+}
+
+table .tr{
+padding: none;
+border-top: none;
+border-bottom: none;
+min-width: unset;
+white-space: wrap;
+border-collapse:collapse;
+border-spacing:0;
+background-color: transparent;
+fill: transparent;
+}
+
+
+.transparentBox{
+background-color: transparent;
+fill: transparent;
+border: none;
+color: white;
+}
+
+.text-muted{
+	color: white;
+}
+
+

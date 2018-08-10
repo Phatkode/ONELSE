@@ -6,6 +6,7 @@ import { User } from './models/user.model.client'
 import { ActivatedRoute, Router } from '@angular/router'
 import { SharedService } from './services/shared.service.client'
 import { ShoutOutService } from './services/shoutout.service.client';
+import { CalPostService } from './services/calendarpost.service.client';
 import { ShoutOutModel }  from './models/shoutout.model.client';
 
 @Component({
@@ -20,14 +21,13 @@ export class AppComponent implements OnInit {
 	buttonContext: string;
 	tipContext: string;
 
-	constructor(public SharedService: SharedService, private UserService: UserService, private router: Router, private shoutOutService: ShoutOutService) { }
+	constructor(public SharedService: SharedService, private UserService: UserService, private router: Router, private shoutOutService: ShoutOutService, private calPostService: CalPostService) { }
 
 	ngOnInit(){
-		const sid = this.shoutOutService['sid'];
 		this.buttonContext = "";
 		this.tipContext = "";
 		this.shoutOutService.retrieveShoutOutPics();
-    }
+	    }
 
     hideButton(){
 		this.buttonContext = "";

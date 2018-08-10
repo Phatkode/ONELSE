@@ -1,20 +1,13 @@
 
 <div class="container">
-
-
-
       <div class="card text-center">
             <img id="LSE" src="../../../images/LSE2.jpg">
             <div class="btn-dark card-body">
-
-
                   <div class="container">
-
-
-
                         <div class="panel panel-default">
                               <div class="panel-body">
                                     <h4><small>POST TO</small>CALENDAR</h4>
+                                    <div class="align-content-center text-center row ">
                                     <form class="form-control transparentBox" (ngSubmit)="createCalendarPost()" #i="ngForm">
                                     <table class="smallTableText">
                                                       <thead> </thead>  
@@ -34,65 +27,65 @@
 
                   <br>
                         <div class="form-group">
-                              <input placeholder="EventName" type="url" class="form-control" ngModel #calPostEventName="ngModel" name="calPostEventName">
+                              <input placeholder="EventName" type="text" class="form-control" ngModel="{{CalendarPost.calPostEventName}}" #calPostEventName="ngModel" name="calPostEventName">
                         </div>
                         <div class="form-group">
 
-                              <input placeholder="Description" type="text" class="form-control" ngModel #calPostDescription="ngModel" name="calPostDescription">
+                              <input placeholder="Description" type="textarea" class="form-control" ngModel="{{CalendarPost.calPostDescription}}" #calPostDescription="ngModel" name="calPostDescription">
                         </div>
                         <div class="form-group">
 
-                              <input placeholder="Date" type="text" class="form-control" ngModel #calPostDate="ngModel" name="calPostDate">
+                              <input placeholder="Date" type="Date" class="form-control" ngModel="{{CalendarPost.calPostDate}}" #calPostDate="ngModel" name="calPostDate">
                         </div>
                         <div class="form-group">
 
-                              <input placeholder="Time" type="textarea" class="form-control" ngModel #calPostTime="ngModel" name="calPostTime">
+                              <input placeholder="Time" type="Time" class="form-control" ngModel="{{CalendarPost.calPostTime}}" #calPostTime="ngModel" name="calPostTime">
                         </div>
                         <div class="form-group">
 
-                              <input placeholder="location" type="textarea" class="form-control" ngModel #calPostLocation="ngModel" name="calPostLocation">
+                              <input placeholder="location" type="text" class="form-control" ngModel="{{CalendarPost.calPostLocation}}" #calPostLocation="ngModel" name="calPostLocation">
                         </div>
                         <div class="form-group">
 
-                              <input placeholder="website" type="textarea" class="form-control" ngModel #calPostWebsite="ngModel" name="calPostWebsite">
+                              <input placeholder="website" type="Url" class="form-control" ngModel="{{CalendarPost.calPostWebsite}}" #calPostWebsite="ngModel" name="calPostWebsite">
                         </div>
                         <div class="form-group">
 
-                              <input placeholder="duration" type="textarea" class="form-control" ngModel #calPostDuration="ngModel" name="calPostDuration">
+                              <input placeholder="duration" type="textarea" class="form-control" ngModel="{{CalendarPost.calPostDuration}}" #calPostDuration="ngModel" name="calPostDuration">
                         </div>
                         <div class="form-group">
 
-                              <input placeholder="email" type="textarea" class="form-control" ngModel #calPostEmail="ngModel" name="calPostEmail">
+                              <input placeholder="email" type="textarea" class="form-control" ngModel="{{CalendarPost.calPostEmail}}" #calPostEmail="ngModel" name="calPostEmail">
                         </div>
                         <div class="form-group">
 
-                              <input placeholder="phone" type="images" class="form-control" ngModel #calPostEmail="ngModel" name="calPostEmail">
+                              <input placeholder="phone" type="phone" class="form-control" ngModel="{{CalendarPost.calPostPhone}}" #calPostPhone="ngModel" name="calPostPhone">
 
                         </div>
                         <div class="form-group">
-
-                              <input placeholder="image 1" type="images" class="form-control" ngModel #calPostImageOne="ngModel" name="calPostImageOne">
+                              <input ngModel="{{CalendarPost.calPostImageOne}}" #calPostImageOne="ngModel" class="form-control" #url="ngModel" type="Url" name="calPostImageOne">
                         </div>
                         <div class="form-group">
-                              <input placeholder="image 2" type="images2" class="form-control" ngModel #calPostImageTwo="ngModel" name="calPostImageTwo">
+                              <input ngModel="{{CalendarPost.calPostImageTwo}}" #calPostImagetwo="ngModel" class="form-control" placeholder="Image Url"  #url="ngModel" type="Url" name="calPostImageTwo">
                         </div>
-                        <form ngNoForm action="{{baseUrl}}/api/shoutOut/upload/{{uid}}/{{cid}}" placeholder="upload Image" method="post" enctype="multipart/form-data">
+                        <form ngNoForm action="{{baseUrl}}/api/calendarPost/upload/{{uid}}/{{cid}}?type=calPostImageOne" method="post" enctype="multipart/form-data">
                                                             <div class="input-group mb-3">
                                                                   <input type="file" class="form-control" name="myFile" aria-label="Recipient's username" aria-describedby="basic-addon2">
                                                                   <div class="input-group-append">
-                                                                        <button class="btn btn-secondary" type="submit">Image 1</button>
+                                                                        <button (click)="tempSaveCal()" class="btn btn-secondary" type="submit">Image 1</button>
                                                                   </div>
                                                             </div>
                                                       </form>
-                              <form ngNoForm action="{{baseUrl}}/api/shoutOut/upload/{{uid}}/{{cid}}" placeholder="upload Image" method="post" enctype="multipart/form-data">
+                              <form ngNoForm action="{{baseUrl}}/api/calendarPost/upload/{{uid}}/{{cid}}?type=calPostImageTwo" method="post" enctype="multipart/form-data">
                                                             <div class="input-group mb-3">
                                                                   <input type="file" class="form-control" name="myFile" aria-label="Recipient's username" aria-describedby="basic-addon2">
                                                                   <div class="input-group-append">
-                                                                        <button class="btn btn-secondary" type="submit">Image 2</button>
+                                                                        <button (click)="tempSaveCal()" class="btn btn-secondary" type="submit">Image 2</button>
                                                                   </div>
                                                             </div>
                                                       </form>
                         <button type="submit" class="btn btn-success btn-block">Submit</button>
+                        <br>
                         <button routerLink="/resource/calendar" type="submit" class="btn btn-danger btn-block">Cancel</button>
                   </form>
 
@@ -100,6 +93,7 @@
 
             </div>
             <div class="panel-footer"></div>
+      </div>
       </div>
 </div>
 

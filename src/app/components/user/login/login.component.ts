@@ -5,6 +5,7 @@ declare var jQuery: any;
 import { User } from '../../../models/user.model.client'
 import { Router } from '@angular/router'
 import { SharedService } from '../../../services/shared.service.client'
+import { CalPostService } from '../../../services/calendarpost.service.client'
 
 @Component({
   selector: 'app-login',
@@ -47,6 +48,7 @@ export class LoginComponent implements OnInit {
               this.errorFlag = false;
               this.closeLogin();
               this.SharedService.user = user;
+
               this.UserService.findPictureForUser(user._id).subscribe(
                 (res: any) => {
                   this.router.navigate(['user'])

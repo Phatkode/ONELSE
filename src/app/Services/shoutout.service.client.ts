@@ -7,9 +7,6 @@ import { User } from '../models/user.model.client'
 import {Router} from '@angular/router';
 import {SharedService} from './shared.service.client';
 
-
-
-
 // injecting service into module
 @Injectable()
 export class ShoutOutService {

@@ -64,34 +64,6 @@ export class ShoutOutsComponent implements OnInit {
 			(ShoutOuts: ShoutOutModel[]) => {
 				this.shoutOuts = ShoutOuts;
 
-				// console.log(this.shoutOuts);
-
-				  // if events is false, uncheck the checkbox
-                  // personal booleans
-                  // if(!this.shoutOuts.artEventsFunShout) {
-                  //   this.shoutOuts.artEventsFunShout = null;
-                  // }
-                  //    if(!this.shoutOuts.educationShout) {
-                  //   this.shoutOuts.educationShout = null;
-                  // }
-                  //    if(!this.shoutOuts.itemReviewShout) {
-                  //   this.shoutOuts.itemReviewShout = null;
-                  // }
-                  //    if(!this.shoutOuts.smallBizzShout) {
-                  //   this.shoutOuts.smallBizzShout = null;
-                  // }
-                  //    if(!this.shoutOuts.outdoorsShout) {
-                  //   this.shoutOuts.outdoorsShout = null;
-                  // }
-                  //    if(!this.shoutOuts.familyShout) {
-                  //   this.shoutOuts.familyShout = null;
-                  // }
-                  //    if(!this.shoutOuts.fitnessShout) {
-                  //   this.shoutOuts.fitnessShout = null;
-                  // }
-                  //    if(!this.shoutOuts.diningShout) {
-                  //   this.shoutOuts.diningShout = null;
-                  // }
 			}
 		)
 	}
@@ -119,7 +91,6 @@ export class ShoutOutsComponent implements OnInit {
 				shoutOutImage: ""
 			};
 			console.log(newShoutOut);
-
 			 this.shoutOutService.postShoutOut(newShoutOut).subscribe(
 				(shoutOut: ShoutOutModel) => {
 					this.router.navigate(['user', this.sharedService.user._id ,'community' , 'shoutout', shoutOut._id]);
@@ -129,21 +100,3 @@ export class ShoutOutsComponent implements OnInit {
 	}
 
 }
-
-// <!--      userId: string;
-//      artEventsFunShout: boolean;
-//      educationShout: boolean;
-//      itemReviewShout: boolean;
-//      smallBizzShout: boolean;
-//      outdoorsShout: boolean;
-//      familyShout: boolean;
-//      fitnessShout: boolean;
-//      diningShout: boolean;
-//      typeShout: string;
-//      nameShout: string;
-//      descriptionShout: string;
-//      locationShout: string;
-//      dateShout: string;
-//      timeShout: string;
-//      websiteShout?: string;
-//      shoutOutImage?: string; -->

@@ -12,6 +12,7 @@ app.get('/api/calendarPost/:cid', findCalendarByPostId);
 app.get('/api/calendarPosts', loadAllCalendarPosts);
 app.get('/api/calendarPost/upload', downloadPic)
 app.post("/api/calendarPost/upload/:uid/:cid", upload.single('myFile'), uploadImage);
+// app.delete("/api/user/:uid", deleteShoutOut);
 
 				function postToCalendar (req, res) {
 					var calendarPost = req.body;
@@ -45,25 +46,31 @@ app.post("/api/calendarPost/upload/:uid/:cid", upload.single('myFile'), uploadIm
 				function uploadImage(req, res) {
 				        const uid = req.params['uid'];
 				        const cid = req.params['cid'];
+				        const type = req.query['type']
 				        const image = req.file;
 
 				        const callbackUrl   = req.headers.origin + "/user/" + uid + "/resource/calendarPost/" + cid;
 				        const picture = {
 				            name: image.path,
 				            data: "",
-				            type: "calendarPost",
+				            type: type,
 				            mimetype: image.mimetype,
 				            shoutOut: cid
 				        }
 
 				        fs.readFile(picture.name, (err, data) => {
 				        picture.data = data;
-				            PictureModel.deletePictureForShoutOut(cid).then(
+				            PictureModel.deletePictureForCalendarPost(cid, type).then(
 				                PictureModel.createPicture(picture).then(
 				                    (picture) => {
 				                        CalendarPostModel.findCalendarPostById(cid).then(
 				                            (calendarPost) => {
-				                            	calendarPost.calendarPost.Image = '/assets/uploads/' + image.filename;
+				                            	if(type === "calPostImageOne") { 
+				                            		calendarPost.calPostImageOne = '/assets/uploads/' + image.filename;
+				                            	} else if (type === "calPostImageTwo") {
+				                            		calendarPost.calPostImageTwo = '/assets/uploads/' + image.filename;
+				                            	}
+				                            	console.log(calendarPost); 					                            
 					                            CalendarPostModel.updateCalendarPost(calendarPost).then(
 					                                (data) => {
 					                                    res.redirect(callbackUrl);
@@ -78,6 +85,7 @@ app.post("/api/calendarPost/upload/:uid/:cid", upload.single('myFile'), uploadIm
 				    }
 
 							function downloadPic(req, res) {
+									var cid = req.params['cid'];
 							        PictureModel.retrieveCalendarPostPics().then(
 							            pictures => {
 							            	if (pictures) {

@@ -63,7 +63,7 @@
           <div class="card-body container">
                <div class="bg-light row">
                     <div class="col-md-3 ">
-                         <img class="float-left" width="150" src="../../../images/artist.jpg">
+                         <img alt="calendarPost" [src]="calendarPost.calPostImageOne" width="100">
                     </div>	
                     <div class="col-md-7 text-left">
                               <a class="navbar-brand white-space-nowrap" >{{calendarPost.calPostDescription}}</a>
@@ -75,7 +75,7 @@
                <div class="row collapse text-white bg-secondary {{calendarPost._id}}">
                     
                     <div class="col-3">
-                         <img class="float-left" width="150" src="../../../images/artist.jpg">          
+                         <img alt="calendarPost" [src]="calendarPost.calPostImageTwo" width="100">         
                     </div>
                     <div class="col-9">
                          <div class="row text-yellow">
