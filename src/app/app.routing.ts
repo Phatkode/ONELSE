@@ -7,6 +7,7 @@ import { AuthGuard } from './services/auth-guard.service';
 // GUESTS
 import { HomeComponent } from './components/homepage/home/home.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
+import { AdminComponent } from './components/admin/admin.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { RegisterComponent } from './components/user/register/register.component';
 import { ProfileComponent } from './components/user/profile/profile.component';
@@ -34,6 +35,7 @@ const APP_ROUTES : Routes = [
   { path : '', component : HomeComponent},
   { path : 'home', component : HomeComponent},
   { path : 'about-us', component : AboutUsComponent},
+  { path : 'admin', component : AdminComponent},
   { path : 'login', component : LoginComponent},
   { path : 'register', component: RegisterComponent},
   // COMMUNITY

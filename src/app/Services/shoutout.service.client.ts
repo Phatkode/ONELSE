@@ -33,6 +33,16 @@ export class ShoutOutService {
 			));
 		}
  
+		deleteNullShoutOut(shoutOut : ShoutOutModel) {
+		    const url = this.baseUrl + '/api/user/' + shoutOut.userId + '/shoutOut';
+		    return this.http.delete(url).pipe(map(
+		    	(response: Response) => {
+		        	return response.json();
+				}
+			));
+		  }
+
+
 
    retrieveShoutOutPics() {
         const url  = this.baseUrl + '/api/shoutOut/upload';

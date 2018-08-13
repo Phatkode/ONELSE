@@ -12,7 +12,7 @@ module.exports = function(app){
 		app.get('/api/shoutouts', loadAllShoutOuts);
 		app.get('/api/shoutout/:sid', findShoutOutById);
 		app.put('/api/shoutOut', updateShoutOut);
-		// app.delete("/api/user/:uid", deleteShoutOut);
+		app.delete("/api/user/:userId/shoutOut", deleteNullShoutOut);
 
 		function findShoutOutById(req, res) {
 			const sid = req.params['sid'];
@@ -29,6 +29,15 @@ module.exports = function(app){
 			ShoutOutModel.updateShoutOut(shoutOut).then(
 				(data)=>{
 					console.log(data);
+					res.json(data);
+				}
+			)
+		}
+
+				function deleteNullShoutOut(req, res) {
+			const sid = req.params['sid'];
+			ShoutOutModel.deleteNullShoutOut(sid).then(
+				(data) => {
 					res.json(data);
 				}
 			)

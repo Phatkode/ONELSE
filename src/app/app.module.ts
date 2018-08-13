@@ -35,6 +35,7 @@ import { ShoutOutService } from './services/shoutout.service.client';
 import { UserService } from './services/user.service.client'
 import { CalPostService } from './services/calendarpost.service.client';
 import { SharedService } from './services/shared.service.client';
+import { AdminComponent } from './components/admin/admin.component';
 
 
 @NgModule({
@@ -64,6 +65,7 @@ import { SharedService } from './services/shared.service.client';
     PostShoutOutComponent,    
     ShoppingCartComponent,
     CalendarPostComponent,
+    AdminComponent,
 
   ],
   imports: [

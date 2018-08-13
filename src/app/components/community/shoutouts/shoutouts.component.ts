@@ -15,7 +15,7 @@ import { ShoutOutModel} from '../../../models/shoutout.model.client'
 export class ShoutOutsComponent implements OnInit {
 	uid: string;
     shoutOuts: ShoutOutModel[];
-
+    shoutOutSearch: string = "";
 	constructor(private sharedService: SharedService, private router: Router, private shoutOutService: ShoutOutService, private userService: UserService) { }
 
 	reorder(type: String){
@@ -60,6 +60,7 @@ export class ShoutOutsComponent implements OnInit {
 	}
 
 	ngOnInit() {
+		this.shoutOutSearch = "";
 		this.shoutOutService.loadAllShoutOuts().subscribe(
 			(ShoutOuts: ShoutOutModel[]) => {
 				this.shoutOuts = ShoutOuts;

@@ -14,6 +14,7 @@ import { CalendarPostModel} from '../../../models/calendarpost.model.client'
 export class CalendarComponent implements OnInit {
   	uid: string;
     calendarPosts: CalendarPostModel[];
+    calendarSearch: string = "";
 
   constructor(private activatedRoute: ActivatedRoute, private sharedService: SharedService, private router: Router, private calPostService: CalPostService, private userService: UserService) { }
 
@@ -60,6 +61,7 @@ export class CalendarComponent implements OnInit {
 	}
 
 	ngOnInit() {
+		this.calendarSearch = ""
 		this.calPostService.loadAllCalendarPosts().subscribe(
 			(CalendarPosts: CalendarPostModel[]) => {
 				this.calendarPosts = CalendarPosts;

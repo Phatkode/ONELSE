@@ -6,6 +6,7 @@ ShoutOutModel.loadAllShoutOuts = loadAllShoutOuts;
 ShoutOutModel.createShoutOut = createShoutOut;
 ShoutOutModel.updateShoutOut = updateShoutOut;
 ShoutOutModel.findShoutOutById = findShoutOutById;
+ShoutOutModel.deleteNullShoutOut = deleteNullShoutOut;
 
 function createShoutOut(ShoutOut){
 	return ShoutOutModel.create(ShoutOut);
@@ -21,6 +22,10 @@ function updateShoutOut(shoutOut) {
 
 function findShoutOutById(sid){
 	return ShoutOutModel.findById(sid);
+}
+
+function deleteNullShoutOut(sid){
+	return ShoutOutModel.delete(sid);
 }
 
 module.exports = ShoutOutModel;
