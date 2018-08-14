@@ -1,4 +1,13 @@
-.center
+.headerThis {
+  position: relative;
+  min-height: 150px;
+}
+
+.headerContentThis {
+/*  position: absolute;*/
+  bottom: 0;
+  left: 0;
+}
 
 .mainText{
     justify-content: flex-end;
@@ -17,13 +26,27 @@
 	padding-right: 5px;
 }
 
+.header-buttons-padding{
+
+}
 .registerSpace{
 align-content: right;
 }
 
 .header-mission-top-margin{
     font-weight: lighter;
-    font-size: 200%;
+    font-size: 133%;
+    text-align: center;
+}
+
+.header-icons-padding{
+    text-align: center;
+}
+
+.align-all-center{
+    text-align: center;
+    display: block;
+    margin: 0 auto;
 }
 
 /*.upper-header{
@@ -99,7 +122,7 @@ align-content: right;
 .werthYellow{
     font-size: 25px;
     padding-left: 15px;
-    padding-right: 15px;
+    padding-right: 0px;
     color:yellow;
     text-align: center;
 }
@@ -147,4 +170,3 @@ table.GeneratedTable thead {
 .new-popup-home {
     margin: 0;
 }
-

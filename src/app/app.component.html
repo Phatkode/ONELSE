@@ -1,38 +1,41 @@
-<!-- LSE upper header -->
-<div class="container text-center align-content-center">
-    <img class="logoPadding" width="300px" src="../images/LSE LOGO2.jpg">
-</div>
 <br>
-<div class="row text-center align-content-center">
-    <div class="col-md-8">
-            <!-- <img class="logoPadding" width="300px" src="../images/LSE LOGO2.jpg"> -->
-   
-        <h4 class="header-mission-top-margin">
-            <strong (mouseenter)="tipButton('Click for LSE Mission')" (mouseleave)="hideButton()" data-toggle="collapse" data-target="#visionsfour" aria-expanded="false" aria-controls="collapseExample" class="registerSpace mainText">"A resource for arts that inspire come-unity!"
-            </strong>
+<div class="row headerThis">
+    <div class="col-md-2"><img (mouseenter)="tipButton('Click for LSE Mission')" (mouseleave)="hideButton()" data-toggle="collapse" data-target="#visionsfour" aria-expanded="false" aria-controls="collapseExample" class="cursor-pointer logoPadding headerContentThis" width="150px" src="../images/LSE LOGO2.jpg">
+    </div>
+    <div class="col-md-5 headerContentThis"><h4 class="headerContentThis header-mission-top-margin">
+            <strong (mouseenter)="tipButton('Click for LSE Mission')" (mouseleave)="hideButton()" data-toggle="collapse" data-target="#visionsfour" aria-expanded="false" aria-controls="collapseExample" class="cursor-pointer registerSpace mainText"><i class="text-muted">LightSpeed Entertainment  |  </i><i>"A resource for arts that inspire come-unity!"
+            </i></strong>
         </h4>
     </div>
-    <div class="col-md-4 center">
-            <div class="row">
+    <div class="col-md-5 headerContentThis">
+         <div class="row align-all-center">
                 <button *ngIf="SharedService.user" (click)="closeRegister()"(click)="closeLogin()" (click)="logout()" 
-                class= "btn btn-danger btn-top-padding upper-header">
+                class= "headerContentThis btn btn-danger btn-top-padding upper-header">
                     <i class="fas fa-sign-out-alt header-icons-padding"></i>LOGOUT
                 </button>
                 <button *ngIf="!SharedService.user"   (click)="closeRegister()" 
-                class= "btn btn-secondary btn-top-padding upper-header" data-toggle="collapse" data-target="#login" aria-expanded="false" aria-controls="collapseExample">
+                class= "headerContentThis btn btn-secondary btn-top-padding upper-header" data-toggle="collapse" data-target="#login" aria-expanded="false" aria-controls="collapseExample">
                     <i class="fas fa-key header-icons-padding"></i>LOGIN
                 </button><br>
-                <button (click)="closeLogin()" class="btn btn-success upper-header" data-toggle="collapse" data-target="#register" aria-expanded="false" aria-controls="collapseExample">
+                <button *ngIf="!SharedService.user" (click)="closeLogin()" class="btn btn-success upper-header" data-toggle="collapse" data-target="#register" aria-expanded="false" aria-controls="collapseExample">
                     <i class="fas fa-user-circle "></i>REGISTER
                 </button>
-            </div>
-    </div>
-</div>
-<div class="row header-row-slim">
-    <div class="col-md-8"></div>
-    <div class="col-md-4 align-content-center">
-        <!-- LSE lower header -->
-        <div class="justify-content-center row nav-text">
+               <button *ngIf="SharedService.user && router.url === '/community/shoutouts'"  (click)="closeLogin()" class="btn btn-primary upper-header" data-toggle="collapse" data-target="#register" aria-expanded="false" aria-controls="collapseExample">
+                    <i class="fas fa-user-circle "></i>Post ShoutOut
+                </button>
+                <button *ngIf="SharedService.user && router.url === '/resource/calendar'"  (click)="closeLogin()" class="btn btn-primary upper-header" data-toggle="collapse" data-target="#register" aria-expanded="false" aria-controls="collapseExample">
+                    <i class="fas fa-user-circle "></i>Post To Cal
+                </button>
+                  <button *ngIf="SharedService.user && router.url === '/community/vloglyfe'"  (click)="closeLogin()" class="btn btn-primary upper-header" data-toggle="collapse" data-target="#register" aria-expanded="false" aria-controls="collapseExample">
+                    <i class="fas fa-user-circle "></i>Post Vlog
+                </button>
+                <button *ngIf="SharedService.user && router.url !== '/user' && router.url !== '/community/vloglyfe' && router.url !== '/resource/calendar' && router.url !== '/community/shoutouts'  " (click)="closeLogin()" class="btn btn-success upper-header" data-toggle="collapse" data-target="#register" aria-expanded="false" aria-controls="collapseExample">
+                    <i class="fas fa-user-circle "></i>Profile
+                </button>
+                <button *ngIf="SharedService.user && router.url === '/user'" (click)="closeLogin()" class="btn btn-outline-danger upper-header" data-toggle="collapse" data-target="#register" aria-expanded="false" aria-controls="collapseExample">
+                    <i class="fas fa-user-circle "></i>Community
+                </button>
+                <div class="justify-content-center row nav-text">
             <ul class="nav nav-pills ">
                 <li class="nav-item dropdown">
                     <a class="legend-center nav-link dropdown" data-toggle="dropdown" href="#"  aria-haspopup="true" aria-expanded="false">community.</a>
@@ -61,8 +64,11 @@
                 </li>
             </ul>
         </div>  
+            </div>
     </div>
 </div>
+
+
 <!--     Container     -->
 <div class="collapse"  id="login">
     <app-login></app-login>
@@ -104,7 +110,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-5">      
+            <div class="col-md-6">      
                 <div class="collapse" id="footerIconsReveal">
                     <a routerLink="/home">
                         <i (mouseenter)="showButton('HOME')" (mouseleave)="hideButton()" class="fab fa-houzz footer-icons-white werth new-popup-home"></i>
@@ -146,7 +152,7 @@
                     </div>
                 </div> 
             </div>
-            <div class="col-md-4">         
+            <div class="col-md-3">         
                 <div class="innerHTMLHoverHome">
                     <a href="">
                          <div class="new-popup-home">

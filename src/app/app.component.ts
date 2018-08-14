@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
 	buttonContext: string;
 	tipContext: string;
 
-	constructor(public SharedService: SharedService, private UserService: UserService, private router: Router, private shoutOutService: ShoutOutService, private calPostService: CalPostService) { }
+	constructor(public SharedService: SharedService, private UserService: UserService, public router: Router, private shoutOutService: ShoutOutService, private calPostService: CalPostService) { }
 
 	ngOnInit(){
 		this.buttonContext = "";

@@ -1,3 +1,13 @@
+.constructionBox {
+    background: rgba(76, 175, 80, 0.3) /* Green background with 30% opacity */
+}
+
+.pictureRowHeight{
+  max-height: 400px;
+
+}
+
+
 .carosell {
 	padding: 0px;
 	border: none;
@@ -10,7 +20,7 @@
 
 .image {
   display: block;
-  height: 16rem;
+  height: 26rem;
 }
 
 .overlay {

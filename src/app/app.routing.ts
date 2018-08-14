@@ -12,6 +12,7 @@ import { LoginComponent } from './components/user/login/login.component';
 import { RegisterComponent } from './components/user/register/register.component';
 import { ProfileComponent } from './components/user/profile/profile.component';
 import { UserPaygeComponent } from './components/user/userpayge.component';
+import { ArafatakbarComponent } from './components/arafatakbar/arafatakbar.component';
 // COMMUNITY
 import { ShoutOutsComponent } from './components/community/shoutouts/shoutouts.component';
 import { PostShoutOutComponent } from './components/community/shoutouts/postshoutout/postshoutout.component';
@@ -38,6 +39,7 @@ const APP_ROUTES : Routes = [
   { path : 'admin', component : AdminComponent},
   { path : 'login', component : LoginComponent},
   { path : 'register', component: RegisterComponent},
+  { path : 'arafatakbar', component: ArafatakbarComponent},
   // COMMUNITY
   { path : 'community/vloglyfe' , component: VlogLyfeComponent}, 
   { path : 'community/vloglyfe/inspirations' , component: InspirationsComponent},

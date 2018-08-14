@@ -109,9 +109,18 @@
                          <span *ngIf="shoutOut.diningShout">Dining | </span>
                     </td>
                </tr>
-               <tr>
+          <!--      <hr *ngIf="(
+                    shoutOut.descriptionShout + 
+                    shoutOut.locationShout + 
+                    shoutOut.dateShout + 
+                    shoutOut.websiteShout).toUpperCase().includes(this.shoutOutSearch.toUpperCase()) 
+                    && this.shoutOut.nameShout +
+                    this.shoutOut.locationShout +
+                    this.shoutOut.dateShout
+                    !== '' ">  -->
+<!--                <tr>
                     <td style="height:0px"colspan="4"><hr></td>
-               </tr> 
+               </tr>  -->
           </tbody>
      </table>
           <br> 

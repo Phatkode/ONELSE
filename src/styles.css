@@ -24,8 +24,10 @@ body{
 }
 
 .logoPadding{
-	padding-left: 15px;
-	padding-top: 8px;
+	padding-left: 8px;
+	padding-right: 8px;
+	display: block;
+    margin: 0 auto;
 }
 
 .border-red {
@@ -108,3 +110,5 @@ body{
   text-align: center;
 /*  text-shadow: 1px 1px 0px #black, 4px 4px 0px rgba(0,0,0,0.15);*/
 }
+
+.cursor-pointer { cursor: pointer; }

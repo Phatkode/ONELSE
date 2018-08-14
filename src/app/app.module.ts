@@ -36,6 +36,7 @@ import { UserService } from './services/user.service.client'
 import { CalPostService } from './services/calendarpost.service.client';
 import { SharedService } from './services/shared.service.client';
 import { AdminComponent } from './components/admin/admin.component';
+import { ArafatakbarComponent } from './components/arafatakbar/arafatakbar.component';
 
 
 @NgModule({
@@ -66,6 +67,7 @@ import { AdminComponent } from './components/admin/admin.component';
     ShoppingCartComponent,
     CalendarPostComponent,
     AdminComponent,
+    ArafatakbarComponent,
 
   ],
   imports: [
