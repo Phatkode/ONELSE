@@ -40,35 +40,60 @@
 	<div class="btn btn-danger container container-fluid"> 
 		<h5  class="display-4" align="left" >USERS</h5>
 		<hr>
-<table class="table table-bordered">
+    <div class="col-md-4"><table *ngFor="let user of users" class="table table-bordered">
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Field</th>
     </tr>
   </thead>
   <tbody>
     <tr>
+       <th colspan="2">{{user.profileImage}}</th>
+       </tr>
+        <tr>
+       <th colspan="2">{{user.paygeImage}}</th>
+       </tr>
+    <tr>
       <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <td>{{user._id}}</td>
     </tr>
     <tr>
       <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
+      <td>{{user.birthday}}</td>
     </tr>
     <tr>
       <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
+      <td>{{user.email}}</td>
+    </tr>
+      <tr>
+      <th scope="row">4</th>
+      <td>{{user.userName}}</td>
+    </tr>
+      <tr>
+      <th scope="row">5</th>
+      <td>{{user.firstName}}</td>
+    </tr>
+      <tr>
+      <th scope="row">6</th>
+      <td>{{user.lastName}}</td>
+    </tr>
+       <tr>
+       <th colspan="2"><span *ngIf="user.events">Fun | </span>
+                         <span *ngIf="user.education">Education | </span>
+                         <span *ngIf="user.itemReview">Items Review | </span>
+                         <span *ngIf="user.smallBizz">Small Bizz | </span>
+                         <span *ngIf="user.outdoors">Outdoors | </span>
+                         <span *ngIf="user.family">Family | </span>
+                         <span *ngIf="user.fitness">Fitness | </span>
+                         <span *ngIf="user.dining">Dining | </span></th>
+      
     </tr>
   </tbody>
-</table>		
+</table>    </div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+
 
 	</div>
 </div>

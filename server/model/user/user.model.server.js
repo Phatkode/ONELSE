@@ -7,6 +7,11 @@ UserModel.updateUser = updateUser;
 UserModel.findUserByUsername = findUserByUsername;
 UserModel.findUserById = findUserById;
 UserModel.findUserByCredentials = findUserByCredentials;
+UserModel.findUsers = findUsers;
+
+function findUsers() {
+	return UserModel.find()
+}
 
 function createUser(user){
 return UserModel.create(user);

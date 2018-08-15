@@ -27,14 +27,7 @@ users: User[];
   constructor(private UserService: UserService, private router: Router) { }
 
   ngOnInit(){
-        // this.UserService.findUsers().subscribe(
-        //     (users:User[]) => {
-        //         this.users = users;
-        //         for(let user of users) {
-        //             this.UserService.findPictureForUser(user._id).subscribe();
-        //         }
-        //     }
-        // );
+
   }
 
 // closeLogin() {

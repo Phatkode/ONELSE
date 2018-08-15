@@ -188,26 +188,30 @@ function findUserById(req, res){
 function findUsers(req, res) {
 	const userName = req.query['userName'];
 	const password = req.query['password'];
-
-// find user by credentials
-if(userName && password) {
-	userModel.findUserByCredentials(userName, password).then(
-		data => {
+	// find user by credentials
+	if(userName && password) {
+		userModel.findUserByCredentials(userName, password).then(
+			data => {
+				res.json(data);
+			}
+			);
+		return;
+	}
+// find user by username
+	if(userName) {
+		userModel.findUserByUsername(userName).then(
+			data => {
+				res.json(data);	
+			}
+			);
+		return;
+	}
+	userModel.findUsers().then(
+		(data) => {
+			console.log("data");
 			res.json(data);
 		}
-		);
-	return;
-}
-// find user by username
-if(userName) {
-	userModel.findUserByUsername(userName).then(
-		data => {
-			res.json(data);	
-		}
-		);
-	return;
-}
-	res.json(null);
+	);
 }
 
 
