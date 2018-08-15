@@ -3,6 +3,13 @@
   min-height: 150px;
 }
 
+.slim{
+    min-height: 50px;
+}
+.table-center{
+    align-content: center;
+}
+
 .headerContentThis {
 /*  position: absolute;*/
   bottom: 0;

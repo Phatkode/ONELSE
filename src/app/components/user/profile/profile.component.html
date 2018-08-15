@@ -56,6 +56,9 @@
 				<a style="color: white" class="btn-block btn-secondary" data-toggle="collapse" data-target="#collapseExampleNonEditBizz" aria-expanded="false" aria-controls="collapseExampleNonEditBizz">Show/Hide "Bizz"</a>
 				<br>
 				<a style="color: white" class="btn-block btn-success" data-toggle="collapse" data-target="#collapseExampleNonEditArts" aria-expanded="false" aria-controls="collapseExampleNonEditArts">Show/Hide "Artz"</a>
+				<br>
+				<a *ngIf="SharedService.user" routerLink="/admin" style="color: white" class="btn-block btn-primary" data-toggle="collapse" data-target="#collapseExampleNonEditBizz" aria-expanded="false" aria-controls="collapseExampleNonEditBizz">Show/Hide "Bizz"</a>
+				
 				<p></p>
 				<p></p>
 			</div>

@@ -3,10 +3,22 @@
 }
 
 .pictureRowHeight{
-  max-height: 400px;
+  max-height: 200px;
 
 }
 
+.responsive {
+    width: 233%;
+    max-height: 333px;
+}
+.responsiveOne {
+    width: 233%;
+    max-height: 333px;
+}
+.responsiveTwo {
+    width: 233%;
+    max-height: 333px;
+}
 
 .carosell {
 	padding: 0px;
@@ -20,7 +32,7 @@
 
 .image {
   display: block;
-  height: 26rem;
+  height: 28rem;
 }
 
 .overlay {
