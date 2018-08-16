@@ -25,9 +25,9 @@ body{
 
 .logoPadding{
 	padding-left: 8px;
-	padding-right: 8px;
+	padding-right: 99px;
 	display: block;
-    margin: 0 auto;
+    margin:  auto;
 }
 
 .border-red {
