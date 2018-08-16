@@ -12,6 +12,7 @@
     white-space: wrap;
 }
 
-.centerTable{
+table{
 	margin: auto;
+	align-items: center;
 }
